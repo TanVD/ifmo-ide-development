@@ -54,7 +54,7 @@ namespace JetBrains.ReSharper.Plugins.Spring
                     ParseBlock(builder);
 
                     if (builder.GetTokenType() != SpringTokenType.END)
-                        builder.Error("Expected '}'");
+                        builder.Error("Expected 'END'");
                     else
                         builder.AdvanceLexer();
 

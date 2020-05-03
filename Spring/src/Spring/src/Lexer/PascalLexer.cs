@@ -70,7 +70,23 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
             set => CurrentPosition = (int) value;
         }
 
-        public TokenNodeType TokenType => _isWhitespace ? SpringTokenType.WS : SpringTokenType.Convert(_curToken.Type);
+        public TokenNodeType TokenType
+        {
+            get
+            {
+                if (_isWhitespace)
+                {
+                    return SpringTokenType.WS;
+                }
+
+                if (_curToken.Type == -1)
+                {
+                    return null;
+                }
+
+                return SpringTokenType.Convert(_curToken.Type);
+            }
+        }
 
         public int TokenStart
         {
