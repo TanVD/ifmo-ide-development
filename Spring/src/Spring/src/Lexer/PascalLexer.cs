@@ -7,7 +7,12 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
     internal class PascalLexer : ILexer<int>
     {
         private readonly pascalLexer _lexer;
+
+        private bool _isWhitespace = false;
+        
+        private IToken _prevToken;
         private IToken _curToken;
+        
         private int _currentPosition;
         public IBuffer Buffer { get; }
 
@@ -26,7 +31,19 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
 
         public void Advance()
         {
-            _curToken = _lexer.NextToken();
+            if (_isWhitespace)
+            {
+                _isWhitespace = false;
+            }
+            else
+            {
+                _prevToken = _curToken;
+                _curToken = _lexer.NextToken();
+                if (_prevToken != null && _prevToken.StopIndex + 1 != _curToken.StartIndex)
+                {
+                    _isWhitespace = true;
+                }
+            }
             _currentPosition++;
         }
 
@@ -36,7 +53,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
             set
             {
                 _lexer.Reset();
-                int counter = 0;
+                var counter = 0;
                 while (counter < value)
                 {
                     _lexer.NextToken();
@@ -53,8 +70,26 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
             set => CurrentPosition = (int) value;
         }
 
-        public TokenNodeType TokenType => SpringTokenType.Convert(_curToken.Type);
-        public int TokenStart => _curToken.StartIndex;
-        public int TokenEnd => _curToken.StopIndex;
+        public TokenNodeType TokenType => _isWhitespace ? SpringTokenType.WS : SpringTokenType.Convert(_curToken.Type);
+
+        public int TokenStart
+        {
+            get
+            {
+                var startIndex = _isWhitespace ? _prevToken.StopIndex + 1 : _curToken.StartIndex;
+                Logger.Log($"Start index is {startIndex}");
+                return startIndex;
+            }
+        }
+
+        public int TokenEnd
+        {
+            get
+            {
+                var stopIndex = _isWhitespace ? _curToken.StartIndex : _curToken.StopIndex + 1;
+                Logger.Log($"End index is {stopIndex}");
+                return stopIndex;
+            }
+        }
     }
 }

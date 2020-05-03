@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Tree;
 using JetBrains.ReSharper.Psi.Parsing;
@@ -11,8 +12,17 @@ namespace JetBrains.ReSharper.Plugins.Spring
         private static HashMap<int, SpringTokenType> convertTo = new HashMap<int, SpringTokenType>();
         private static HashMap<SpringTokenType, int> convertFrom = new HashMap<SpringTokenType, int>();
 
-        public static SpringTokenType Convert(int index) => convertTo[index];
-        public static int Convert(SpringTokenType type) => convertFrom[type];
+        public static SpringTokenType Convert(int index)
+        {
+            init();
+            return convertTo[index];
+        }
+
+        public static int Convert(SpringTokenType type)
+        {
+            init();
+            return convertFrom[type];
+        }
 
         public static SpringTokenType AND = new SpringTokenType("AND", 1);
         public static SpringTokenType ARRAY = new SpringTokenType("ARRAY", 2);
@@ -121,10 +131,130 @@ namespace JetBrains.ReSharper.Plugins.Spring
         public static SpringTokenType LEFT_CURLY_BRACKET_SYM = new SpringTokenType("{", 65);
         public static SpringTokenType RIGHT_CURLY_BRACKET_SYM = new SpringTokenType("}", 66);
 
+        private static bool isInitialized = false;
+
+        public static void init()
+        {
+            if (isInitialized) return;
+
+            NUM_REAL.Register();
+            VAR.Register();
+            RBRACK2.Register();
+            MINUS.Register();
+            INTERFACE.Register();
+            DOWNTO.Register();
+            ELSE.Register();
+            RIGHT_CURLY_BRACKET_SYM.Register();
+            IF.Register();
+            TYPE.Register();
+            LBRACK2.Register();
+            RIGHT_SQUARE_BRACKET_SYM.Register();
+            IN.Register();
+            LPAREN.Register();
+            DOT.Register();
+            FUNCTION.Register();
+            CASE.Register();
+            PLUS_SIGN_SYM.Register();
+            AT.Register();
+            LBRACK.Register();
+            THEN.Register();
+            LESS_THAN_SIGN_SYM.Register();
+            PROGRAM.Register();
+            GOTO.Register();
+            SET.Register();
+            LESS_THAN_SIGN_EQUALS_SIGN_SYM.Register();
+            REPEAT.Register();
+            SEMI.Register();
+            CHAR.Register();
+            BEGIN.Register();
+            ASSIGN.Register();
+            FULL_STOP_SYM.Register();
+            PACKED.Register();
+            CIRCUMFLEX_ACCENT_SYM.Register();
+            FILE.Register();
+            RCURLY.Register();
+            COMMA.Register();
+            COLON_EQUALS_SIGN_SYM.Register();
+            PROCEDURE.Register();
+            HYPHEN_MINUS_SYM.Register();
+            RIGHT_PARENTHESIS_SYM.Register();
+            LCURLY.Register();
+            DIV.Register();
+            STAR.Register();
+            NOT_EQUAL.Register();
+            LE.Register();
+            STRING.Register();
+            TO.Register();
+            FULL_STOP_RIGHT_PARENTHESIS_SYM.Register();
+            ARRAY.Register();
+            RECORD.Register();
+            LT.Register();
+            DO.Register();
+            CHR.Register();
+            CONST.Register();
+            LABEL.Register();
+            SOLIDUS_SYM.Register();
+            LEFT_PARENTHESIS_FULL_STOP_SYM.Register();
+            INTEGER.Register();
+            COMMERCIAL_AT_SYM.Register();
+            COLON_SYM.Register();
+            UNIT.Register();
+            FULL_STOP_FULL_STOP_SYM.Register();
+            FOR.Register();
+            TRUE.Register();
+            RPAREN.Register();
+            LEFT_SQUARE_BRACKET_SYM.Register();
+            BOOLEAN.Register();
+            GREATER_THAN_SIGN_SYM.Register();
+            NOT.Register();
+            RBRACK.Register();
+            AND.Register();
+            REAL.Register();
+            END.Register();
+            LESS_THAN_SIGN_GREATER_THAN_SIGN_SYM.Register();
+            PLUS.Register();
+            LEFT_PARENTHESIS_SYM.Register();
+            COMMENT_2.Register();
+            COMMENT_1.Register();
+            COMMA_SYM.Register();
+            OF.Register();
+            ASTERISK_SYM.Register();
+            LEFT_CURLY_BRACKET_SYM.Register();
+            WS.Register();
+            GE.Register();
+            MOD.Register();
+            OR.Register();
+            SEMICOLON_SYM.Register();
+            EQUAL.Register();
+            SLASH.Register();
+            IMPLEMENTATION.Register();
+            COLON.Register();
+            DOTDOT.Register();
+            USES.Register();
+            EQUALS_SIGN_SYM.Register();
+            UNTIL.Register();
+            GT.Register();
+            NUM_INT.Register();
+            WITH.Register();
+            NIL.Register();
+            IDENT.Register();
+            POINTER.Register();
+            WHILE.Register();
+            FALSE.Register();
+            STRING_LITERAL.Register();
+            GREATER_THAN_SIGN_EQUALS_SIGN_SYM.Register();
+
+            isInitialized = true;
+        }
+
         public SpringTokenType(string s, int index) : base(s, index)
         {
-            convertTo[index] = this;
-            convertFrom[this] = index;
+        }
+
+        private void Register()
+        {
+            convertTo[Index] = this;
+            convertFrom[this] = Index;
         }
 
         public override LeafElementBase Create(IBuffer buffer, TreeOffset startOffset, TreeOffset endOffset)
