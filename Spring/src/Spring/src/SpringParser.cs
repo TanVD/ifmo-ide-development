@@ -16,7 +16,7 @@ using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.ReSharper.Psi.TreeBuilder;
 using JetBrains.Text;
 
-namespace JetBrains.ReSharper.Plugins.Spring
+namespace JetBrains.ReSharper.Plugins.Spring.Lexer
 {
     internal class SpringParser : IParser
     {
@@ -47,20 +47,20 @@ namespace JetBrains.ReSharper.Plugins.Spring
             while (!builder.Eof())
             {
                 var tt = builder.GetTokenType();
-                if (tt == SpringTokenType.BEGIN)
+                if (tt == PascalTokenTypes.BEGIN)
                 {
                     var start = builder.Mark();
                     builder.AdvanceLexer();
                     ParseBlock(builder);
 
-                    if (builder.GetTokenType() != SpringTokenType.END)
+                    if (builder.GetTokenType() != PascalTokenTypes.END)
                         builder.Error("Expected 'END'");
                     else
                         builder.AdvanceLexer();
 
                     builder.Done(start, SpringCompositeNodeType.BLOCK, null);
                 }
-                else if (tt == SpringTokenType.END)
+                else if (tt == PascalTokenTypes.END)
                     return;
                 else builder.AdvanceLexer();
             }

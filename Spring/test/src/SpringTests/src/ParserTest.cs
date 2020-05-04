@@ -1,4 +1,4 @@
-using JetBrains.ReSharper.Plugins.Spring;
+using JetBrains.ReSharper.Plugins.Spring.Lexer;
 using JetBrains.ReSharper.TestFramework;
 using NUnit.Framework;
 

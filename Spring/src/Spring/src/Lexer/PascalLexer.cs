@@ -1,8 +1,9 @@
 using Antlr4.Runtime;
+using JetBrains.ReSharper.Plugins.Spring.Utils;
 using JetBrains.ReSharper.Psi.Parsing;
 using JetBrains.Text;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Lexer
+namespace JetBrains.ReSharper.Plugins.Spring.Lexer.Lexer
 {
     internal class PascalLexer : ILexer<int>
     {
@@ -76,7 +77,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
             {
                 if (_isWhitespace)
                 {
-                    return SpringTokenType.WS;
+                    return PascalTokenTypes.WS;
                 }
 
                 if (_curToken.Type == -1)
@@ -84,7 +85,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
                     return null;
                 }
 
-                return SpringTokenType.Convert(_curToken.Type);
+                return PascalTokenTypes.Convert(_curToken.Type);
             }
         }
 

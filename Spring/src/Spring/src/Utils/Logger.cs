@@ -1,12 +1,11 @@
 using System;
 using System.IO;
-using JetBrains.Diagnostics;
 
-namespace JetBrains.ReSharper.Plugins.Spring
+namespace JetBrains.ReSharper.Plugins.Spring.Utils
 {
-    public class Logger
+    public static class Logger
     {
-        private static String log = "/home/tanvd/log.txt";
+        private static readonly String log = "/home/tanvd/log.txt";
 
         public static void Log(String text)
         {
