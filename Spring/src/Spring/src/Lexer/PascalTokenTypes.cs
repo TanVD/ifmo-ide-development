@@ -20,26 +20,6 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
             return !ConvertTo.ContainsKey(index) ? null : ConvertTo[index];
         }
 
-        public static int Convert(TokenNodeType type)
-        {
-            if (!(type is PascalTokenType))
-            {
-                Logger.Log($"Returning -1 for {type}");
-                return -1;
-            }
-
-            Init();
-
-            if (!ConvertFrom.ContainsKey((PascalTokenType) type))
-            {
-                Logger.Log($"Returning -1 for {type}");
-                return -1;
-            }
-
-            return ConvertFrom[(PascalTokenType) type];
-        }
-
-
         public static PascalTokenType AND = new PascalTokenType("AND", 1);
         public static PascalTokenType ARRAY = new PascalTokenType("ARRAY", 2);
         public static PascalTokenType BEGIN = new PascalTokenType("BEGIN", 3);

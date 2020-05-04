@@ -5,48 +5,56 @@ using JetBrains.ReSharper.Daemon.CSharp.Errors;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.I18n.Services.Daemon;
 using JetBrains.ReSharper.Plugins.Spring.Lexer;
+using JetBrains.ReSharper.Plugins.Spring.Utils;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Tree;
 using JetBrains.ReSharper.Psi.Files;
 using JetBrains.ReSharper.Psi.Tree;
+using JetBrains.Util;
 
 namespace JetBrains.ReSharper.Plugins.Spring.Parser
 {
     [DaemonStage]
     class PascalDaemonStage : DaemonStageBase<SpringFile>
     {
-        protected override IDaemonStageProcess CreateDaemonProcess(IDaemonProcess process,
-            DaemonProcessKind processKind, SpringFile file,
-            IContextBoundSettingsStore settingsStore)
+        protected override IDaemonStageProcess CreateDaemonProcess(
+            IDaemonProcess process,
+            DaemonProcessKind processKind,
+            SpringFile file,
+            IContextBoundSettingsStore settingsStore
+        )
         {
-            return new SpringDaemonProcess(process, file);
+            return new PascalDaemonProcess(process, file);
         }
 
-        internal class SpringDaemonProcess : IDaemonStageProcess
+        private class PascalDaemonProcess : IDaemonStageProcess
         {
-            private readonly SpringFile _myFile;
+            private readonly SpringFile _file;
 
-            public SpringDaemonProcess(IDaemonProcess process, SpringFile file)
+            public PascalDaemonProcess(IDaemonProcess process, SpringFile file)
             {
-                _myFile = file;
+                _file = file;
                 DaemonProcess = process;
             }
 
             public void Execute(Action<DaemonStageResult> committer)
             {
                 var highlightings = new List<HighlightingInfo>();
-                foreach (var treeNode in _myFile.Descendants())
+                foreach (var treeNode in _file.Descendants())
                 {
                     if (treeNode is PsiBuilderErrorElement error)
                     {
-                        var range = error.GetDocumentRange();
-                        highlightings.Add(new HighlightingInfo(range,
-                            new CSharpSyntaxError(error.ErrorDescription, range)));
+                        var splits = error.ErrorDescription.Split('#');
+                        
+                        var message = splits[0];
+                        var length = int.Parse(splits[1]);
+                        
+                        var range = error.GetDocumentRange().ExtendRight(length);
+                        highlightings.Add( new HighlightingInfo(range, new CSharpSyntaxError(message, range)));
                     }
                 }
 
-                var result = new DaemonStageResult(highlightings);
-                committer(result);
+                committer(new DaemonStageResult(highlightings));
             }
 
             public IDaemonProcess DaemonProcess { get; }

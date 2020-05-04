@@ -1,5 +1,5 @@
+using System.IO;
 using Antlr4.Runtime;
-using Antlr4.Runtime.Tree;
 using JetBrains.Lifetimes;
 using JetBrains.ReSharper.Plugins.Spring.Utils;
 using JetBrains.ReSharper.Psi.Parsing;
@@ -22,9 +22,11 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser
             using (var def = Lifetime.Define())
             {
                 var builder = new PsiBuilder(_lexer, SpringFileNodeType.Instance, new TokenFactory(), def.Lifetime);
+                var listener = new PascalErrorListener(builder);
 
                 var lexer = new GPascalLexer(new AntlrInputStream(_lexer.Buffer.GetText()));
                 var parser = new GPascalParser(new CommonTokenStream(lexer));
+                parser.AddErrorListener(listener);
 
                 var fileMark = builder.Mark();
 
@@ -36,54 +38,32 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser
             }
         }
 
-        private class PascalParserVisitor : GPascalBaseVisitor<PsiBuilder>
+        class PascalErrorListener : BaseErrorListener
         {
-            private readonly PsiBuilder _psiBuilder;
-            private ITerminalNode _prev;
+            private readonly PsiBuilder _builder;
 
-            public PascalParserVisitor(PsiBuilder psiBuilder)
+            public PascalErrorListener(PsiBuilder builder)
             {
-                _psiBuilder = psiBuilder;
+                _builder = builder;
             }
 
-            public override PsiBuilder VisitChildren(IRuleNode node)
+            public override void SyntaxError(
+                TextWriter output, IRecognizer recognizer, IToken offendingSymbol,
+                int line, int charPositionInLine, string msg, RecognitionException e
+            )
             {
-                Logger.Log($"Got in a node {node.GetText()}");
-                var mark = _psiBuilder.Mark();
-                base.VisitChildren(node);
-                _psiBuilder.Done(mark, SpringCompositeNodeType.OTHER, null);
-                return _psiBuilder;
-            }
+                var curLexeme = _builder.GetCurrentLexeme();
+                var curNonCommentLexeme = _builder.GetCurrentNonCommentLexeme();
+                
+                Logger.Log($"OFFENDING SYMBOL: {offendingSymbol.StartIndex} {offendingSymbol.StopIndex}");
 
-            public override PsiBuilder VisitTerminal(ITerminalNode node)
-            {
-                if (_prev != null && node.Symbol.TokenIndex != -1)
-                {
-                    Logger.Log($"PREV SYMBOL: {_prev.Symbol.TokenIndex}");
-                    Logger.Log($"NODE SYMBOL: {node.Symbol.TokenIndex}");
+                _builder.ResetCurrentLexeme(offendingSymbol.TokenIndex, offendingSymbol.TokenIndex);
+                var mark = _builder.Mark();
+                
+                //TODO-tanvd need better solution to forward length 
+                _builder.Error(mark, msg + $"#{offendingSymbol.StopIndex - offendingSymbol.StartIndex + 1}");
 
-                    var toLoop = node.Symbol.TokenIndex - _prev.Symbol.TokenIndex - 1;
-                    while (toLoop > 0)
-                    {
-                        _psiBuilder.AdvanceLexer();
-                        toLoop--;
-                    }
-                }
-
-                _psiBuilder.AdvanceLexer();
-                _prev = node;
-
-                return _psiBuilder;
-            }
-
-            public override PsiBuilder VisitErrorNode(IErrorNode node)
-            {
-                Logger.Log($"SYMBOL: {node.Symbol.TokenIndex}");
-                var mark = _psiBuilder.Mark();
-
-                _psiBuilder.Error(mark, node.GetText());
-
-                return _psiBuilder;
+                _builder.ResetCurrentLexeme(curLexeme, curNonCommentLexeme);
             }
         }
     }

@@ -68,24 +68,8 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
 
         public TokenNodeType TokenType => _curToken.Type == -1 ? null : PascalTokenTypes.Convert(_curToken.Type);
 
-        public int TokenStart
-        {
-            get
-            {
-                var startIndex = _curToken.StartIndex;
-                Logger.Log($"Start index is {startIndex}");
-                return startIndex;
-            }
-        }
+        public int TokenStart => _curToken.StartIndex;
 
-        public int TokenEnd
-        {
-            get
-            {
-                var stopIndex = _curToken.StopIndex + 1;
-                Logger.Log($"End index is {stopIndex}");
-                return stopIndex;
-            }
-        }
+        public int TokenEnd => _curToken.StopIndex + 1;
     }
 }

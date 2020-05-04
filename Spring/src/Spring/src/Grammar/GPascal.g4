@@ -236,6 +236,7 @@ pointerType
 
 variableDeclarationPart
    : VAR variableDeclaration (SEMI variableDeclaration)* SEMI
+   | VAR variableDeclaration (SEMI variableDeclaration)* { NotifyErrorListeners(TokenStream.LT(-1), "Semicolon is missing", null); }
    ;
 
 variableDeclaration
@@ -424,6 +425,7 @@ structuredStatement
 
 compoundStatement
    : BEGIN statements END
+   | BEGIN statements { NotifyErrorListeners(TokenStream.LT(-1), "END directive is missing", null); }
    ;
 
 statements
