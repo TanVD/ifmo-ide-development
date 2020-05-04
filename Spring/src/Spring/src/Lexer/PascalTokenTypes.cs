@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using JetBrains.ReSharper.Plugins.Spring.Utils;
-using JetBrains.ReSharper.Psi.Parsing;
 using JetBrains.Util.Collections;
 
 namespace JetBrains.ReSharper.Plugins.Spring.Lexer
@@ -8,15 +6,9 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
     public static class PascalTokenTypes
     {
         private static readonly HashMap<int, PascalTokenType> ConvertTo = new HashMap<int, PascalTokenType>();
-        private static readonly HashMap<PascalTokenType, int> ConvertFrom = new HashMap<PascalTokenType, int>();
-
-        private static bool _isInitialized;
-
 
         public static PascalTokenType Convert(int index)
         {
-            Init();
-
             return !ConvertTo.ContainsKey(index) ? null : ConvertTo[index];
         }
 
@@ -139,125 +131,9 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
             NUM_INT, NUM_REAL, TRUE, FALSE
         };
 
-        private static void Init()
-        {
-            if (_isInitialized) return;
-
-            Register(NUM_REAL);
-            Register(VAR);
-            Register(RBRACK2);
-            Register(MINUS);
-            Register(INTERFACE);
-            Register(DOWNTO);
-            Register(ELSE);
-            Register(RIGHT_CURLY_BRACKET_SYM);
-            Register(IF);
-            Register(TYPE);
-            Register(LBRACK2);
-            Register(RIGHT_SQUARE_BRACKET_SYM);
-            Register(IN);
-            Register(LPAREN);
-            Register(DOT);
-            Register(FUNCTION);
-            Register(CASE);
-            Register(PLUS_SIGN_SYM);
-            Register(AT);
-            Register(LBRACK);
-            Register(THEN);
-            Register(LESS_THAN_SIGN_SYM);
-            Register(PROGRAM);
-            Register(GOTO);
-            Register(SET);
-            Register(LESS_THAN_SIGN_EQUALS_SIGN_SYM);
-            Register(REPEAT);
-            Register(SEMI);
-            Register(CHAR);
-            Register(BEGIN);
-            Register(ASSIGN);
-            Register(FULL_STOP_SYM);
-            Register(PACKED);
-            Register(CIRCUMFLEX_ACCENT_SYM);
-            Register(FILE);
-            Register(RCURLY);
-            Register(COMMA);
-            Register(COLON_EQUALS_SIGN_SYM);
-            Register(PROCEDURE);
-            Register(HYPHEN_MINUS_SYM);
-            Register(RIGHT_PARENTHESIS_SYM);
-            Register(LCURLY);
-            Register(DIV);
-            Register(STAR);
-            Register(NOT_EQUAL);
-            Register(LE);
-            Register(STRING);
-            Register(TO);
-            Register(FULL_STOP_RIGHT_PARENTHESIS_SYM);
-            Register(ARRAY);
-            Register(RECORD);
-            Register(LT);
-            Register(DO);
-            Register(CHR);
-            Register(CONST);
-            Register(LABEL);
-            Register(SOLIDUS_SYM);
-            Register(LEFT_PARENTHESIS_FULL_STOP_SYM);
-            Register(INTEGER);
-            Register(COMMERCIAL_AT_SYM);
-            Register(COLON_SYM);
-            Register(UNIT);
-            Register(FULL_STOP_FULL_STOP_SYM);
-            Register(FOR);
-            Register(TRUE);
-            Register(RPAREN);
-            Register(LEFT_SQUARE_BRACKET_SYM);
-            Register(BOOLEAN);
-            Register(GREATER_THAN_SIGN_SYM);
-            Register(NOT);
-            Register(RBRACK);
-            Register(AND);
-            Register(REAL);
-            Register(END);
-            Register(LESS_THAN_SIGN_GREATER_THAN_SIGN_SYM);
-            Register(PLUS);
-            Register(LEFT_PARENTHESIS_SYM);
-            Register(COMMENT_2);
-            Register(COMMENT_1);
-            Register(COMMA_SYM);
-            Register(OF);
-            Register(ASTERISK_SYM);
-            Register(LEFT_CURLY_BRACKET_SYM);
-            Register(WS);
-            Register(GE);
-            Register(MOD);
-            Register(OR);
-            Register(SEMICOLON_SYM);
-            Register(EQUAL);
-            Register(SLASH);
-            Register(IMPLEMENTATION);
-            Register(COLON);
-            Register(DOTDOT);
-            Register(USES);
-            Register(EQUALS_SIGN_SYM);
-            Register(UNTIL);
-            Register(GT);
-            Register(NUM_INT);
-            Register(WITH);
-            Register(NIL);
-            Register(IDENT);
-            Register(POINTER);
-            Register(WHILE);
-            Register(FALSE);
-            Register(STRING_LITERAL);
-            Register(GREATER_THAN_SIGN_EQUALS_SIGN_SYM);
-
-            _isInitialized = true;
-        }
-
-
-        private static void Register(PascalTokenType type)
+        public static void Register(PascalTokenType type)
         {
             ConvertTo[type.Index] = type;
-            ConvertFrom[type] = type.Index;
         }
     }
 }

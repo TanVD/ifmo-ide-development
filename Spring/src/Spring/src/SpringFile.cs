@@ -2,7 +2,7 @@ using JetBrains.ReSharper.Plugins.Spring.Parser;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Tree;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Lexer
+namespace JetBrains.ReSharper.Plugins.Spring
 {
     public class SpringFile : FileElementBase
     {
