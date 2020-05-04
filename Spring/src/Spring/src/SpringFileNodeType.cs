@@ -1,7 +1,7 @@
-using System;
+using JetBrains.ReSharper.Plugins.Spring.Lexer;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Tree;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Lexer
+namespace JetBrains.ReSharper.Plugins.Spring
 {
     internal class SpringFileNodeType : CompositeNodeType
     {
@@ -31,7 +31,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
             if (this == BLOCK)
                 return new SpringBlock();
             else
-                throw new InvalidOperationException();
+                return new SpringOther();
         }
     }
 }

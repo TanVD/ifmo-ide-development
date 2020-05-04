@@ -683,7 +683,7 @@ public partial class GPascalLexer : Lexer {
 		'\x29E', '\x3', '\x2', '\x2', '\x2', '\x29E', '\xD8', '\x3', '\x2', '\x2', 
 		'\x2', '\x10', '\x2', '\x259', '\x265', '\x270', '\x277', '\x279', '\x281', 
 		'\x286', '\x28C', '\x28F', '\x291', '\x294', '\x298', '\x29D', '\x3', 
-		'\b', '\x2', '\x2',
+		'\x2', '\x3', '\x2',
 	};
 
 	public static readonly ATN _ATN =

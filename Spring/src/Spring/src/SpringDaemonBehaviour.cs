@@ -1,7 +1,7 @@
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Lexer
+namespace JetBrains.ReSharper.Plugins.Spring
 {
     [Language(typeof(SpringLanguage))]
     class SpringDaemonBehaviour : LanguageSpecificDaemonBehavior

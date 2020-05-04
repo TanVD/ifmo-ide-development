@@ -5,17 +5,14 @@ using JetBrains.Text;
 
 namespace JetBrains.ReSharper.Plugins.Spring.Lexer
 {
-    internal class PascalLexer : ILexer<int>
+    public class PascalLexer : ILexer<int>
     {
         private readonly GPascalLexer _lexer;
 
-        public GPascalLexer Lexer => _lexer;
+        private bool _isStarted;
 
-        private bool _isWhitespace;
-        
-        private IToken _prevToken;
         private IToken _curToken;
-        
+
         private int _currentPosition;
         public IBuffer Buffer { get; }
 
@@ -30,23 +27,19 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
         {
             _curToken = _lexer.NextToken();
             _currentPosition++;
+            _isStarted = true;
         }
 
         public void Advance()
         {
-            if (_isWhitespace)
+            if (!_isStarted)
             {
-                _isWhitespace = false;
+                Start();
+                _isStarted = true;
+                return;
             }
-            else
-            {
-                _prevToken = _curToken;
-                _curToken = _lexer.NextToken();
-                if (_prevToken != null && _prevToken.StopIndex + 1 != _curToken.StartIndex)
-                {
-                    _isWhitespace = true;
-                }
-            }
+
+            _curToken = _lexer.NextToken();
             _currentPosition++;
         }
 
@@ -73,29 +66,13 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
             set => CurrentPosition = (int) value;
         }
 
-        public TokenNodeType TokenType
-        {
-            get
-            {
-                if (_isWhitespace)
-                {
-                    return PascalTokenTypes.WS;
-                }
-
-                if (_curToken.Type == -1)
-                {
-                    return null;
-                }
-
-                return PascalTokenTypes.Convert(_curToken.Type);
-            }
-        }
+        public TokenNodeType TokenType => _curToken.Type == -1 ? null : PascalTokenTypes.Convert(_curToken.Type);
 
         public int TokenStart
         {
             get
             {
-                var startIndex = _isWhitespace ? _prevToken.StopIndex + 1 : _curToken.StartIndex;
+                var startIndex = _curToken.StartIndex;
                 Logger.Log($"Start index is {startIndex}");
                 return startIndex;
             }
@@ -105,7 +82,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
         {
             get
             {
-                var stopIndex = _isWhitespace ? _curToken.StartIndex : _curToken.StopIndex + 1;
+                var stopIndex = _curToken.StopIndex + 1;
                 Logger.Log($"End index is {stopIndex}");
                 return stopIndex;
             }

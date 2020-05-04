@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using JetBrains.ReSharper.Plugins.Spring.Utils;
+using JetBrains.ReSharper.Psi.Parsing;
 using JetBrains.Util.Collections;
 
 namespace JetBrains.ReSharper.Plugins.Spring.Lexer
@@ -18,11 +20,23 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
             return !ConvertTo.ContainsKey(index) ? null : ConvertTo[index];
         }
 
-        public static int Convert(PascalTokenType type)
+        public static int Convert(TokenNodeType type)
         {
+            if (!(type is PascalTokenType))
+            {
+                Logger.Log($"Returning -1 for {type}");
+                return -1;
+            }
+
             Init();
 
-            return !ConvertFrom.ContainsKey(type) ? -1 : ConvertFrom[type];
+            if (!ConvertFrom.ContainsKey((PascalTokenType) type))
+            {
+                Logger.Log($"Returning -1 for {type}");
+                return -1;
+            }
+
+            return ConvertFrom[(PascalTokenType) type];
         }
 
 

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using JetBrains.ProjectModel;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Lexer
+namespace JetBrains.ReSharper.Plugins.Spring
 {
     [ProjectFileTypeDefinition(Name)]
     public class SpringProjectFileType : KnownProjectFileType

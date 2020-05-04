@@ -12,28 +12,22 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
 {
     public class PascalTokenType : TokenNodeType
     {
-
-
-
-
-
-
         public PascalTokenType(string s, int index) : base(s, index)
         {
         }
 
 
-        private class SpringGenericToken : LeafElementBase, ITokenNode
+        private class PascalGenericToken : LeafElementBase, ITokenNode
         {
             private readonly string _myText;
             private readonly PascalTokenType _myType;
 
-            public SpringGenericToken(string text, PascalTokenType tokenType)
+            public PascalGenericToken(string text, PascalTokenType tokenType)
             {
                 _myText = text;
                 _myType = tokenType;
             }
-            
+
             public override int GetTextLength()
             {
                 return _myText.Length;
@@ -54,7 +48,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
             {
                 return new StringBuffer(GetText());
             }
-            
+
             public override string ToString()
             {
                 return base.ToString() + "(type:" + _myType + ", text:" + _myText + ")";
@@ -62,6 +56,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
 
             public override NodeType NodeType => _myType;
             public override PsiLanguageType Language => SpringLanguage.Instance;
+
             public TokenNodeType GetTokenType()
             {
                 return _myType;
@@ -70,17 +65,19 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
 
         public override LeafElementBase Create(IBuffer buffer, TreeOffset startOffset, TreeOffset endOffset)
         {
-            return new SpringGenericToken(buffer.GetText(new TextRange(startOffset.Offset, endOffset.Offset)), this);
+            return new PascalGenericToken(buffer.GetText(new TextRange(startOffset.Offset, endOffset.Offset)), this);
         }
 
         public override bool IsWhitespace => this == PascalTokenTypes.WS;
         public override bool IsComment => this == PascalTokenTypes.COMMENT_1 || this == PascalTokenTypes.COMMENT_2;
-        public override bool IsStringLiteral => this == PascalTokenTypes.STRING || this == PascalTokenTypes.STRING_LITERAL;
+
+        public override bool IsStringLiteral =>
+            this == PascalTokenTypes.STRING || this == PascalTokenTypes.STRING_LITERAL;
 
         public override bool IsConstantLiteral => PascalTokenTypes.Constants.Contains(this);
         public override bool IsIdentifier => this == PascalTokenTypes.IDENT || this == PascalTokenTypes.LABEL;
         public override bool IsKeyword => PascalTokenTypes.Keywords.Contains(this);
-        
+
         public override string TokenRepresentation { get; }
     }
 }

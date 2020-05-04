@@ -982,17 +982,17 @@ FALSE
 
 
 WS
-   : [ \t\r\n] -> skip
+   : [ \t\r\n] -> channel(HIDDEN)
    ;
 
 
 COMMENT_1
-   : '(*' .*? '*)' -> skip
+   : '(*' .*? '*)' -> channel(HIDDEN)
    ;
 
 
 COMMENT_2
-   : '{' .*? '}' -> skip
+   : '{' .*? '}' -> channel(HIDDEN)
    ;
 
 

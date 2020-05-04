@@ -9,7 +9,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Utils
 
         public static void Log(String text)
         {
-            StreamWriter writer = File.AppendText(log);
+            var writer = File.AppendText(log);
             writer.WriteLine(text);
             writer.Close();
         }

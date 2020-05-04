@@ -16,4 +16,11 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
 
         public override PsiLanguageType Language => SpringLanguage.Instance;
     }
+
+    public class SpringOther : CompositeElement
+    {
+        public override NodeType NodeType => SpringCompositeNodeType.OTHER;
+
+        public override PsiLanguageType Language => SpringLanguage.Instance;
+    }
 }
