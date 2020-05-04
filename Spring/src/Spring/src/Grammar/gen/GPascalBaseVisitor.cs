@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from /home/tanvd/csc/ide/pascal-lang/Spring/src/Spring/src/grammar/pascal.g4 by ANTLR 4.8
+// Generated from /home/tanvd/csc/ide/pascal-lang/Spring/src/Spring/src/Grammar/GPascal.g4 by ANTLR 4.8
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -25,16 +25,16 @@ using IToken = Antlr4.Runtime.IToken;
 using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 
 /// <summary>
-/// This class provides an empty implementation of <see cref="IpascalVisitor{Result}"/>,
+/// This class provides an empty implementation of <see cref="IGPascalVisitor{Result}"/>,
 /// which can be extended to create a visitor which only needs to handle a subset
 /// of the available methods.
 /// </summary>
 /// <typeparam name="Result">The return type of the visit operation.</typeparam>
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
 [System.CLSCompliant(false)]
-public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, IpascalVisitor<Result> {
+public partial class GPascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, IGPascalVisitor<Result> {
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.program"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.program"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -42,9 +42,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitProgram([NotNull] pascalParser.ProgramContext context) { return VisitChildren(context); }
+	public virtual Result VisitProgram([NotNull] GPascalParser.ProgramContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.programHeading"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.programHeading"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -52,9 +52,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitProgramHeading([NotNull] pascalParser.ProgramHeadingContext context) { return VisitChildren(context); }
+	public virtual Result VisitProgramHeading([NotNull] GPascalParser.ProgramHeadingContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.identifier"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.identifier"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -62,9 +62,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitIdentifier([NotNull] pascalParser.IdentifierContext context) { return VisitChildren(context); }
+	public virtual Result VisitIdentifier([NotNull] GPascalParser.IdentifierContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.block"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.block"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -72,9 +72,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitBlock([NotNull] pascalParser.BlockContext context) { return VisitChildren(context); }
+	public virtual Result VisitBlock([NotNull] GPascalParser.BlockContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.usesUnitsPart"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.usesUnitsPart"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -82,9 +82,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitUsesUnitsPart([NotNull] pascalParser.UsesUnitsPartContext context) { return VisitChildren(context); }
+	public virtual Result VisitUsesUnitsPart([NotNull] GPascalParser.UsesUnitsPartContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.labelDeclarationPart"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.labelDeclarationPart"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -92,9 +92,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitLabelDeclarationPart([NotNull] pascalParser.LabelDeclarationPartContext context) { return VisitChildren(context); }
+	public virtual Result VisitLabelDeclarationPart([NotNull] GPascalParser.LabelDeclarationPartContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.label"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.label"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -102,9 +102,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitLabel([NotNull] pascalParser.LabelContext context) { return VisitChildren(context); }
+	public virtual Result VisitLabel([NotNull] GPascalParser.LabelContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.constantDefinitionPart"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.constantDefinitionPart"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -112,9 +112,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitConstantDefinitionPart([NotNull] pascalParser.ConstantDefinitionPartContext context) { return VisitChildren(context); }
+	public virtual Result VisitConstantDefinitionPart([NotNull] GPascalParser.ConstantDefinitionPartContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.constantDefinition"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.constantDefinition"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -122,9 +122,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitConstantDefinition([NotNull] pascalParser.ConstantDefinitionContext context) { return VisitChildren(context); }
+	public virtual Result VisitConstantDefinition([NotNull] GPascalParser.ConstantDefinitionContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.constantChr"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.constantChr"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -132,9 +132,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitConstantChr([NotNull] pascalParser.ConstantChrContext context) { return VisitChildren(context); }
+	public virtual Result VisitConstantChr([NotNull] GPascalParser.ConstantChrContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.constant"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.constant"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -142,9 +142,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitConstant([NotNull] pascalParser.ConstantContext context) { return VisitChildren(context); }
+	public virtual Result VisitConstant([NotNull] GPascalParser.ConstantContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.unsignedNumber"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.unsignedNumber"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -152,9 +152,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitUnsignedNumber([NotNull] pascalParser.UnsignedNumberContext context) { return VisitChildren(context); }
+	public virtual Result VisitUnsignedNumber([NotNull] GPascalParser.UnsignedNumberContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.unsignedInteger"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.unsignedInteger"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -162,9 +162,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitUnsignedInteger([NotNull] pascalParser.UnsignedIntegerContext context) { return VisitChildren(context); }
+	public virtual Result VisitUnsignedInteger([NotNull] GPascalParser.UnsignedIntegerContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.unsignedReal"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.unsignedReal"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -172,9 +172,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitUnsignedReal([NotNull] pascalParser.UnsignedRealContext context) { return VisitChildren(context); }
+	public virtual Result VisitUnsignedReal([NotNull] GPascalParser.UnsignedRealContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.sign"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.sign"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -182,9 +182,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitSign([NotNull] pascalParser.SignContext context) { return VisitChildren(context); }
+	public virtual Result VisitSign([NotNull] GPascalParser.SignContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.bool"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.bool"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -192,9 +192,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitBool([NotNull] pascalParser.BoolContext context) { return VisitChildren(context); }
+	public virtual Result VisitBool([NotNull] GPascalParser.BoolContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.string"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.string"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -202,9 +202,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitString([NotNull] pascalParser.StringContext context) { return VisitChildren(context); }
+	public virtual Result VisitString([NotNull] GPascalParser.StringContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.typeDefinitionPart"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.typeDefinitionPart"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -212,9 +212,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitTypeDefinitionPart([NotNull] pascalParser.TypeDefinitionPartContext context) { return VisitChildren(context); }
+	public virtual Result VisitTypeDefinitionPart([NotNull] GPascalParser.TypeDefinitionPartContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.typeDefinition"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.typeDefinition"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -222,9 +222,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitTypeDefinition([NotNull] pascalParser.TypeDefinitionContext context) { return VisitChildren(context); }
+	public virtual Result VisitTypeDefinition([NotNull] GPascalParser.TypeDefinitionContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.functionType"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.functionType"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -232,9 +232,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitFunctionType([NotNull] pascalParser.FunctionTypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitFunctionType([NotNull] GPascalParser.FunctionTypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.procedureType"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.procedureType"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -242,9 +242,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitProcedureType([NotNull] pascalParser.ProcedureTypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitProcedureType([NotNull] GPascalParser.ProcedureTypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.type"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.type"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -252,9 +252,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitType([NotNull] pascalParser.TypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitType([NotNull] GPascalParser.TypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.simpleType"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.simpleType"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -262,9 +262,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitSimpleType([NotNull] pascalParser.SimpleTypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitSimpleType([NotNull] GPascalParser.SimpleTypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.scalarType"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.scalarType"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -272,9 +272,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitScalarType([NotNull] pascalParser.ScalarTypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitScalarType([NotNull] GPascalParser.ScalarTypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.subrangeType"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.subrangeType"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -282,9 +282,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitSubrangeType([NotNull] pascalParser.SubrangeTypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitSubrangeType([NotNull] GPascalParser.SubrangeTypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.typeIdentifier"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.typeIdentifier"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -292,9 +292,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitTypeIdentifier([NotNull] pascalParser.TypeIdentifierContext context) { return VisitChildren(context); }
+	public virtual Result VisitTypeIdentifier([NotNull] GPascalParser.TypeIdentifierContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.structuredType"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.structuredType"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -302,9 +302,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitStructuredType([NotNull] pascalParser.StructuredTypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitStructuredType([NotNull] GPascalParser.StructuredTypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.unpackedStructuredType"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.unpackedStructuredType"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -312,9 +312,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitUnpackedStructuredType([NotNull] pascalParser.UnpackedStructuredTypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitUnpackedStructuredType([NotNull] GPascalParser.UnpackedStructuredTypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.stringtype"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.stringtype"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -322,9 +322,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitStringtype([NotNull] pascalParser.StringtypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitStringtype([NotNull] GPascalParser.StringtypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.arrayType"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.arrayType"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -332,9 +332,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitArrayType([NotNull] pascalParser.ArrayTypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitArrayType([NotNull] GPascalParser.ArrayTypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.typeList"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.typeList"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -342,9 +342,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitTypeList([NotNull] pascalParser.TypeListContext context) { return VisitChildren(context); }
+	public virtual Result VisitTypeList([NotNull] GPascalParser.TypeListContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.indexType"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.indexType"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -352,9 +352,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitIndexType([NotNull] pascalParser.IndexTypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitIndexType([NotNull] GPascalParser.IndexTypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.componentType"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.componentType"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -362,9 +362,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitComponentType([NotNull] pascalParser.ComponentTypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitComponentType([NotNull] GPascalParser.ComponentTypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.recordType"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.recordType"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -372,9 +372,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitRecordType([NotNull] pascalParser.RecordTypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitRecordType([NotNull] GPascalParser.RecordTypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.fieldList"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.fieldList"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -382,9 +382,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitFieldList([NotNull] pascalParser.FieldListContext context) { return VisitChildren(context); }
+	public virtual Result VisitFieldList([NotNull] GPascalParser.FieldListContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.fixedPart"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.fixedPart"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -392,9 +392,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitFixedPart([NotNull] pascalParser.FixedPartContext context) { return VisitChildren(context); }
+	public virtual Result VisitFixedPart([NotNull] GPascalParser.FixedPartContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.recordSection"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.recordSection"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -402,9 +402,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitRecordSection([NotNull] pascalParser.RecordSectionContext context) { return VisitChildren(context); }
+	public virtual Result VisitRecordSection([NotNull] GPascalParser.RecordSectionContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.variantPart"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.variantPart"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -412,9 +412,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitVariantPart([NotNull] pascalParser.VariantPartContext context) { return VisitChildren(context); }
+	public virtual Result VisitVariantPart([NotNull] GPascalParser.VariantPartContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.tag"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.tag"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -422,9 +422,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitTag([NotNull] pascalParser.TagContext context) { return VisitChildren(context); }
+	public virtual Result VisitTag([NotNull] GPascalParser.TagContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.variant"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.variant"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -432,9 +432,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitVariant([NotNull] pascalParser.VariantContext context) { return VisitChildren(context); }
+	public virtual Result VisitVariant([NotNull] GPascalParser.VariantContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.setType"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.setType"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -442,9 +442,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitSetType([NotNull] pascalParser.SetTypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitSetType([NotNull] GPascalParser.SetTypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.baseType"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.baseType"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -452,9 +452,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitBaseType([NotNull] pascalParser.BaseTypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitBaseType([NotNull] GPascalParser.BaseTypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.fileType"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.fileType"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -462,9 +462,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitFileType([NotNull] pascalParser.FileTypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitFileType([NotNull] GPascalParser.FileTypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.pointerType"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.pointerType"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -472,9 +472,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitPointerType([NotNull] pascalParser.PointerTypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitPointerType([NotNull] GPascalParser.PointerTypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.variableDeclarationPart"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.variableDeclarationPart"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -482,9 +482,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitVariableDeclarationPart([NotNull] pascalParser.VariableDeclarationPartContext context) { return VisitChildren(context); }
+	public virtual Result VisitVariableDeclarationPart([NotNull] GPascalParser.VariableDeclarationPartContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.variableDeclaration"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.variableDeclaration"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -492,9 +492,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitVariableDeclaration([NotNull] pascalParser.VariableDeclarationContext context) { return VisitChildren(context); }
+	public virtual Result VisitVariableDeclaration([NotNull] GPascalParser.VariableDeclarationContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.procedureAndFunctionDeclarationPart"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.procedureAndFunctionDeclarationPart"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -502,9 +502,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitProcedureAndFunctionDeclarationPart([NotNull] pascalParser.ProcedureAndFunctionDeclarationPartContext context) { return VisitChildren(context); }
+	public virtual Result VisitProcedureAndFunctionDeclarationPart([NotNull] GPascalParser.ProcedureAndFunctionDeclarationPartContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.procedureOrFunctionDeclaration"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.procedureOrFunctionDeclaration"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -512,9 +512,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitProcedureOrFunctionDeclaration([NotNull] pascalParser.ProcedureOrFunctionDeclarationContext context) { return VisitChildren(context); }
+	public virtual Result VisitProcedureOrFunctionDeclaration([NotNull] GPascalParser.ProcedureOrFunctionDeclarationContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.procedureDeclaration"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.procedureDeclaration"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -522,9 +522,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitProcedureDeclaration([NotNull] pascalParser.ProcedureDeclarationContext context) { return VisitChildren(context); }
+	public virtual Result VisitProcedureDeclaration([NotNull] GPascalParser.ProcedureDeclarationContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.formalParameterList"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.formalParameterList"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -532,9 +532,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitFormalParameterList([NotNull] pascalParser.FormalParameterListContext context) { return VisitChildren(context); }
+	public virtual Result VisitFormalParameterList([NotNull] GPascalParser.FormalParameterListContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.formalParameterSection"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.formalParameterSection"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -542,9 +542,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitFormalParameterSection([NotNull] pascalParser.FormalParameterSectionContext context) { return VisitChildren(context); }
+	public virtual Result VisitFormalParameterSection([NotNull] GPascalParser.FormalParameterSectionContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.parameterGroup"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.parameterGroup"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -552,9 +552,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitParameterGroup([NotNull] pascalParser.ParameterGroupContext context) { return VisitChildren(context); }
+	public virtual Result VisitParameterGroup([NotNull] GPascalParser.ParameterGroupContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.identifierList"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.identifierList"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -562,9 +562,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitIdentifierList([NotNull] pascalParser.IdentifierListContext context) { return VisitChildren(context); }
+	public virtual Result VisitIdentifierList([NotNull] GPascalParser.IdentifierListContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.constList"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.constList"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -572,9 +572,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitConstList([NotNull] pascalParser.ConstListContext context) { return VisitChildren(context); }
+	public virtual Result VisitConstList([NotNull] GPascalParser.ConstListContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.functionDeclaration"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.functionDeclaration"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -582,9 +582,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitFunctionDeclaration([NotNull] pascalParser.FunctionDeclarationContext context) { return VisitChildren(context); }
+	public virtual Result VisitFunctionDeclaration([NotNull] GPascalParser.FunctionDeclarationContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.resultType"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.resultType"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -592,9 +592,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitResultType([NotNull] pascalParser.ResultTypeContext context) { return VisitChildren(context); }
+	public virtual Result VisitResultType([NotNull] GPascalParser.ResultTypeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.statement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.statement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -602,9 +602,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitStatement([NotNull] pascalParser.StatementContext context) { return VisitChildren(context); }
+	public virtual Result VisitStatement([NotNull] GPascalParser.StatementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.unlabelledStatement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.unlabelledStatement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -612,9 +612,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitUnlabelledStatement([NotNull] pascalParser.UnlabelledStatementContext context) { return VisitChildren(context); }
+	public virtual Result VisitUnlabelledStatement([NotNull] GPascalParser.UnlabelledStatementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.simpleStatement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.simpleStatement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -622,9 +622,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitSimpleStatement([NotNull] pascalParser.SimpleStatementContext context) { return VisitChildren(context); }
+	public virtual Result VisitSimpleStatement([NotNull] GPascalParser.SimpleStatementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.assignmentStatement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.assignmentStatement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -632,9 +632,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitAssignmentStatement([NotNull] pascalParser.AssignmentStatementContext context) { return VisitChildren(context); }
+	public virtual Result VisitAssignmentStatement([NotNull] GPascalParser.AssignmentStatementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.variable"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.variable"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -642,9 +642,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitVariable([NotNull] pascalParser.VariableContext context) { return VisitChildren(context); }
+	public virtual Result VisitVariable([NotNull] GPascalParser.VariableContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.expression"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.expression"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -652,9 +652,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitExpression([NotNull] pascalParser.ExpressionContext context) { return VisitChildren(context); }
+	public virtual Result VisitExpression([NotNull] GPascalParser.ExpressionContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.relationaloperator"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.relationaloperator"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -662,9 +662,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitRelationaloperator([NotNull] pascalParser.RelationaloperatorContext context) { return VisitChildren(context); }
+	public virtual Result VisitRelationaloperator([NotNull] GPascalParser.RelationaloperatorContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.simpleExpression"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.simpleExpression"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -672,9 +672,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitSimpleExpression([NotNull] pascalParser.SimpleExpressionContext context) { return VisitChildren(context); }
+	public virtual Result VisitSimpleExpression([NotNull] GPascalParser.SimpleExpressionContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.additiveoperator"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.additiveoperator"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -682,9 +682,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitAdditiveoperator([NotNull] pascalParser.AdditiveoperatorContext context) { return VisitChildren(context); }
+	public virtual Result VisitAdditiveoperator([NotNull] GPascalParser.AdditiveoperatorContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.term"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.term"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -692,9 +692,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitTerm([NotNull] pascalParser.TermContext context) { return VisitChildren(context); }
+	public virtual Result VisitTerm([NotNull] GPascalParser.TermContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.multiplicativeoperator"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.multiplicativeoperator"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -702,9 +702,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitMultiplicativeoperator([NotNull] pascalParser.MultiplicativeoperatorContext context) { return VisitChildren(context); }
+	public virtual Result VisitMultiplicativeoperator([NotNull] GPascalParser.MultiplicativeoperatorContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.signedFactor"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.signedFactor"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -712,9 +712,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitSignedFactor([NotNull] pascalParser.SignedFactorContext context) { return VisitChildren(context); }
+	public virtual Result VisitSignedFactor([NotNull] GPascalParser.SignedFactorContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.factor"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.factor"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -722,9 +722,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitFactor([NotNull] pascalParser.FactorContext context) { return VisitChildren(context); }
+	public virtual Result VisitFactor([NotNull] GPascalParser.FactorContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.unsignedConstant"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.unsignedConstant"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -732,9 +732,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitUnsignedConstant([NotNull] pascalParser.UnsignedConstantContext context) { return VisitChildren(context); }
+	public virtual Result VisitUnsignedConstant([NotNull] GPascalParser.UnsignedConstantContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.functionDesignator"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.functionDesignator"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -742,9 +742,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitFunctionDesignator([NotNull] pascalParser.FunctionDesignatorContext context) { return VisitChildren(context); }
+	public virtual Result VisitFunctionDesignator([NotNull] GPascalParser.FunctionDesignatorContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.parameterList"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.parameterList"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -752,9 +752,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitParameterList([NotNull] pascalParser.ParameterListContext context) { return VisitChildren(context); }
+	public virtual Result VisitParameterList([NotNull] GPascalParser.ParameterListContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.set"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.set"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -762,9 +762,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitSet([NotNull] pascalParser.SetContext context) { return VisitChildren(context); }
+	public virtual Result VisitSet([NotNull] GPascalParser.SetContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.elementList"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.elementList"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -772,9 +772,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitElementList([NotNull] pascalParser.ElementListContext context) { return VisitChildren(context); }
+	public virtual Result VisitElementList([NotNull] GPascalParser.ElementListContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.element"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.element"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -782,9 +782,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitElement([NotNull] pascalParser.ElementContext context) { return VisitChildren(context); }
+	public virtual Result VisitElement([NotNull] GPascalParser.ElementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.procedureStatement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.procedureStatement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -792,9 +792,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitProcedureStatement([NotNull] pascalParser.ProcedureStatementContext context) { return VisitChildren(context); }
+	public virtual Result VisitProcedureStatement([NotNull] GPascalParser.ProcedureStatementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.actualParameter"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.actualParameter"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -802,9 +802,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitActualParameter([NotNull] pascalParser.ActualParameterContext context) { return VisitChildren(context); }
+	public virtual Result VisitActualParameter([NotNull] GPascalParser.ActualParameterContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.parameterwidth"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.parameterwidth"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -812,9 +812,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitParameterwidth([NotNull] pascalParser.ParameterwidthContext context) { return VisitChildren(context); }
+	public virtual Result VisitParameterwidth([NotNull] GPascalParser.ParameterwidthContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.gotoStatement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.gotoStatement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -822,9 +822,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitGotoStatement([NotNull] pascalParser.GotoStatementContext context) { return VisitChildren(context); }
+	public virtual Result VisitGotoStatement([NotNull] GPascalParser.GotoStatementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.emptyStatement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.emptyStatement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -832,9 +832,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitEmptyStatement([NotNull] pascalParser.EmptyStatementContext context) { return VisitChildren(context); }
+	public virtual Result VisitEmptyStatement([NotNull] GPascalParser.EmptyStatementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.empty"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.empty"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -842,9 +842,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitEmpty([NotNull] pascalParser.EmptyContext context) { return VisitChildren(context); }
+	public virtual Result VisitEmpty([NotNull] GPascalParser.EmptyContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.structuredStatement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.structuredStatement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -852,9 +852,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitStructuredStatement([NotNull] pascalParser.StructuredStatementContext context) { return VisitChildren(context); }
+	public virtual Result VisitStructuredStatement([NotNull] GPascalParser.StructuredStatementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.compoundStatement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.compoundStatement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -862,9 +862,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitCompoundStatement([NotNull] pascalParser.CompoundStatementContext context) { return VisitChildren(context); }
+	public virtual Result VisitCompoundStatement([NotNull] GPascalParser.CompoundStatementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.statements"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.statements"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -872,9 +872,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitStatements([NotNull] pascalParser.StatementsContext context) { return VisitChildren(context); }
+	public virtual Result VisitStatements([NotNull] GPascalParser.StatementsContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.conditionalStatement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.conditionalStatement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -882,9 +882,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitConditionalStatement([NotNull] pascalParser.ConditionalStatementContext context) { return VisitChildren(context); }
+	public virtual Result VisitConditionalStatement([NotNull] GPascalParser.ConditionalStatementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.ifStatement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.ifStatement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -892,9 +892,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitIfStatement([NotNull] pascalParser.IfStatementContext context) { return VisitChildren(context); }
+	public virtual Result VisitIfStatement([NotNull] GPascalParser.IfStatementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.caseStatement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.caseStatement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -902,9 +902,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitCaseStatement([NotNull] pascalParser.CaseStatementContext context) { return VisitChildren(context); }
+	public virtual Result VisitCaseStatement([NotNull] GPascalParser.CaseStatementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.caseListElement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.caseListElement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -912,9 +912,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitCaseListElement([NotNull] pascalParser.CaseListElementContext context) { return VisitChildren(context); }
+	public virtual Result VisitCaseListElement([NotNull] GPascalParser.CaseListElementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.repetetiveStatement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.repetetiveStatement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -922,9 +922,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitRepetetiveStatement([NotNull] pascalParser.RepetetiveStatementContext context) { return VisitChildren(context); }
+	public virtual Result VisitRepetetiveStatement([NotNull] GPascalParser.RepetetiveStatementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.whileStatement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.whileStatement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -932,9 +932,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitWhileStatement([NotNull] pascalParser.WhileStatementContext context) { return VisitChildren(context); }
+	public virtual Result VisitWhileStatement([NotNull] GPascalParser.WhileStatementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.repeatStatement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.repeatStatement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -942,9 +942,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitRepeatStatement([NotNull] pascalParser.RepeatStatementContext context) { return VisitChildren(context); }
+	public virtual Result VisitRepeatStatement([NotNull] GPascalParser.RepeatStatementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.forStatement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.forStatement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -952,9 +952,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitForStatement([NotNull] pascalParser.ForStatementContext context) { return VisitChildren(context); }
+	public virtual Result VisitForStatement([NotNull] GPascalParser.ForStatementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.forList"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.forList"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -962,9 +962,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitForList([NotNull] pascalParser.ForListContext context) { return VisitChildren(context); }
+	public virtual Result VisitForList([NotNull] GPascalParser.ForListContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.initialValue"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.initialValue"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -972,9 +972,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitInitialValue([NotNull] pascalParser.InitialValueContext context) { return VisitChildren(context); }
+	public virtual Result VisitInitialValue([NotNull] GPascalParser.InitialValueContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.finalValue"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.finalValue"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -982,9 +982,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitFinalValue([NotNull] pascalParser.FinalValueContext context) { return VisitChildren(context); }
+	public virtual Result VisitFinalValue([NotNull] GPascalParser.FinalValueContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.withStatement"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.withStatement"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -992,9 +992,9 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitWithStatement([NotNull] pascalParser.WithStatementContext context) { return VisitChildren(context); }
+	public virtual Result VisitWithStatement([NotNull] GPascalParser.WithStatementContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="pascalParser.recordVariableList"/>.
+	/// Visit a parse tree produced by <see cref="GPascalParser.recordVariableList"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -1002,5 +1002,5 @@ public partial class pascalBaseVisitor<Result> : AbstractParseTreeVisitor<Result
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitRecordVariableList([NotNull] pascalParser.RecordVariableListContext context) { return VisitChildren(context); }
+	public virtual Result VisitRecordVariableList([NotNull] GPascalParser.RecordVariableListContext context) { return VisitChildren(context); }
 }

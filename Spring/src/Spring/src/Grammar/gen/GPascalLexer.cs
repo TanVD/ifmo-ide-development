@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from /home/tanvd/csc/ide/pascal-lang/Spring/src/Spring/src/grammar/pascal.g4 by ANTLR 4.8
+// Generated from /home/tanvd/csc/ide/pascal-lang/Spring/src/Spring/src/Grammar/GPascal.g4 by ANTLR 4.8
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -29,7 +29,7 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
 [System.CLSCompliant(false)]
-public partial class pascalLexer : Lexer {
+public partial class GPascalLexer : Lexer {
 	protected static DFA[] decisionToDFA;
 	protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
 	public const int
@@ -68,10 +68,10 @@ public partial class pascalLexer : Lexer {
 	};
 
 
-	public pascalLexer(ICharStream input)
+	public GPascalLexer(ICharStream input)
 	: this(input, Console.Out, Console.Error) { }
 
-	public pascalLexer(ICharStream input, TextWriter output, TextWriter errorOutput)
+	public GPascalLexer(ICharStream input, TextWriter output, TextWriter errorOutput)
 	: base(input, output, errorOutput)
 	{
 		Interpreter = new LexerATNSimulator(this, _ATN, decisionToDFA, sharedContextCache);
@@ -108,7 +108,7 @@ public partial class pascalLexer : Lexer {
 		}
 	}
 
-	public override string GrammarFileName { get { return "pascal.g4"; } }
+	public override string GrammarFileName { get { return "GPascal.g4"; } }
 
 	public override string[] RuleNames { get { return ruleNames; } }
 
@@ -118,7 +118,7 @@ public partial class pascalLexer : Lexer {
 
 	public override string SerializedAtn { get { return new string(_serializedATN); } }
 
-	static pascalLexer() {
+	static GPascalLexer() {
 		decisionToDFA = new DFA[_ATN.NumberOfDecisions];
 		for (int i = 0; i < _ATN.NumberOfDecisions; i++) {
 			decisionToDFA[i] = new DFA(_ATN.GetDecisionState(i), i);

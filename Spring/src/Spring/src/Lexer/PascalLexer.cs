@@ -3,13 +3,15 @@ using JetBrains.ReSharper.Plugins.Spring.Utils;
 using JetBrains.ReSharper.Psi.Parsing;
 using JetBrains.Text;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Lexer.Lexer
+namespace JetBrains.ReSharper.Plugins.Spring.Lexer
 {
     internal class PascalLexer : ILexer<int>
     {
-        private readonly pascalLexer _lexer;
+        private readonly GPascalLexer _lexer;
 
-        private bool _isWhitespace = false;
+        public GPascalLexer Lexer => _lexer;
+
+        private bool _isWhitespace;
         
         private IToken _prevToken;
         private IToken _curToken;
@@ -20,7 +22,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer.Lexer
         public PascalLexer(IBuffer buffer)
         {
             Buffer = buffer;
-            _lexer = new pascalLexer(new AntlrInputStream(buffer.GetText()));
+            _lexer = new GPascalLexer(new AntlrInputStream(buffer.GetText()));
             _currentPosition = 0;
         }
 

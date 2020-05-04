@@ -1,30 +1,28 @@
 using System.Collections.Generic;
-using Antlr4.Runtime.Misc;
 using JetBrains.Util.Collections;
-using Org.BouncyCastle.Utilities.Collections;
 
 namespace JetBrains.ReSharper.Plugins.Spring.Lexer
 {
-    public class PascalTokenTypes
+    public static class PascalTokenTypes
     {
-        private static HashMap<int, PascalTokenType> convertTo = new HashMap<int, PascalTokenType>();
-        private static HashMap<PascalTokenType, int> convertFrom = new HashMap<PascalTokenType, int>();
+        private static readonly HashMap<int, PascalTokenType> ConvertTo = new HashMap<int, PascalTokenType>();
+        private static readonly HashMap<PascalTokenType, int> ConvertFrom = new HashMap<PascalTokenType, int>();
 
-        private static bool _isInitialized = false;
+        private static bool _isInitialized;
 
 
         public static PascalTokenType Convert(int index)
         {
             Init();
 
-            return !convertTo.ContainsKey(index) ? null : convertTo[index];
+            return !ConvertTo.ContainsKey(index) ? null : ConvertTo[index];
         }
 
         public static int Convert(PascalTokenType type)
         {
             Init();
 
-            return !convertFrom.ContainsKey(type) ? -1 : convertFrom[type];
+            return !ConvertFrom.ContainsKey(type) ? -1 : ConvertFrom[type];
         }
 
 
@@ -135,14 +133,14 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
         public static PascalTokenType LEFT_CURLY_BRACKET_SYM = new PascalTokenType("{", 65);
         public static PascalTokenType RIGHT_CURLY_BRACKET_SYM = new PascalTokenType("}", 66);
 
-        public static HashSet<PascalTokenType> Keywords = new HashSet<PascalTokenType>
+        public static readonly HashSet<PascalTokenType> Keywords = new HashSet<PascalTokenType>
         {
             AND, ARRAY, BEGIN, BOOLEAN, CASE, CHAR, CHR, CONST, DIV, DO, DOWNTO, ELSE, END, FILE, FOR, FUNCTION, GOTO,
             IF, IN, INTEGER, LABEL, MOD, NIL, NOT, OF, OR, PACKED, PROCEDURE, PROGRAM, REAL, RECORD, REPEAT, SET, THEN,
             TO, TYPE, UNTIL, VAR, WHILE, WITH, UNIT, INTERFACE, USES, STRING, IMPLEMENTATION,
         };
 
-        public static HashSet<PascalTokenType> Constants = new HashSet<PascalTokenType>
+        public static readonly HashSet<PascalTokenType> Constants = new HashSet<PascalTokenType>
         {
             NUM_INT, NUM_REAL, TRUE, FALSE
         };
@@ -264,8 +262,8 @@ namespace JetBrains.ReSharper.Plugins.Spring.Lexer
 
         private static void Register(PascalTokenType type)
         {
-            convertTo[type.Index] = type;
-            PascalTokenTypes.convertFrom[type] = type.Index;
+            ConvertTo[type.Index] = type;
+            ConvertFrom[type] = type.Index;
         }
     }
 }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from /home/tanvd/csc/ide/pascal-lang/Spring/src/Spring/src/grammar/pascal.g4 by ANTLR 4.8
+// Generated from /home/tanvd/csc/ide/pascal-lang/Spring/src/Spring/src/Grammar/GPascal.g4 by ANTLR 4.8
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -32,7 +32,7 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
 [System.CLSCompliant(false)]
-public partial class pascalParser : Parser {
+public partial class GPascalParser : Parser {
 	protected static DFA[] decisionToDFA;
 	protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
 	public const int
@@ -135,22 +135,22 @@ public partial class pascalParser : Parser {
 		}
 	}
 
-	public override string GrammarFileName { get { return "pascal.g4"; } }
+	public override string GrammarFileName { get { return "GPascal.g4"; } }
 
 	public override string[] RuleNames { get { return ruleNames; } }
 
 	public override string SerializedAtn { get { return new string(_serializedATN); } }
 
-	static pascalParser() {
+	static GPascalParser() {
 		decisionToDFA = new DFA[_ATN.NumberOfDecisions];
 		for (int i = 0; i < _ATN.NumberOfDecisions; i++) {
 			decisionToDFA[i] = new DFA(_ATN.GetDecisionState(i), i);
 		}
 	}
 
-		public pascalParser(ITokenStream input) : this(input, Console.Out, Console.Error) { }
+		public GPascalParser(ITokenStream input) : this(input, Console.Out, Console.Error) { }
 
-		public pascalParser(ITokenStream input, TextWriter output, TextWriter errorOutput)
+		public GPascalParser(ITokenStream input, TextWriter output, TextWriter errorOutput)
 		: base(input, output, errorOutput)
 	{
 		Interpreter = new ParserATNSimulator(this, _ATN, decisionToDFA, sharedContextCache);
@@ -163,23 +163,23 @@ public partial class pascalParser : Parser {
 		public BlockContext block() {
 			return GetRuleContext<BlockContext>(0);
 		}
-		public ITerminalNode DOT() { return GetToken(pascalParser.DOT, 0); }
-		public ITerminalNode INTERFACE() { return GetToken(pascalParser.INTERFACE, 0); }
+		public ITerminalNode DOT() { return GetToken(GPascalParser.DOT, 0); }
+		public ITerminalNode INTERFACE() { return GetToken(GPascalParser.INTERFACE, 0); }
 		public ProgramContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_program; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterProgram(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitProgram(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitProgram(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -219,32 +219,32 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class ProgramHeadingContext : ParserRuleContext {
-		public ITerminalNode PROGRAM() { return GetToken(pascalParser.PROGRAM, 0); }
+		public ITerminalNode PROGRAM() { return GetToken(GPascalParser.PROGRAM, 0); }
 		public IdentifierContext identifier() {
 			return GetRuleContext<IdentifierContext>(0);
 		}
-		public ITerminalNode SEMI() { return GetToken(pascalParser.SEMI, 0); }
-		public ITerminalNode LPAREN() { return GetToken(pascalParser.LPAREN, 0); }
+		public ITerminalNode SEMI() { return GetToken(GPascalParser.SEMI, 0); }
+		public ITerminalNode LPAREN() { return GetToken(GPascalParser.LPAREN, 0); }
 		public IdentifierListContext identifierList() {
 			return GetRuleContext<IdentifierListContext>(0);
 		}
-		public ITerminalNode RPAREN() { return GetToken(pascalParser.RPAREN, 0); }
-		public ITerminalNode UNIT() { return GetToken(pascalParser.UNIT, 0); }
+		public ITerminalNode RPAREN() { return GetToken(GPascalParser.RPAREN, 0); }
+		public ITerminalNode UNIT() { return GetToken(GPascalParser.UNIT, 0); }
 		public ProgramHeadingContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_programHeading; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterProgramHeading(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitProgramHeading(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitProgramHeading(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -302,22 +302,22 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class IdentifierContext : ParserRuleContext {
-		public ITerminalNode IDENT() { return GetToken(pascalParser.IDENT, 0); }
+		public ITerminalNode IDENT() { return GetToken(GPascalParser.IDENT, 0); }
 		public IdentifierContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_identifier; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterIdentifier(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitIdentifier(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitIdentifier(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -384,9 +384,9 @@ public partial class pascalParser : Parser {
 		public UsesUnitsPartContext usesUnitsPart(int i) {
 			return GetRuleContext<UsesUnitsPartContext>(i);
 		}
-		public ITerminalNode[] IMPLEMENTATION() { return GetTokens(pascalParser.IMPLEMENTATION); }
+		public ITerminalNode[] IMPLEMENTATION() { return GetTokens(GPascalParser.IMPLEMENTATION); }
 		public ITerminalNode IMPLEMENTATION(int i) {
-			return GetToken(pascalParser.IMPLEMENTATION, i);
+			return GetToken(GPascalParser.IMPLEMENTATION, i);
 		}
 		public BlockContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -394,15 +394,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_block; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterBlock(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitBlock(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitBlock(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -483,26 +483,26 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class UsesUnitsPartContext : ParserRuleContext {
-		public ITerminalNode USES() { return GetToken(pascalParser.USES, 0); }
+		public ITerminalNode USES() { return GetToken(GPascalParser.USES, 0); }
 		public IdentifierListContext identifierList() {
 			return GetRuleContext<IdentifierListContext>(0);
 		}
-		public ITerminalNode SEMI() { return GetToken(pascalParser.SEMI, 0); }
+		public ITerminalNode SEMI() { return GetToken(GPascalParser.SEMI, 0); }
 		public UsesUnitsPartContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_usesUnitsPart; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterUsesUnitsPart(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitUsesUnitsPart(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitUsesUnitsPart(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -532,17 +532,17 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class LabelDeclarationPartContext : ParserRuleContext {
-		public ITerminalNode LABEL() { return GetToken(pascalParser.LABEL, 0); }
+		public ITerminalNode LABEL() { return GetToken(GPascalParser.LABEL, 0); }
 		public LabelContext[] label() {
 			return GetRuleContexts<LabelContext>();
 		}
 		public LabelContext label(int i) {
 			return GetRuleContext<LabelContext>(i);
 		}
-		public ITerminalNode SEMI() { return GetToken(pascalParser.SEMI, 0); }
-		public ITerminalNode[] COMMA() { return GetTokens(pascalParser.COMMA); }
+		public ITerminalNode SEMI() { return GetToken(GPascalParser.SEMI, 0); }
+		public ITerminalNode[] COMMA() { return GetTokens(GPascalParser.COMMA); }
 		public ITerminalNode COMMA(int i) {
-			return GetToken(pascalParser.COMMA, i);
+			return GetToken(GPascalParser.COMMA, i);
 		}
 		public LabelDeclarationPartContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -550,15 +550,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_labelDeclarationPart; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterLabelDeclarationPart(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitLabelDeclarationPart(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitLabelDeclarationPart(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -612,15 +612,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_label; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterLabel(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitLabel(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitLabel(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -648,16 +648,16 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class ConstantDefinitionPartContext : ParserRuleContext {
-		public ITerminalNode CONST() { return GetToken(pascalParser.CONST, 0); }
+		public ITerminalNode CONST() { return GetToken(GPascalParser.CONST, 0); }
 		public ConstantDefinitionContext[] constantDefinition() {
 			return GetRuleContexts<ConstantDefinitionContext>();
 		}
 		public ConstantDefinitionContext constantDefinition(int i) {
 			return GetRuleContext<ConstantDefinitionContext>(i);
 		}
-		public ITerminalNode[] SEMI() { return GetTokens(pascalParser.SEMI); }
+		public ITerminalNode[] SEMI() { return GetTokens(GPascalParser.SEMI); }
 		public ITerminalNode SEMI(int i) {
-			return GetToken(pascalParser.SEMI, i);
+			return GetToken(GPascalParser.SEMI, i);
 		}
 		public ConstantDefinitionPartContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -665,15 +665,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_constantDefinitionPart; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterConstantDefinitionPart(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitConstantDefinitionPart(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitConstantDefinitionPart(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -719,7 +719,7 @@ public partial class pascalParser : Parser {
 		public IdentifierContext identifier() {
 			return GetRuleContext<IdentifierContext>(0);
 		}
-		public ITerminalNode EQUAL() { return GetToken(pascalParser.EQUAL, 0); }
+		public ITerminalNode EQUAL() { return GetToken(GPascalParser.EQUAL, 0); }
 		public ConstantContext constant() {
 			return GetRuleContext<ConstantContext>(0);
 		}
@@ -729,15 +729,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_constantDefinition; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterConstantDefinition(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitConstantDefinition(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitConstantDefinition(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -767,27 +767,27 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class ConstantChrContext : ParserRuleContext {
-		public ITerminalNode CHR() { return GetToken(pascalParser.CHR, 0); }
-		public ITerminalNode LPAREN() { return GetToken(pascalParser.LPAREN, 0); }
+		public ITerminalNode CHR() { return GetToken(GPascalParser.CHR, 0); }
+		public ITerminalNode LPAREN() { return GetToken(GPascalParser.LPAREN, 0); }
 		public UnsignedIntegerContext unsignedInteger() {
 			return GetRuleContext<UnsignedIntegerContext>(0);
 		}
-		public ITerminalNode RPAREN() { return GetToken(pascalParser.RPAREN, 0); }
+		public ITerminalNode RPAREN() { return GetToken(GPascalParser.RPAREN, 0); }
 		public ConstantChrContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_constantChr; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterConstantChr(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitConstantChr(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitConstantChr(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -839,15 +839,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_constant; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterConstant(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitConstant(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitConstant(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -925,15 +925,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_unsignedNumber; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterUnsignedNumber(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitUnsignedNumber(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitUnsignedNumber(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -975,22 +975,22 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class UnsignedIntegerContext : ParserRuleContext {
-		public ITerminalNode NUM_INT() { return GetToken(pascalParser.NUM_INT, 0); }
+		public ITerminalNode NUM_INT() { return GetToken(GPascalParser.NUM_INT, 0); }
 		public UnsignedIntegerContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_unsignedInteger; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterUnsignedInteger(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitUnsignedInteger(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitUnsignedInteger(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1018,22 +1018,22 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class UnsignedRealContext : ParserRuleContext {
-		public ITerminalNode NUM_REAL() { return GetToken(pascalParser.NUM_REAL, 0); }
+		public ITerminalNode NUM_REAL() { return GetToken(GPascalParser.NUM_REAL, 0); }
 		public UnsignedRealContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_unsignedReal; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterUnsignedReal(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitUnsignedReal(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitUnsignedReal(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1061,23 +1061,23 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class SignContext : ParserRuleContext {
-		public ITerminalNode PLUS() { return GetToken(pascalParser.PLUS, 0); }
-		public ITerminalNode MINUS() { return GetToken(pascalParser.MINUS, 0); }
+		public ITerminalNode PLUS() { return GetToken(GPascalParser.PLUS, 0); }
+		public ITerminalNode MINUS() { return GetToken(GPascalParser.MINUS, 0); }
 		public SignContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_sign; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterSign(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitSign(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitSign(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1114,23 +1114,23 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class BoolContext : ParserRuleContext {
-		public ITerminalNode TRUE() { return GetToken(pascalParser.TRUE, 0); }
-		public ITerminalNode FALSE() { return GetToken(pascalParser.FALSE, 0); }
+		public ITerminalNode TRUE() { return GetToken(GPascalParser.TRUE, 0); }
+		public ITerminalNode FALSE() { return GetToken(GPascalParser.FALSE, 0); }
 		public BoolContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_bool; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterBool(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitBool(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitBool(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1167,22 +1167,22 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class StringContext : ParserRuleContext {
-		public ITerminalNode STRING_LITERAL() { return GetToken(pascalParser.STRING_LITERAL, 0); }
+		public ITerminalNode STRING_LITERAL() { return GetToken(GPascalParser.STRING_LITERAL, 0); }
 		public StringContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_string; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterString(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitString(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitString(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1210,16 +1210,16 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class TypeDefinitionPartContext : ParserRuleContext {
-		public ITerminalNode TYPE() { return GetToken(pascalParser.TYPE, 0); }
+		public ITerminalNode TYPE() { return GetToken(GPascalParser.TYPE, 0); }
 		public TypeDefinitionContext[] typeDefinition() {
 			return GetRuleContexts<TypeDefinitionContext>();
 		}
 		public TypeDefinitionContext typeDefinition(int i) {
 			return GetRuleContext<TypeDefinitionContext>(i);
 		}
-		public ITerminalNode[] SEMI() { return GetTokens(pascalParser.SEMI); }
+		public ITerminalNode[] SEMI() { return GetTokens(GPascalParser.SEMI); }
 		public ITerminalNode SEMI(int i) {
-			return GetToken(pascalParser.SEMI, i);
+			return GetToken(GPascalParser.SEMI, i);
 		}
 		public TypeDefinitionPartContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -1227,15 +1227,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_typeDefinitionPart; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterTypeDefinitionPart(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitTypeDefinitionPart(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitTypeDefinitionPart(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1281,7 +1281,7 @@ public partial class pascalParser : Parser {
 		public IdentifierContext identifier() {
 			return GetRuleContext<IdentifierContext>(0);
 		}
-		public ITerminalNode EQUAL() { return GetToken(pascalParser.EQUAL, 0); }
+		public ITerminalNode EQUAL() { return GetToken(GPascalParser.EQUAL, 0); }
 		public TypeContext type() {
 			return GetRuleContext<TypeContext>(0);
 		}
@@ -1297,15 +1297,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_typeDefinition; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterTypeDefinition(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitTypeDefinition(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitTypeDefinition(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1373,8 +1373,8 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class FunctionTypeContext : ParserRuleContext {
-		public ITerminalNode FUNCTION() { return GetToken(pascalParser.FUNCTION, 0); }
-		public ITerminalNode COLON() { return GetToken(pascalParser.COLON, 0); }
+		public ITerminalNode FUNCTION() { return GetToken(GPascalParser.FUNCTION, 0); }
+		public ITerminalNode COLON() { return GetToken(GPascalParser.COLON, 0); }
 		public ResultTypeContext resultType() {
 			return GetRuleContext<ResultTypeContext>(0);
 		}
@@ -1387,15 +1387,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_functionType; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterFunctionType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitFunctionType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitFunctionType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1435,7 +1435,7 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class ProcedureTypeContext : ParserRuleContext {
-		public ITerminalNode PROCEDURE() { return GetToken(pascalParser.PROCEDURE, 0); }
+		public ITerminalNode PROCEDURE() { return GetToken(GPascalParser.PROCEDURE, 0); }
 		public FormalParameterListContext formalParameterList() {
 			return GetRuleContext<FormalParameterListContext>(0);
 		}
@@ -1445,15 +1445,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_procedureType; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterProcedureType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitProcedureType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitProcedureType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1506,15 +1506,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_type; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1596,15 +1596,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_simpleType; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterSimpleType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitSimpleType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitSimpleType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1656,26 +1656,26 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class ScalarTypeContext : ParserRuleContext {
-		public ITerminalNode LPAREN() { return GetToken(pascalParser.LPAREN, 0); }
+		public ITerminalNode LPAREN() { return GetToken(GPascalParser.LPAREN, 0); }
 		public IdentifierListContext identifierList() {
 			return GetRuleContext<IdentifierListContext>(0);
 		}
-		public ITerminalNode RPAREN() { return GetToken(pascalParser.RPAREN, 0); }
+		public ITerminalNode RPAREN() { return GetToken(GPascalParser.RPAREN, 0); }
 		public ScalarTypeContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_scalarType; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterScalarType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitScalarType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitScalarType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1711,22 +1711,22 @@ public partial class pascalParser : Parser {
 		public ConstantContext constant(int i) {
 			return GetRuleContext<ConstantContext>(i);
 		}
-		public ITerminalNode DOTDOT() { return GetToken(pascalParser.DOTDOT, 0); }
+		public ITerminalNode DOTDOT() { return GetToken(GPascalParser.DOTDOT, 0); }
 		public SubrangeTypeContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_subrangeType; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterSubrangeType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitSubrangeType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitSubrangeType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1759,26 +1759,26 @@ public partial class pascalParser : Parser {
 		public IdentifierContext identifier() {
 			return GetRuleContext<IdentifierContext>(0);
 		}
-		public ITerminalNode CHAR() { return GetToken(pascalParser.CHAR, 0); }
-		public ITerminalNode BOOLEAN() { return GetToken(pascalParser.BOOLEAN, 0); }
-		public ITerminalNode INTEGER() { return GetToken(pascalParser.INTEGER, 0); }
-		public ITerminalNode REAL() { return GetToken(pascalParser.REAL, 0); }
-		public ITerminalNode STRING() { return GetToken(pascalParser.STRING, 0); }
+		public ITerminalNode CHAR() { return GetToken(GPascalParser.CHAR, 0); }
+		public ITerminalNode BOOLEAN() { return GetToken(GPascalParser.BOOLEAN, 0); }
+		public ITerminalNode INTEGER() { return GetToken(GPascalParser.INTEGER, 0); }
+		public ITerminalNode REAL() { return GetToken(GPascalParser.REAL, 0); }
+		public ITerminalNode STRING() { return GetToken(GPascalParser.STRING, 0); }
 		public TypeIdentifierContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_typeIdentifier; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterTypeIdentifier(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitTypeIdentifier(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitTypeIdentifier(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1833,7 +1833,7 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class StructuredTypeContext : ParserRuleContext {
-		public ITerminalNode PACKED() { return GetToken(pascalParser.PACKED, 0); }
+		public ITerminalNode PACKED() { return GetToken(GPascalParser.PACKED, 0); }
 		public UnpackedStructuredTypeContext unpackedStructuredType() {
 			return GetRuleContext<UnpackedStructuredTypeContext>(0);
 		}
@@ -1843,15 +1843,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_structuredType; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterStructuredType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitStructuredType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitStructuredType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1915,15 +1915,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_unpackedStructuredType; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterUnpackedStructuredType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitUnpackedStructuredType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitUnpackedStructuredType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -1977,9 +1977,9 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class StringtypeContext : ParserRuleContext {
-		public ITerminalNode STRING() { return GetToken(pascalParser.STRING, 0); }
-		public ITerminalNode LBRACK() { return GetToken(pascalParser.LBRACK, 0); }
-		public ITerminalNode RBRACK() { return GetToken(pascalParser.RBRACK, 0); }
+		public ITerminalNode STRING() { return GetToken(GPascalParser.STRING, 0); }
+		public ITerminalNode LBRACK() { return GetToken(GPascalParser.LBRACK, 0); }
+		public ITerminalNode RBRACK() { return GetToken(GPascalParser.RBRACK, 0); }
 		public IdentifierContext identifier() {
 			return GetRuleContext<IdentifierContext>(0);
 		}
@@ -1992,15 +1992,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_stringtype; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterStringtype(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitStringtype(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitStringtype(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -2047,33 +2047,33 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class ArrayTypeContext : ParserRuleContext {
-		public ITerminalNode ARRAY() { return GetToken(pascalParser.ARRAY, 0); }
-		public ITerminalNode LBRACK() { return GetToken(pascalParser.LBRACK, 0); }
+		public ITerminalNode ARRAY() { return GetToken(GPascalParser.ARRAY, 0); }
+		public ITerminalNode LBRACK() { return GetToken(GPascalParser.LBRACK, 0); }
 		public TypeListContext typeList() {
 			return GetRuleContext<TypeListContext>(0);
 		}
-		public ITerminalNode RBRACK() { return GetToken(pascalParser.RBRACK, 0); }
-		public ITerminalNode OF() { return GetToken(pascalParser.OF, 0); }
+		public ITerminalNode RBRACK() { return GetToken(GPascalParser.RBRACK, 0); }
+		public ITerminalNode OF() { return GetToken(GPascalParser.OF, 0); }
 		public ComponentTypeContext componentType() {
 			return GetRuleContext<ComponentTypeContext>(0);
 		}
-		public ITerminalNode LBRACK2() { return GetToken(pascalParser.LBRACK2, 0); }
-		public ITerminalNode RBRACK2() { return GetToken(pascalParser.RBRACK2, 0); }
+		public ITerminalNode LBRACK2() { return GetToken(GPascalParser.LBRACK2, 0); }
+		public ITerminalNode RBRACK2() { return GetToken(GPascalParser.RBRACK2, 0); }
 		public ArrayTypeContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_arrayType; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterArrayType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitArrayType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitArrayType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -2129,9 +2129,9 @@ public partial class pascalParser : Parser {
 		public IndexTypeContext indexType(int i) {
 			return GetRuleContext<IndexTypeContext>(i);
 		}
-		public ITerminalNode[] COMMA() { return GetTokens(pascalParser.COMMA); }
+		public ITerminalNode[] COMMA() { return GetTokens(GPascalParser.COMMA); }
 		public ITerminalNode COMMA(int i) {
-			return GetToken(pascalParser.COMMA, i);
+			return GetToken(GPascalParser.COMMA, i);
 		}
 		public TypeListContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -2139,15 +2139,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_typeList; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterTypeList(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitTypeList(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitTypeList(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -2199,15 +2199,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_indexType; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterIndexType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitIndexType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitIndexType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -2244,15 +2244,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_componentType; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterComponentType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitComponentType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitComponentType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -2280,8 +2280,8 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class RecordTypeContext : ParserRuleContext {
-		public ITerminalNode RECORD() { return GetToken(pascalParser.RECORD, 0); }
-		public ITerminalNode END() { return GetToken(pascalParser.END, 0); }
+		public ITerminalNode RECORD() { return GetToken(GPascalParser.RECORD, 0); }
+		public ITerminalNode END() { return GetToken(GPascalParser.END, 0); }
 		public FieldListContext fieldList() {
 			return GetRuleContext<FieldListContext>(0);
 		}
@@ -2291,15 +2291,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_recordType; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterRecordType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitRecordType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitRecordType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -2341,7 +2341,7 @@ public partial class pascalParser : Parser {
 		public FixedPartContext fixedPart() {
 			return GetRuleContext<FixedPartContext>(0);
 		}
-		public ITerminalNode SEMI() { return GetToken(pascalParser.SEMI, 0); }
+		public ITerminalNode SEMI() { return GetToken(GPascalParser.SEMI, 0); }
 		public VariantPartContext variantPart() {
 			return GetRuleContext<VariantPartContext>(0);
 		}
@@ -2351,15 +2351,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_fieldList; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterFieldList(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitFieldList(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitFieldList(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -2418,9 +2418,9 @@ public partial class pascalParser : Parser {
 		public RecordSectionContext recordSection(int i) {
 			return GetRuleContext<RecordSectionContext>(i);
 		}
-		public ITerminalNode[] SEMI() { return GetTokens(pascalParser.SEMI); }
+		public ITerminalNode[] SEMI() { return GetTokens(GPascalParser.SEMI); }
 		public ITerminalNode SEMI(int i) {
-			return GetToken(pascalParser.SEMI, i);
+			return GetToken(GPascalParser.SEMI, i);
 		}
 		public FixedPartContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -2428,15 +2428,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_fixedPart; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterFixedPart(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitFixedPart(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitFixedPart(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -2484,7 +2484,7 @@ public partial class pascalParser : Parser {
 		public IdentifierListContext identifierList() {
 			return GetRuleContext<IdentifierListContext>(0);
 		}
-		public ITerminalNode COLON() { return GetToken(pascalParser.COLON, 0); }
+		public ITerminalNode COLON() { return GetToken(GPascalParser.COLON, 0); }
 		public TypeContext type() {
 			return GetRuleContext<TypeContext>(0);
 		}
@@ -2494,15 +2494,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_recordSection; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterRecordSection(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitRecordSection(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitRecordSection(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -2532,20 +2532,20 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class VariantPartContext : ParserRuleContext {
-		public ITerminalNode CASE() { return GetToken(pascalParser.CASE, 0); }
+		public ITerminalNode CASE() { return GetToken(GPascalParser.CASE, 0); }
 		public TagContext tag() {
 			return GetRuleContext<TagContext>(0);
 		}
-		public ITerminalNode OF() { return GetToken(pascalParser.OF, 0); }
+		public ITerminalNode OF() { return GetToken(GPascalParser.OF, 0); }
 		public VariantContext[] variant() {
 			return GetRuleContexts<VariantContext>();
 		}
 		public VariantContext variant(int i) {
 			return GetRuleContext<VariantContext>(i);
 		}
-		public ITerminalNode[] SEMI() { return GetTokens(pascalParser.SEMI); }
+		public ITerminalNode[] SEMI() { return GetTokens(GPascalParser.SEMI); }
 		public ITerminalNode SEMI(int i) {
-			return GetToken(pascalParser.SEMI, i);
+			return GetToken(GPascalParser.SEMI, i);
 		}
 		public VariantPartContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -2553,15 +2553,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_variantPart; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterVariantPart(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitVariantPart(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitVariantPart(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -2610,7 +2610,7 @@ public partial class pascalParser : Parser {
 		public IdentifierContext identifier() {
 			return GetRuleContext<IdentifierContext>(0);
 		}
-		public ITerminalNode COLON() { return GetToken(pascalParser.COLON, 0); }
+		public ITerminalNode COLON() { return GetToken(GPascalParser.COLON, 0); }
 		public TypeIdentifierContext typeIdentifier() {
 			return GetRuleContext<TypeIdentifierContext>(0);
 		}
@@ -2620,15 +2620,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_tag; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterTag(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitTag(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitTag(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -2673,27 +2673,27 @@ public partial class pascalParser : Parser {
 		public ConstListContext constList() {
 			return GetRuleContext<ConstListContext>(0);
 		}
-		public ITerminalNode COLON() { return GetToken(pascalParser.COLON, 0); }
-		public ITerminalNode LPAREN() { return GetToken(pascalParser.LPAREN, 0); }
+		public ITerminalNode COLON() { return GetToken(GPascalParser.COLON, 0); }
+		public ITerminalNode LPAREN() { return GetToken(GPascalParser.LPAREN, 0); }
 		public FieldListContext fieldList() {
 			return GetRuleContext<FieldListContext>(0);
 		}
-		public ITerminalNode RPAREN() { return GetToken(pascalParser.RPAREN, 0); }
+		public ITerminalNode RPAREN() { return GetToken(GPascalParser.RPAREN, 0); }
 		public VariantContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_variant; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterVariant(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitVariant(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitVariant(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -2725,8 +2725,8 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class SetTypeContext : ParserRuleContext {
-		public ITerminalNode SET() { return GetToken(pascalParser.SET, 0); }
-		public ITerminalNode OF() { return GetToken(pascalParser.OF, 0); }
+		public ITerminalNode SET() { return GetToken(GPascalParser.SET, 0); }
+		public ITerminalNode OF() { return GetToken(GPascalParser.OF, 0); }
 		public BaseTypeContext baseType() {
 			return GetRuleContext<BaseTypeContext>(0);
 		}
@@ -2736,15 +2736,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_setType; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterSetType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitSetType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitSetType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -2783,15 +2783,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_baseType; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterBaseType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitBaseType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitBaseType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -2819,8 +2819,8 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class FileTypeContext : ParserRuleContext {
-		public ITerminalNode FILE() { return GetToken(pascalParser.FILE, 0); }
-		public ITerminalNode OF() { return GetToken(pascalParser.OF, 0); }
+		public ITerminalNode FILE() { return GetToken(GPascalParser.FILE, 0); }
+		public ITerminalNode OF() { return GetToken(GPascalParser.OF, 0); }
 		public TypeContext type() {
 			return GetRuleContext<TypeContext>(0);
 		}
@@ -2830,15 +2830,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_fileType; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterFileType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitFileType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitFileType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -2880,7 +2880,7 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class PointerTypeContext : ParserRuleContext {
-		public ITerminalNode POINTER() { return GetToken(pascalParser.POINTER, 0); }
+		public ITerminalNode POINTER() { return GetToken(GPascalParser.POINTER, 0); }
 		public TypeIdentifierContext typeIdentifier() {
 			return GetRuleContext<TypeIdentifierContext>(0);
 		}
@@ -2890,15 +2890,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_pointerType; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterPointerType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitPointerType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitPointerType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -2927,16 +2927,16 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class VariableDeclarationPartContext : ParserRuleContext {
-		public ITerminalNode VAR() { return GetToken(pascalParser.VAR, 0); }
+		public ITerminalNode VAR() { return GetToken(GPascalParser.VAR, 0); }
 		public VariableDeclarationContext[] variableDeclaration() {
 			return GetRuleContexts<VariableDeclarationContext>();
 		}
 		public VariableDeclarationContext variableDeclaration(int i) {
 			return GetRuleContext<VariableDeclarationContext>(i);
 		}
-		public ITerminalNode[] SEMI() { return GetTokens(pascalParser.SEMI); }
+		public ITerminalNode[] SEMI() { return GetTokens(GPascalParser.SEMI); }
 		public ITerminalNode SEMI(int i) {
-			return GetToken(pascalParser.SEMI, i);
+			return GetToken(GPascalParser.SEMI, i);
 		}
 		public VariableDeclarationPartContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -2944,15 +2944,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_variableDeclarationPart; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterVariableDeclarationPart(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitVariableDeclarationPart(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitVariableDeclarationPart(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -3002,7 +3002,7 @@ public partial class pascalParser : Parser {
 		public IdentifierListContext identifierList() {
 			return GetRuleContext<IdentifierListContext>(0);
 		}
-		public ITerminalNode COLON() { return GetToken(pascalParser.COLON, 0); }
+		public ITerminalNode COLON() { return GetToken(GPascalParser.COLON, 0); }
 		public TypeContext type() {
 			return GetRuleContext<TypeContext>(0);
 		}
@@ -3012,15 +3012,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_variableDeclaration; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterVariableDeclaration(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitVariableDeclaration(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitVariableDeclaration(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -3053,22 +3053,22 @@ public partial class pascalParser : Parser {
 		public ProcedureOrFunctionDeclarationContext procedureOrFunctionDeclaration() {
 			return GetRuleContext<ProcedureOrFunctionDeclarationContext>(0);
 		}
-		public ITerminalNode SEMI() { return GetToken(pascalParser.SEMI, 0); }
+		public ITerminalNode SEMI() { return GetToken(GPascalParser.SEMI, 0); }
 		public ProcedureAndFunctionDeclarationPartContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_procedureAndFunctionDeclarationPart; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterProcedureAndFunctionDeclarationPart(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitProcedureAndFunctionDeclarationPart(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitProcedureAndFunctionDeclarationPart(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -3109,15 +3109,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_procedureOrFunctionDeclaration; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterProcedureOrFunctionDeclaration(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitProcedureOrFunctionDeclaration(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitProcedureOrFunctionDeclaration(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -3159,11 +3159,11 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class ProcedureDeclarationContext : ParserRuleContext {
-		public ITerminalNode PROCEDURE() { return GetToken(pascalParser.PROCEDURE, 0); }
+		public ITerminalNode PROCEDURE() { return GetToken(GPascalParser.PROCEDURE, 0); }
 		public IdentifierContext identifier() {
 			return GetRuleContext<IdentifierContext>(0);
 		}
-		public ITerminalNode SEMI() { return GetToken(pascalParser.SEMI, 0); }
+		public ITerminalNode SEMI() { return GetToken(GPascalParser.SEMI, 0); }
 		public BlockContext block() {
 			return GetRuleContext<BlockContext>(0);
 		}
@@ -3176,15 +3176,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_procedureDeclaration; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterProcedureDeclaration(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitProcedureDeclaration(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitProcedureDeclaration(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -3225,17 +3225,17 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class FormalParameterListContext : ParserRuleContext {
-		public ITerminalNode LPAREN() { return GetToken(pascalParser.LPAREN, 0); }
+		public ITerminalNode LPAREN() { return GetToken(GPascalParser.LPAREN, 0); }
 		public FormalParameterSectionContext[] formalParameterSection() {
 			return GetRuleContexts<FormalParameterSectionContext>();
 		}
 		public FormalParameterSectionContext formalParameterSection(int i) {
 			return GetRuleContext<FormalParameterSectionContext>(i);
 		}
-		public ITerminalNode RPAREN() { return GetToken(pascalParser.RPAREN, 0); }
-		public ITerminalNode[] SEMI() { return GetTokens(pascalParser.SEMI); }
+		public ITerminalNode RPAREN() { return GetToken(GPascalParser.RPAREN, 0); }
+		public ITerminalNode[] SEMI() { return GetTokens(GPascalParser.SEMI); }
 		public ITerminalNode SEMI(int i) {
-			return GetToken(pascalParser.SEMI, i);
+			return GetToken(GPascalParser.SEMI, i);
 		}
 		public FormalParameterListContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -3243,15 +3243,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_formalParameterList; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterFormalParameterList(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitFormalParameterList(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitFormalParameterList(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -3299,24 +3299,24 @@ public partial class pascalParser : Parser {
 		public ParameterGroupContext parameterGroup() {
 			return GetRuleContext<ParameterGroupContext>(0);
 		}
-		public ITerminalNode VAR() { return GetToken(pascalParser.VAR, 0); }
-		public ITerminalNode FUNCTION() { return GetToken(pascalParser.FUNCTION, 0); }
-		public ITerminalNode PROCEDURE() { return GetToken(pascalParser.PROCEDURE, 0); }
+		public ITerminalNode VAR() { return GetToken(GPascalParser.VAR, 0); }
+		public ITerminalNode FUNCTION() { return GetToken(GPascalParser.FUNCTION, 0); }
+		public ITerminalNode PROCEDURE() { return GetToken(GPascalParser.PROCEDURE, 0); }
 		public FormalParameterSectionContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_formalParameterSection; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterFormalParameterSection(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitFormalParameterSection(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitFormalParameterSection(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -3376,7 +3376,7 @@ public partial class pascalParser : Parser {
 		public IdentifierListContext identifierList() {
 			return GetRuleContext<IdentifierListContext>(0);
 		}
-		public ITerminalNode COLON() { return GetToken(pascalParser.COLON, 0); }
+		public ITerminalNode COLON() { return GetToken(GPascalParser.COLON, 0); }
 		public TypeIdentifierContext typeIdentifier() {
 			return GetRuleContext<TypeIdentifierContext>(0);
 		}
@@ -3386,15 +3386,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_parameterGroup; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterParameterGroup(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitParameterGroup(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitParameterGroup(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -3430,9 +3430,9 @@ public partial class pascalParser : Parser {
 		public IdentifierContext identifier(int i) {
 			return GetRuleContext<IdentifierContext>(i);
 		}
-		public ITerminalNode[] COMMA() { return GetTokens(pascalParser.COMMA); }
+		public ITerminalNode[] COMMA() { return GetTokens(GPascalParser.COMMA); }
 		public ITerminalNode COMMA(int i) {
-			return GetToken(pascalParser.COMMA, i);
+			return GetToken(GPascalParser.COMMA, i);
 		}
 		public IdentifierListContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -3440,15 +3440,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_identifierList; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterIdentifierList(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitIdentifierList(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitIdentifierList(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -3497,9 +3497,9 @@ public partial class pascalParser : Parser {
 		public ConstantContext constant(int i) {
 			return GetRuleContext<ConstantContext>(i);
 		}
-		public ITerminalNode[] COMMA() { return GetTokens(pascalParser.COMMA); }
+		public ITerminalNode[] COMMA() { return GetTokens(GPascalParser.COMMA); }
 		public ITerminalNode COMMA(int i) {
-			return GetToken(pascalParser.COMMA, i);
+			return GetToken(GPascalParser.COMMA, i);
 		}
 		public ConstListContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -3507,15 +3507,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_constList; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterConstList(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitConstList(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitConstList(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -3558,15 +3558,15 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class FunctionDeclarationContext : ParserRuleContext {
-		public ITerminalNode FUNCTION() { return GetToken(pascalParser.FUNCTION, 0); }
+		public ITerminalNode FUNCTION() { return GetToken(GPascalParser.FUNCTION, 0); }
 		public IdentifierContext identifier() {
 			return GetRuleContext<IdentifierContext>(0);
 		}
-		public ITerminalNode COLON() { return GetToken(pascalParser.COLON, 0); }
+		public ITerminalNode COLON() { return GetToken(GPascalParser.COLON, 0); }
 		public ResultTypeContext resultType() {
 			return GetRuleContext<ResultTypeContext>(0);
 		}
-		public ITerminalNode SEMI() { return GetToken(pascalParser.SEMI, 0); }
+		public ITerminalNode SEMI() { return GetToken(GPascalParser.SEMI, 0); }
 		public BlockContext block() {
 			return GetRuleContext<BlockContext>(0);
 		}
@@ -3579,15 +3579,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_functionDeclaration; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterFunctionDeclaration(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitFunctionDeclaration(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitFunctionDeclaration(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -3639,15 +3639,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_resultType; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterResultType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitResultType(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitResultType(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -3678,7 +3678,7 @@ public partial class pascalParser : Parser {
 		public LabelContext label() {
 			return GetRuleContext<LabelContext>(0);
 		}
-		public ITerminalNode COLON() { return GetToken(pascalParser.COLON, 0); }
+		public ITerminalNode COLON() { return GetToken(GPascalParser.COLON, 0); }
 		public UnlabelledStatementContext unlabelledStatement() {
 			return GetRuleContext<UnlabelledStatementContext>(0);
 		}
@@ -3688,15 +3688,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_statement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitStatement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitStatement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -3765,15 +3765,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_unlabelledStatement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterUnlabelledStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitUnlabelledStatement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitUnlabelledStatement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -3845,15 +3845,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_simpleStatement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterSimpleStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitSimpleStatement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitSimpleStatement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -3908,7 +3908,7 @@ public partial class pascalParser : Parser {
 		public VariableContext variable() {
 			return GetRuleContext<VariableContext>(0);
 		}
-		public ITerminalNode ASSIGN() { return GetToken(pascalParser.ASSIGN, 0); }
+		public ITerminalNode ASSIGN() { return GetToken(GPascalParser.ASSIGN, 0); }
 		public ExpressionContext expression() {
 			return GetRuleContext<ExpressionContext>(0);
 		}
@@ -3918,15 +3918,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_assignmentStatement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterAssignmentStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitAssignmentStatement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitAssignmentStatement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -3956,16 +3956,16 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class VariableContext : ParserRuleContext {
-		public ITerminalNode AT() { return GetToken(pascalParser.AT, 0); }
+		public ITerminalNode AT() { return GetToken(GPascalParser.AT, 0); }
 		public IdentifierContext[] identifier() {
 			return GetRuleContexts<IdentifierContext>();
 		}
 		public IdentifierContext identifier(int i) {
 			return GetRuleContext<IdentifierContext>(i);
 		}
-		public ITerminalNode[] LBRACK() { return GetTokens(pascalParser.LBRACK); }
+		public ITerminalNode[] LBRACK() { return GetTokens(GPascalParser.LBRACK); }
 		public ITerminalNode LBRACK(int i) {
-			return GetToken(pascalParser.LBRACK, i);
+			return GetToken(GPascalParser.LBRACK, i);
 		}
 		public ExpressionContext[] expression() {
 			return GetRuleContexts<ExpressionContext>();
@@ -3973,29 +3973,29 @@ public partial class pascalParser : Parser {
 		public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
 		}
-		public ITerminalNode[] RBRACK() { return GetTokens(pascalParser.RBRACK); }
+		public ITerminalNode[] RBRACK() { return GetTokens(GPascalParser.RBRACK); }
 		public ITerminalNode RBRACK(int i) {
-			return GetToken(pascalParser.RBRACK, i);
+			return GetToken(GPascalParser.RBRACK, i);
 		}
-		public ITerminalNode[] LBRACK2() { return GetTokens(pascalParser.LBRACK2); }
+		public ITerminalNode[] LBRACK2() { return GetTokens(GPascalParser.LBRACK2); }
 		public ITerminalNode LBRACK2(int i) {
-			return GetToken(pascalParser.LBRACK2, i);
+			return GetToken(GPascalParser.LBRACK2, i);
 		}
-		public ITerminalNode[] RBRACK2() { return GetTokens(pascalParser.RBRACK2); }
+		public ITerminalNode[] RBRACK2() { return GetTokens(GPascalParser.RBRACK2); }
 		public ITerminalNode RBRACK2(int i) {
-			return GetToken(pascalParser.RBRACK2, i);
+			return GetToken(GPascalParser.RBRACK2, i);
 		}
-		public ITerminalNode[] DOT() { return GetTokens(pascalParser.DOT); }
+		public ITerminalNode[] DOT() { return GetTokens(GPascalParser.DOT); }
 		public ITerminalNode DOT(int i) {
-			return GetToken(pascalParser.DOT, i);
+			return GetToken(GPascalParser.DOT, i);
 		}
-		public ITerminalNode[] POINTER() { return GetTokens(pascalParser.POINTER); }
+		public ITerminalNode[] POINTER() { return GetTokens(GPascalParser.POINTER); }
 		public ITerminalNode POINTER(int i) {
-			return GetToken(pascalParser.POINTER, i);
+			return GetToken(GPascalParser.POINTER, i);
 		}
-		public ITerminalNode[] COMMA() { return GetTokens(pascalParser.COMMA); }
+		public ITerminalNode[] COMMA() { return GetTokens(GPascalParser.COMMA); }
 		public ITerminalNode COMMA(int i) {
-			return GetToken(pascalParser.COMMA, i);
+			return GetToken(GPascalParser.COMMA, i);
 		}
 		public VariableContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -4003,15 +4003,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_variable; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterVariable(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitVariable(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitVariable(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -4140,15 +4140,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_expression; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterExpression(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitExpression(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitExpression(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -4187,28 +4187,28 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class RelationaloperatorContext : ParserRuleContext {
-		public ITerminalNode EQUAL() { return GetToken(pascalParser.EQUAL, 0); }
-		public ITerminalNode NOT_EQUAL() { return GetToken(pascalParser.NOT_EQUAL, 0); }
-		public ITerminalNode LT() { return GetToken(pascalParser.LT, 0); }
-		public ITerminalNode LE() { return GetToken(pascalParser.LE, 0); }
-		public ITerminalNode GE() { return GetToken(pascalParser.GE, 0); }
-		public ITerminalNode GT() { return GetToken(pascalParser.GT, 0); }
-		public ITerminalNode IN() { return GetToken(pascalParser.IN, 0); }
+		public ITerminalNode EQUAL() { return GetToken(GPascalParser.EQUAL, 0); }
+		public ITerminalNode NOT_EQUAL() { return GetToken(GPascalParser.NOT_EQUAL, 0); }
+		public ITerminalNode LT() { return GetToken(GPascalParser.LT, 0); }
+		public ITerminalNode LE() { return GetToken(GPascalParser.LE, 0); }
+		public ITerminalNode GE() { return GetToken(GPascalParser.GE, 0); }
+		public ITerminalNode GT() { return GetToken(GPascalParser.GT, 0); }
+		public ITerminalNode IN() { return GetToken(GPascalParser.IN, 0); }
 		public RelationaloperatorContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_relationaloperator; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterRelationaloperator(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitRelationaloperator(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitRelationaloperator(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -4260,15 +4260,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_simpleExpression; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterSimpleExpression(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitSimpleExpression(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitSimpleExpression(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -4307,24 +4307,24 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class AdditiveoperatorContext : ParserRuleContext {
-		public ITerminalNode PLUS() { return GetToken(pascalParser.PLUS, 0); }
-		public ITerminalNode MINUS() { return GetToken(pascalParser.MINUS, 0); }
-		public ITerminalNode OR() { return GetToken(pascalParser.OR, 0); }
+		public ITerminalNode PLUS() { return GetToken(GPascalParser.PLUS, 0); }
+		public ITerminalNode MINUS() { return GetToken(GPascalParser.MINUS, 0); }
+		public ITerminalNode OR() { return GetToken(GPascalParser.OR, 0); }
 		public AdditiveoperatorContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_additiveoperator; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterAdditiveoperator(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitAdditiveoperator(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitAdditiveoperator(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -4376,15 +4376,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_term; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterTerm(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitTerm(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitTerm(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -4423,26 +4423,26 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class MultiplicativeoperatorContext : ParserRuleContext {
-		public ITerminalNode STAR() { return GetToken(pascalParser.STAR, 0); }
-		public ITerminalNode SLASH() { return GetToken(pascalParser.SLASH, 0); }
-		public ITerminalNode DIV() { return GetToken(pascalParser.DIV, 0); }
-		public ITerminalNode MOD() { return GetToken(pascalParser.MOD, 0); }
-		public ITerminalNode AND() { return GetToken(pascalParser.AND, 0); }
+		public ITerminalNode STAR() { return GetToken(GPascalParser.STAR, 0); }
+		public ITerminalNode SLASH() { return GetToken(GPascalParser.SLASH, 0); }
+		public ITerminalNode DIV() { return GetToken(GPascalParser.DIV, 0); }
+		public ITerminalNode MOD() { return GetToken(GPascalParser.MOD, 0); }
+		public ITerminalNode AND() { return GetToken(GPascalParser.AND, 0); }
 		public MultiplicativeoperatorContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_multiplicativeoperator; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterMultiplicativeoperator(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitMultiplicativeoperator(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitMultiplicativeoperator(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -4482,23 +4482,23 @@ public partial class pascalParser : Parser {
 		public FactorContext factor() {
 			return GetRuleContext<FactorContext>(0);
 		}
-		public ITerminalNode PLUS() { return GetToken(pascalParser.PLUS, 0); }
-		public ITerminalNode MINUS() { return GetToken(pascalParser.MINUS, 0); }
+		public ITerminalNode PLUS() { return GetToken(GPascalParser.PLUS, 0); }
+		public ITerminalNode MINUS() { return GetToken(GPascalParser.MINUS, 0); }
 		public SignedFactorContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_signedFactor; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterSignedFactor(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitSignedFactor(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitSignedFactor(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -4547,11 +4547,11 @@ public partial class pascalParser : Parser {
 		public VariableContext variable() {
 			return GetRuleContext<VariableContext>(0);
 		}
-		public ITerminalNode LPAREN() { return GetToken(pascalParser.LPAREN, 0); }
+		public ITerminalNode LPAREN() { return GetToken(GPascalParser.LPAREN, 0); }
 		public ExpressionContext expression() {
 			return GetRuleContext<ExpressionContext>(0);
 		}
-		public ITerminalNode RPAREN() { return GetToken(pascalParser.RPAREN, 0); }
+		public ITerminalNode RPAREN() { return GetToken(GPascalParser.RPAREN, 0); }
 		public FunctionDesignatorContext functionDesignator() {
 			return GetRuleContext<FunctionDesignatorContext>(0);
 		}
@@ -4561,7 +4561,7 @@ public partial class pascalParser : Parser {
 		public SetContext set() {
 			return GetRuleContext<SetContext>(0);
 		}
-		public ITerminalNode NOT() { return GetToken(pascalParser.NOT, 0); }
+		public ITerminalNode NOT() { return GetToken(GPascalParser.NOT, 0); }
 		public FactorContext factor() {
 			return GetRuleContext<FactorContext>(0);
 		}
@@ -4574,15 +4574,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_factor; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterFactor(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitFactor(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitFactor(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -4664,22 +4664,22 @@ public partial class pascalParser : Parser {
 		public StringContext @string() {
 			return GetRuleContext<StringContext>(0);
 		}
-		public ITerminalNode NIL() { return GetToken(pascalParser.NIL, 0); }
+		public ITerminalNode NIL() { return GetToken(GPascalParser.NIL, 0); }
 		public UnsignedConstantContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_unsignedConstant; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterUnsignedConstant(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitUnsignedConstant(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitUnsignedConstant(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -4737,26 +4737,26 @@ public partial class pascalParser : Parser {
 		public IdentifierContext identifier() {
 			return GetRuleContext<IdentifierContext>(0);
 		}
-		public ITerminalNode LPAREN() { return GetToken(pascalParser.LPAREN, 0); }
+		public ITerminalNode LPAREN() { return GetToken(GPascalParser.LPAREN, 0); }
 		public ParameterListContext parameterList() {
 			return GetRuleContext<ParameterListContext>(0);
 		}
-		public ITerminalNode RPAREN() { return GetToken(pascalParser.RPAREN, 0); }
+		public ITerminalNode RPAREN() { return GetToken(GPascalParser.RPAREN, 0); }
 		public FunctionDesignatorContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_functionDesignator; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterFunctionDesignator(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitFunctionDesignator(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitFunctionDesignator(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -4793,9 +4793,9 @@ public partial class pascalParser : Parser {
 		public ActualParameterContext actualParameter(int i) {
 			return GetRuleContext<ActualParameterContext>(i);
 		}
-		public ITerminalNode[] COMMA() { return GetTokens(pascalParser.COMMA); }
+		public ITerminalNode[] COMMA() { return GetTokens(GPascalParser.COMMA); }
 		public ITerminalNode COMMA(int i) {
-			return GetToken(pascalParser.COMMA, i);
+			return GetToken(GPascalParser.COMMA, i);
 		}
 		public ParameterListContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -4803,15 +4803,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_parameterList; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterParameterList(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitParameterList(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitParameterList(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -4854,28 +4854,28 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class SetContext : ParserRuleContext {
-		public ITerminalNode LBRACK() { return GetToken(pascalParser.LBRACK, 0); }
+		public ITerminalNode LBRACK() { return GetToken(GPascalParser.LBRACK, 0); }
 		public ElementListContext elementList() {
 			return GetRuleContext<ElementListContext>(0);
 		}
-		public ITerminalNode RBRACK() { return GetToken(pascalParser.RBRACK, 0); }
-		public ITerminalNode LBRACK2() { return GetToken(pascalParser.LBRACK2, 0); }
-		public ITerminalNode RBRACK2() { return GetToken(pascalParser.RBRACK2, 0); }
+		public ITerminalNode RBRACK() { return GetToken(GPascalParser.RBRACK, 0); }
+		public ITerminalNode LBRACK2() { return GetToken(GPascalParser.LBRACK2, 0); }
+		public ITerminalNode RBRACK2() { return GetToken(GPascalParser.RBRACK2, 0); }
 		public SetContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_set; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterSet(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitSet(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitSet(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -4927,9 +4927,9 @@ public partial class pascalParser : Parser {
 		public ElementContext element(int i) {
 			return GetRuleContext<ElementContext>(i);
 		}
-		public ITerminalNode[] COMMA() { return GetTokens(pascalParser.COMMA); }
+		public ITerminalNode[] COMMA() { return GetTokens(GPascalParser.COMMA); }
 		public ITerminalNode COMMA(int i) {
-			return GetToken(pascalParser.COMMA, i);
+			return GetToken(GPascalParser.COMMA, i);
 		}
 		public ElementListContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -4937,15 +4937,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_elementList; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterElementList(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitElementList(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitElementList(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -5022,22 +5022,22 @@ public partial class pascalParser : Parser {
 		public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
 		}
-		public ITerminalNode DOTDOT() { return GetToken(pascalParser.DOTDOT, 0); }
+		public ITerminalNode DOTDOT() { return GetToken(GPascalParser.DOTDOT, 0); }
 		public ElementContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_element; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterElement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitElement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitElement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -5079,26 +5079,26 @@ public partial class pascalParser : Parser {
 		public IdentifierContext identifier() {
 			return GetRuleContext<IdentifierContext>(0);
 		}
-		public ITerminalNode LPAREN() { return GetToken(pascalParser.LPAREN, 0); }
+		public ITerminalNode LPAREN() { return GetToken(GPascalParser.LPAREN, 0); }
 		public ParameterListContext parameterList() {
 			return GetRuleContext<ParameterListContext>(0);
 		}
-		public ITerminalNode RPAREN() { return GetToken(pascalParser.RPAREN, 0); }
+		public ITerminalNode RPAREN() { return GetToken(GPascalParser.RPAREN, 0); }
 		public ProcedureStatementContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_procedureStatement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterProcedureStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitProcedureStatement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitProcedureStatement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -5153,15 +5153,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_actualParameter; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterActualParameter(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitActualParameter(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitActualParameter(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -5203,7 +5203,7 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class ParameterwidthContext : ParserRuleContext {
-		public ITerminalNode COLON() { return GetToken(pascalParser.COLON, 0); }
+		public ITerminalNode COLON() { return GetToken(GPascalParser.COLON, 0); }
 		public ExpressionContext expression() {
 			return GetRuleContext<ExpressionContext>(0);
 		}
@@ -5213,15 +5213,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_parameterwidth; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterParameterwidth(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitParameterwidth(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitParameterwidth(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -5250,7 +5250,7 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class GotoStatementContext : ParserRuleContext {
-		public ITerminalNode GOTO() { return GetToken(pascalParser.GOTO, 0); }
+		public ITerminalNode GOTO() { return GetToken(GPascalParser.GOTO, 0); }
 		public LabelContext label() {
 			return GetRuleContext<LabelContext>(0);
 		}
@@ -5260,15 +5260,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_gotoStatement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterGotoStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitGotoStatement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitGotoStatement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -5303,15 +5303,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_emptyStatement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterEmptyStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitEmptyStatement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitEmptyStatement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -5344,15 +5344,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_empty; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterEmpty(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitEmpty(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitEmpty(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -5397,15 +5397,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_structuredStatement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterStructuredStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitStructuredStatement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitStructuredStatement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -5462,26 +5462,26 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class CompoundStatementContext : ParserRuleContext {
-		public ITerminalNode BEGIN() { return GetToken(pascalParser.BEGIN, 0); }
+		public ITerminalNode BEGIN() { return GetToken(GPascalParser.BEGIN, 0); }
 		public StatementsContext statements() {
 			return GetRuleContext<StatementsContext>(0);
 		}
-		public ITerminalNode END() { return GetToken(pascalParser.END, 0); }
+		public ITerminalNode END() { return GetToken(GPascalParser.END, 0); }
 		public CompoundStatementContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_compoundStatement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterCompoundStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitCompoundStatement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitCompoundStatement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -5517,9 +5517,9 @@ public partial class pascalParser : Parser {
 		public StatementContext statement(int i) {
 			return GetRuleContext<StatementContext>(i);
 		}
-		public ITerminalNode[] SEMI() { return GetTokens(pascalParser.SEMI); }
+		public ITerminalNode[] SEMI() { return GetTokens(GPascalParser.SEMI); }
 		public ITerminalNode SEMI(int i) {
-			return GetToken(pascalParser.SEMI, i);
+			return GetToken(GPascalParser.SEMI, i);
 		}
 		public StatementsContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -5527,15 +5527,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_statements; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterStatements(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitStatements(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitStatements(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -5590,15 +5590,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_conditionalStatement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterConditionalStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitConditionalStatement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitConditionalStatement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -5640,33 +5640,33 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class IfStatementContext : ParserRuleContext {
-		public ITerminalNode IF() { return GetToken(pascalParser.IF, 0); }
+		public ITerminalNode IF() { return GetToken(GPascalParser.IF, 0); }
 		public ExpressionContext expression() {
 			return GetRuleContext<ExpressionContext>(0);
 		}
-		public ITerminalNode THEN() { return GetToken(pascalParser.THEN, 0); }
+		public ITerminalNode THEN() { return GetToken(GPascalParser.THEN, 0); }
 		public StatementContext[] statement() {
 			return GetRuleContexts<StatementContext>();
 		}
 		public StatementContext statement(int i) {
 			return GetRuleContext<StatementContext>(i);
 		}
-		public ITerminalNode ELSE() { return GetToken(pascalParser.ELSE, 0); }
+		public ITerminalNode ELSE() { return GetToken(GPascalParser.ELSE, 0); }
 		public IfStatementContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_ifStatement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterIfStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitIfStatement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitIfStatement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -5707,23 +5707,23 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class CaseStatementContext : ParserRuleContext {
-		public ITerminalNode CASE() { return GetToken(pascalParser.CASE, 0); }
+		public ITerminalNode CASE() { return GetToken(GPascalParser.CASE, 0); }
 		public ExpressionContext expression() {
 			return GetRuleContext<ExpressionContext>(0);
 		}
-		public ITerminalNode OF() { return GetToken(pascalParser.OF, 0); }
+		public ITerminalNode OF() { return GetToken(GPascalParser.OF, 0); }
 		public CaseListElementContext[] caseListElement() {
 			return GetRuleContexts<CaseListElementContext>();
 		}
 		public CaseListElementContext caseListElement(int i) {
 			return GetRuleContext<CaseListElementContext>(i);
 		}
-		public ITerminalNode END() { return GetToken(pascalParser.END, 0); }
-		public ITerminalNode[] SEMI() { return GetTokens(pascalParser.SEMI); }
+		public ITerminalNode END() { return GetToken(GPascalParser.END, 0); }
+		public ITerminalNode[] SEMI() { return GetTokens(GPascalParser.SEMI); }
 		public ITerminalNode SEMI(int i) {
-			return GetToken(pascalParser.SEMI, i);
+			return GetToken(GPascalParser.SEMI, i);
 		}
-		public ITerminalNode ELSE() { return GetToken(pascalParser.ELSE, 0); }
+		public ITerminalNode ELSE() { return GetToken(GPascalParser.ELSE, 0); }
 		public StatementsContext statements() {
 			return GetRuleContext<StatementsContext>(0);
 		}
@@ -5733,15 +5733,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_caseStatement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterCaseStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitCaseStatement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitCaseStatement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -5805,7 +5805,7 @@ public partial class pascalParser : Parser {
 		public ConstListContext constList() {
 			return GetRuleContext<ConstListContext>(0);
 		}
-		public ITerminalNode COLON() { return GetToken(pascalParser.COLON, 0); }
+		public ITerminalNode COLON() { return GetToken(GPascalParser.COLON, 0); }
 		public StatementContext statement() {
 			return GetRuleContext<StatementContext>(0);
 		}
@@ -5815,15 +5815,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_caseListElement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterCaseListElement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitCaseListElement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitCaseListElement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -5868,15 +5868,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_repetetiveStatement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterRepetetiveStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitRepetetiveStatement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitRepetetiveStatement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -5924,11 +5924,11 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class WhileStatementContext : ParserRuleContext {
-		public ITerminalNode WHILE() { return GetToken(pascalParser.WHILE, 0); }
+		public ITerminalNode WHILE() { return GetToken(GPascalParser.WHILE, 0); }
 		public ExpressionContext expression() {
 			return GetRuleContext<ExpressionContext>(0);
 		}
-		public ITerminalNode DO() { return GetToken(pascalParser.DO, 0); }
+		public ITerminalNode DO() { return GetToken(GPascalParser.DO, 0); }
 		public StatementContext statement() {
 			return GetRuleContext<StatementContext>(0);
 		}
@@ -5938,15 +5938,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_whileStatement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterWhileStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitWhileStatement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitWhileStatement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -5977,11 +5977,11 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class RepeatStatementContext : ParserRuleContext {
-		public ITerminalNode REPEAT() { return GetToken(pascalParser.REPEAT, 0); }
+		public ITerminalNode REPEAT() { return GetToken(GPascalParser.REPEAT, 0); }
 		public StatementsContext statements() {
 			return GetRuleContext<StatementsContext>(0);
 		}
-		public ITerminalNode UNTIL() { return GetToken(pascalParser.UNTIL, 0); }
+		public ITerminalNode UNTIL() { return GetToken(GPascalParser.UNTIL, 0); }
 		public ExpressionContext expression() {
 			return GetRuleContext<ExpressionContext>(0);
 		}
@@ -5991,15 +5991,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_repeatStatement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterRepeatStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitRepeatStatement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitRepeatStatement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -6030,15 +6030,15 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class ForStatementContext : ParserRuleContext {
-		public ITerminalNode FOR() { return GetToken(pascalParser.FOR, 0); }
+		public ITerminalNode FOR() { return GetToken(GPascalParser.FOR, 0); }
 		public IdentifierContext identifier() {
 			return GetRuleContext<IdentifierContext>(0);
 		}
-		public ITerminalNode ASSIGN() { return GetToken(pascalParser.ASSIGN, 0); }
+		public ITerminalNode ASSIGN() { return GetToken(GPascalParser.ASSIGN, 0); }
 		public ForListContext forList() {
 			return GetRuleContext<ForListContext>(0);
 		}
-		public ITerminalNode DO() { return GetToken(pascalParser.DO, 0); }
+		public ITerminalNode DO() { return GetToken(GPascalParser.DO, 0); }
 		public StatementContext statement() {
 			return GetRuleContext<StatementContext>(0);
 		}
@@ -6048,15 +6048,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_forStatement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterForStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitForStatement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitForStatement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -6095,23 +6095,23 @@ public partial class pascalParser : Parser {
 		public FinalValueContext finalValue() {
 			return GetRuleContext<FinalValueContext>(0);
 		}
-		public ITerminalNode TO() { return GetToken(pascalParser.TO, 0); }
-		public ITerminalNode DOWNTO() { return GetToken(pascalParser.DOWNTO, 0); }
+		public ITerminalNode TO() { return GetToken(GPascalParser.TO, 0); }
+		public ITerminalNode DOWNTO() { return GetToken(GPascalParser.DOWNTO, 0); }
 		public ForListContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_forList; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterForList(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitForList(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitForList(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -6159,15 +6159,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_initialValue; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterInitialValue(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitInitialValue(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitInitialValue(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -6204,15 +6204,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_finalValue; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterFinalValue(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitFinalValue(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitFinalValue(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -6240,11 +6240,11 @@ public partial class pascalParser : Parser {
 	}
 
 	public partial class WithStatementContext : ParserRuleContext {
-		public ITerminalNode WITH() { return GetToken(pascalParser.WITH, 0); }
+		public ITerminalNode WITH() { return GetToken(GPascalParser.WITH, 0); }
 		public RecordVariableListContext recordVariableList() {
 			return GetRuleContext<RecordVariableListContext>(0);
 		}
-		public ITerminalNode DO() { return GetToken(pascalParser.DO, 0); }
+		public ITerminalNode DO() { return GetToken(GPascalParser.DO, 0); }
 		public StatementContext statement() {
 			return GetRuleContext<StatementContext>(0);
 		}
@@ -6254,15 +6254,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_withStatement; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterWithStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitWithStatement(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitWithStatement(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -6299,9 +6299,9 @@ public partial class pascalParser : Parser {
 		public VariableContext variable(int i) {
 			return GetRuleContext<VariableContext>(i);
 		}
-		public ITerminalNode[] COMMA() { return GetTokens(pascalParser.COMMA); }
+		public ITerminalNode[] COMMA() { return GetTokens(GPascalParser.COMMA); }
 		public ITerminalNode COMMA(int i) {
-			return GetToken(pascalParser.COMMA, i);
+			return GetToken(GPascalParser.COMMA, i);
 		}
 		public RecordVariableListContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -6309,15 +6309,15 @@ public partial class pascalParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_recordVariableList; } }
 		public override void EnterRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.EnterRecordVariableList(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
-			IpascalListener typedListener = listener as IpascalListener;
+			IGPascalListener typedListener = listener as IGPascalListener;
 			if (typedListener != null) typedListener.ExitRecordVariableList(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IpascalVisitor<TResult> typedVisitor = visitor as IpascalVisitor<TResult>;
+			IGPascalVisitor<TResult> typedVisitor = visitor as IGPascalVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitRecordVariableList(this);
 			else return visitor.VisitChildren(this);
 		}
