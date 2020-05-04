@@ -42,6 +42,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser
                 var highlightings = new List<HighlightingInfo>();
                 foreach (var treeNode in _file.Descendants())
                 {
+                    Logger.Log($"IN HIGHLIGHTING GOT {treeNode.NodeType}");
                     if (treeNode is PsiBuilderErrorElement error)
                     {
                         var splits = error.ErrorDescription.Split('#');
