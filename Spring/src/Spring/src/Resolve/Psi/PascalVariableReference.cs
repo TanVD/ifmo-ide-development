@@ -1,6 +1,7 @@
 using System;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Plugins.Spring.Parser.Psi;
+using JetBrains.ReSharper.Plugins.Spring.Resolve.Psi;
 using JetBrains.ReSharper.Plugins.Spring.Utils;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Resolve;

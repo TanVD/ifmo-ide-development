@@ -6,6 +6,7 @@ using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.I18n.Services.Daemon;
 using JetBrains.ReSharper.Plugins.Spring.Parser.Psi;
 using JetBrains.ReSharper.Plugins.Spring.Reference;
+using JetBrains.ReSharper.Plugins.Spring.Resolve;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Files;
 using JetBrains.ReSharper.Psi.Resolve;
@@ -49,6 +50,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Highlighting
                         highlightings.Add(new HighlightingInfo(range, new CSharpSyntaxError(error.ErrorDescription, range)));
                     }
                 }
+
                 //Resolution check
                 foreach (var treeNode in _file.Descendants())
                 {
@@ -57,9 +59,9 @@ namespace JetBrains.ReSharper.Plugins.Spring.Highlighting
                     {
                         var range = references.First().GetDocumentRange();
                         highlightings.Add(new HighlightingInfo(range, new CSharpSyntaxError("Symbol cannot be resolved", range)));
-                        
                     }
                 }
+
                 committer(new DaemonStageResult(highlightings));
             }
 

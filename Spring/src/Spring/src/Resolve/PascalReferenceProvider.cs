@@ -3,13 +3,12 @@ using JetBrains.DataFlow;
 using JetBrains.Lifetimes;
 using JetBrains.ReSharper.Plugins.Spring.Parser.Psi;
 using JetBrains.ReSharper.Plugins.Spring.Reference.Psi;
-using JetBrains.ReSharper.Plugins.Spring.Utils;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Caches;
 using JetBrains.ReSharper.Psi.Resolve;
 using JetBrains.ReSharper.Psi.Tree;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Reference
+namespace JetBrains.ReSharper.Plugins.Spring.Resolve
 {
     [ReferenceProviderFactory]
     public class PascalReferenceProvider : IReferenceProviderFactory
