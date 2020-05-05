@@ -20,11 +20,11 @@ namespace JetBrains.ReSharper.Plugins.Spring.Reference.Psi
 
         public override ResolveResultWithInfo ResolveWithoutCache()
         {
-            Logger.Log("Requested resolve without a cache!");
+            PLogger.Info("Requested resolve without a cache!");
             var file = _owner.GetContainingFile();
             if (file == null)
             {
-                Logger.Log($"Did not find file for {_owner}");
+                PLogger.Info($"Did not find file for {_owner}");
                 return ResolveResultWithInfo.Unresolved;
             }
 
@@ -32,7 +32,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Reference.Psi
             {
                 if (descendant is PascalVariableDeclaration declaration)
                 {
-                    Logger.Log($"FOUND DECLARATION {descendant}. DECLARATION NAME {declaration.DeclaredName}, REFERENCE NAME {GetName()}");
+                    PLogger.Info($"FOUND DECLARATION {descendant}. DECLARATION NAME {declaration.DeclaredName}, REFERENCE NAME {GetName()}");
                     if (declaration.DeclaredName == GetName())
                     {
                         return new ResolveResultWithInfo(new SimpleResolveResult(declaration.DeclaredElement), ResolveErrorType.OK);
@@ -40,23 +40,20 @@ namespace JetBrains.ReSharper.Plugins.Spring.Reference.Psi
                 }
             }
 
-            Logger.Log("Resolve did not succeed!");
+            PLogger.Info("Resolve did not succeed!");
 
 
             return ResolveResultWithInfo.Unresolved;
         }
 
-        public override string GetName()
-        {
-            return myOwner.GetText().Trim('\r', '\n', '\t', ' ');
-        }
+        public override string GetName() => _owner.Identifier.Name;
 
         public override ISymbolTable GetReferenceSymbolTable(bool useReferenceName)
         {
             throw new NotImplementedException();
         }
 
-        public override TreeTextRange GetTreeTextRange() => _owner.GetTreeTextRange();
+        public override TreeTextRange GetTreeTextRange() => _owner.Identifier.GetTreeTextRange();
 
         public override IReference BindTo(IDeclaredElement element)
         {

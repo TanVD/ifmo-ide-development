@@ -58,7 +58,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser
 
                 var mark = _builder.Mark();
                 var length = offendingSymbol.StopIndex - offendingSymbol.StartIndex + 1;
-                _builder.Done(mark, PascalCompositeNodeTypes.Error, new PascalErrorNodeType.Message(msg, length));
+                _builder.Done(mark, PascalNodeTypes.Error, new PascalErrorNodeType.Message(msg, length));
 
                 _builder.ResetCurrentLexeme(curLexeme, curNonCommentLexeme);
             }

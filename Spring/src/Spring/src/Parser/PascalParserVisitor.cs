@@ -1,3 +1,4 @@
+using Antlr4.Runtime;
 using Antlr4.Runtime.Tree;
 using JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node;
 using JetBrains.ReSharper.Plugins.Spring.Utils;
@@ -15,38 +16,33 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser
             _psiBuilder = psiBuilder;
         }
 
-        public override PsiBuilder VisitBlock(GPascalParser.BlockContext context)
-        {
-            VisitType(context, PascalCompositeNodeTypes.Block);
-
-            return _psiBuilder;
-        }
-
         public override PsiBuilder VisitVariableDeclaration(GPascalParser.VariableDeclarationContext context)
         {
-            VisitType(context, PascalCompositeNodeTypes.VariableDeclaration);
+            VisitType(context, PascalNodeTypes.VariableDeclaration);
 
             return _psiBuilder;
         }
 
         public override PsiBuilder VisitVariable(GPascalParser.VariableContext context)
         {
-            VisitType(context, PascalCompositeNodeTypes.Variable);
+            VisitType(context, PascalNodeTypes.Variable);
 
             return _psiBuilder;
         }
 
         public override PsiBuilder VisitIdentifier(GPascalParser.IdentifierContext context)
         {
+            VisitType(context, PascalNodeTypes.Identifier);
+
             return base.VisitIdentifier(context);
         }
 
-        private void VisitType(IRuleNode context, PascalCompositeNodeType type)
+        private void VisitType(RuleContext context, PascalAntlrNodeType type)
         {
-            Logger.Log($"Got in {type}");
+            PLogger.Info($"Got in {type}");
             var mark = _psiBuilder.Mark();
             base.VisitChildren(context);
-            _psiBuilder.Done(mark, type, null);
+            _psiBuilder.Done(mark, type, context);
         }
 
         public override PsiBuilder VisitChildren(IRuleNode node)
@@ -63,12 +59,13 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser
                 var toLoop = node.Symbol.TokenIndex - (_prev?.Symbol.TokenIndex ?? -1) - 1;
                 while (toLoop > 0)
                 {
-                    _psiBuilder.AdvanceLexer();
+                    if (!_psiBuilder.Eof()) _psiBuilder.AdvanceLexer();
                     toLoop--;
                 }
             }
 
-            _psiBuilder.AdvanceLexer();
+            if (!_psiBuilder.Eof()) _psiBuilder.AdvanceLexer();
+
             _prev = node;
 
             return _psiBuilder;

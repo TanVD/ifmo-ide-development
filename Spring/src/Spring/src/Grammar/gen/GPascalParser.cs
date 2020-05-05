@@ -3028,8 +3028,8 @@ public partial class GPascalParser : Parser {
 	}
 
 	public partial class VariableDeclarationContext : ParserRuleContext {
-		public IdentifierListContext identifierList() {
-			return GetRuleContext<IdentifierListContext>(0);
+		public IdentifierContext identifier() {
+			return GetRuleContext<IdentifierContext>(0);
 		}
 		public ITerminalNode COLON() { return GetToken(GPascalParser.COLON, 0); }
 		public TypeContext type() {
@@ -3062,7 +3062,7 @@ public partial class GPascalParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 478; identifierList();
+			State = 478; identifier();
 			State = 479; Match(COLON);
 			State = 480; type();
 			}
@@ -6840,11 +6840,11 @@ public partial class GPascalParser : Parser {
 		'\x1DD', '\b', '.', '\x1', '\x2', '\x1DD', '\x1DF', '\x3', '\x2', '\x2', 
 		'\x2', '\x1DE', '\x1C8', '\x3', '\x2', '\x2', '\x2', '\x1DE', '\x1D3', 
 		'\x3', '\x2', '\x2', '\x2', '\x1DF', '[', '\x3', '\x2', '\x2', '\x2', 
-		'\x1E0', '\x1E1', '\x5', 'j', '\x36', '\x2', '\x1E1', '\x1E2', '\a', '\x32', 
-		'\x2', '\x2', '\x1E2', '\x1E3', '\x5', ',', '\x17', '\x2', '\x1E3', ']', 
-		'\x3', '\x2', '\x2', '\x2', '\x1E4', '\x1E5', '\x5', '`', '\x31', '\x2', 
-		'\x1E5', '\x1E6', '\a', '\x31', '\x2', '\x2', '\x1E6', '_', '\x3', '\x2', 
-		'\x2', '\x2', '\x1E7', '\x1EA', '\x5', '\x62', '\x32', '\x2', '\x1E8', 
+		'\x1E0', '\x1E1', '\x5', '\x6', '\x4', '\x2', '\x1E1', '\x1E2', '\a', 
+		'\x32', '\x2', '\x2', '\x1E2', '\x1E3', '\x5', ',', '\x17', '\x2', '\x1E3', 
+		']', '\x3', '\x2', '\x2', '\x2', '\x1E4', '\x1E5', '\x5', '`', '\x31', 
+		'\x2', '\x1E5', '\x1E6', '\a', '\x31', '\x2', '\x2', '\x1E6', '_', '\x3', 
+		'\x2', '\x2', '\x2', '\x1E7', '\x1EA', '\x5', '\x62', '\x32', '\x2', '\x1E8', 
 		'\x1EA', '\x5', 'n', '\x38', '\x2', '\x1E9', '\x1E7', '\x3', '\x2', '\x2', 
 		'\x2', '\x1E9', '\x1E8', '\x3', '\x2', '\x2', '\x2', '\x1EA', '\x61', 
 		'\x3', '\x2', '\x2', '\x2', '\x1EB', '\x1EC', '\a', '\x1E', '\x2', '\x2', 

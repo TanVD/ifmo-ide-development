@@ -13,7 +13,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser.Psi
             Length = length;
         }
 
-        public override NodeType NodeType => PascalCompositeNodeTypes.Error;
+        public override NodeType NodeType => PascalNodeTypes.Error;
         public override PsiLanguageType Language => SpringLanguage.Instance;
         public string ErrorDescription { get; }
         public int Length { get; }

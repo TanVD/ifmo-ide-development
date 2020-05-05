@@ -239,9 +239,13 @@ variableDeclarationPart
    | VAR variableDeclaration (SEMI variableDeclaration)* { NotifyErrorListeners(TokenStream.LT(-1), "Semicolon is missing", null); }
    ;
 
+//SUPPORT ONLY ONE VARIABLE PER DECLARATION
+//variableDeclaration
+//   : identifierList COLON type
+//   ;
 variableDeclaration
-   : identifierList COLON type
-   ;
+    : identifier COLON type
+    ;
 
 procedureAndFunctionDeclarationPart
    : procedureOrFunctionDeclaration SEMI

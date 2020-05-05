@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Xml;
 using JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node;
 using JetBrains.ReSharper.Plugins.Spring.Reference.Psi;
@@ -7,9 +8,13 @@ using JetBrains.ReSharper.Psi.Tree;
 
 namespace JetBrains.ReSharper.Plugins.Spring.Parser.Psi
 {
-    public class PascalVariableDeclaration : CompositeElement, IDeclaration
+    public class PascalVariableDeclaration : PascalAntlrCompositeElement<GPascalParser.VariableDeclarationContext>, IDeclaration
     {
-        public override NodeType NodeType => PascalCompositeNodeTypes.VariableDeclaration;
+        public PascalVariableDeclaration(GPascalParser.VariableDeclarationContext context): base(context)
+        {
+        }
+        
+        public override NodeType NodeType => PascalNodeTypes.VariableDeclaration;
         public override PsiLanguageType Language => SpringLanguage.Instance;
         public XmlNode GetXMLDoc(bool inherit) => null;
 
@@ -17,19 +22,11 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser.Psi
         {
         }
 
-        public TreeTextRange GetNameRange() => FirstChild.GetTreeTextRange();
+        public TreeTextRange GetNameRange() => this.Children().First(it => it is PascalIdentifier).GetTreeTextRange();
         public bool IsSynthetic() => false;
 
         public IDeclaredElement DeclaredElement => new PascalVariableDeclared(this);
 
-        public string DeclaredName
-        {
-            get
-            {
-                var text = GetText();
-                var splitted = text.Split(':');
-                return splitted[0].Trim('\r', '\n', '\t', ' ');
-            }
-        }
+        public string DeclaredName => Context.identifier().GetText();
     }
 }
