@@ -30,7 +30,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node
             {
                 return new PascalIdentifier((GPascalParser.IdentifierContext) message);
             }
-            
+
             Assertion.Fail($"PascalAntlrNodeType with non-defined Create {this}");
             return null;
         }

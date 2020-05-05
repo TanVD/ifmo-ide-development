@@ -37,11 +37,10 @@ namespace JetBrains.ReSharper.Plugins.Spring.Reference.Psi
 
         public bool IsSynthetic() => false;
 
-        //TODO-tanvd would it even work?
-        public HybridCollection<IPsiSourceFile> GetSourceFiles() => HybridCollection<IPsiSourceFile>.Empty;
+        public HybridCollection<IPsiSourceFile> GetSourceFiles() => new HybridCollection<IPsiSourceFile> {_declaration.GetSourceFile()};
 
         //TODO-tanvd fix -- working like there is only one file and it is pascal
-        public bool HasDeclarationsIn(IPsiSourceFile sourceFile) => true;
+        public bool HasDeclarationsIn(IPsiSourceFile sourceFile) => sourceFile == _declaration.GetSourceFile();
 
         public string ShortName => _declaration.DeclaredName;
         public bool CaseSensitiveName => false;

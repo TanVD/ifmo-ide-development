@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Tree;
@@ -10,7 +9,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser.Psi
     {
         public PascalIdentifier Identifier => (PascalIdentifier) this.Children().First(it => it is PascalIdentifier);
 
-        public PascalVariable(GPascalParser.VariableContext context): base(context)
+        public PascalVariable(GPascalParser.VariableContext context) : base(context)
         {
         }
 

@@ -71,7 +71,5 @@ namespace JetBrains.ReSharper.Plugins.Spring.Reference.Psi
         {
             return myOwner.IsValid();
         }
-
-        public PascalVariable Variable => _owner;
     }
 }

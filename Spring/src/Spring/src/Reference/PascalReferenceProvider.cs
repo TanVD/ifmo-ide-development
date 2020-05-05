@@ -1,7 +1,6 @@
 using Antlr4.Runtime.Misc;
 using JetBrains.DataFlow;
 using JetBrains.Lifetimes;
-using JetBrains.ReSharper.Plugins.Spring.Lexer;
 using JetBrains.ReSharper.Plugins.Spring.Parser.Psi;
 using JetBrains.ReSharper.Plugins.Spring.Reference.Psi;
 using JetBrains.ReSharper.Plugins.Spring.Utils;
@@ -39,7 +38,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Reference
         public ReferenceCollection GetReferences(ITreeNode element, ReferenceCollection oldReferences)
         {
             PLogger.Info($"Requested references for {element} with parent {element.Parent}");
- 
+
             if (element is PascalVariable variable)
             {
                 PLogger.Info($"Element was variable!");
