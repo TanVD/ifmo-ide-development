@@ -1,5 +1,4 @@
 using JetBrains.ProjectModel;
-using JetBrains.ReSharper.Plugins.Spring.Lexer;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Impl;
 using JetBrains.ReSharper.Psi.Parsing;

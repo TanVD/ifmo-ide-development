@@ -1,5 +1,4 @@
 using Antlr4.Runtime;
-using JetBrains.ReSharper.Plugins.Spring.Utils;
 using JetBrains.ReSharper.Psi.Parsing;
 using JetBrains.Text;
 

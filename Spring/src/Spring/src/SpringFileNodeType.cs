@@ -1,4 +1,3 @@
-using JetBrains.ReSharper.Plugins.Spring.Lexer;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Tree;
 
 namespace JetBrains.ReSharper.Plugins.Spring

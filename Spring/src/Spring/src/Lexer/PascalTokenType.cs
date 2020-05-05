@@ -1,10 +1,8 @@
-using System.Collections.Generic;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Tree;
 using JetBrains.ReSharper.Psi.Parsing;
 using JetBrains.Text;
 using JetBrains.Util;
-using JetBrains.Util.Collections;
 
 namespace JetBrains.ReSharper.Plugins.Spring.Lexer
 {

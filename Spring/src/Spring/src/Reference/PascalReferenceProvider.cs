@@ -41,12 +41,10 @@ namespace JetBrains.ReSharper.Plugins.Spring.Reference
             Logger.Log($"Requested references for {element}");
             if (element is PascalLeafToken token && token.NodeType == PascalTokenTypes.IDENT && element.Parent is PascalVariable variableIdent)
             {
-                
                 Logger.Log($"Element was ident!");
                 return new ReferenceCollection(new ArrayList<IReference> {new PascalVariableReference(variableIdent)});
-
             }
-            
+
             if (element is PascalVariable variable)
             {
                 Logger.Log($"Element was variable!");

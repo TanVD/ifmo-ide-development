@@ -42,7 +42,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser.Ide
                     if (treeNode is PascalErrorElement error)
                     {
                         var range = error.GetDocumentRange().ExtendRight(error.Length);
-                        highlightings.Add( new HighlightingInfo(range, new CSharpSyntaxError(error.ErrorDescription, range)));
+                        highlightings.Add(new HighlightingInfo(range, new CSharpSyntaxError(error.ErrorDescription, range)));
                     }
                 }
 

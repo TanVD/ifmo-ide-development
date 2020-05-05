@@ -21,6 +21,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser.Psi
         public bool IsSynthetic() => false;
 
         public IDeclaredElement DeclaredElement => new PascalVariableDeclared(this);
+
         public string DeclaredName
         {
             get

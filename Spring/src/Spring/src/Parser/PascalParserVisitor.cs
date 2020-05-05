@@ -1,5 +1,4 @@
 using Antlr4.Runtime.Tree;
-using JetBrains.ReSharper.Plugins.Spring.Parser.Psi;
 using JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node;
 using JetBrains.ReSharper.Plugins.Spring.Utils;
 using JetBrains.ReSharper.Psi.TreeBuilder;

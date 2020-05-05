@@ -2,7 +2,6 @@ using System.IO;
 using Antlr4.Runtime;
 using JetBrains.Lifetimes;
 using JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node;
-using JetBrains.ReSharper.Plugins.Spring.Utils;
 using JetBrains.ReSharper.Psi.Parsing;
 using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.ReSharper.Psi.TreeBuilder;
@@ -30,10 +29,9 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser
                 parser.AddErrorListener(listener);
 
                 var fileMark = builder.Mark();
-
                 new PascalParserVisitor(builder).Visit(parser.program());
-
                 builder.Done(fileMark, SpringFileNodeType.Instance, null);
+
                 var file = (IFile) builder.BuildTree();
                 return file;
             }

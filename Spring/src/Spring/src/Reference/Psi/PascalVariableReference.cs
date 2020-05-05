@@ -9,10 +9,10 @@ using JetBrains.ReSharper.Psi.Tree;
 
 namespace JetBrains.ReSharper.Plugins.Spring.Reference.Psi
 {
-    public class PascalVariableReference: TreeReferenceBase<PascalVariable>
+    public class PascalVariableReference : TreeReferenceBase<PascalVariable>
     {
         private readonly PascalVariable _owner;
-        
+
         public PascalVariableReference([NotNull] PascalVariable owner) : base(owner)
         {
             _owner = owner;
@@ -27,7 +27,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Reference.Psi
                 Logger.Log($"Did not find file for {_owner}");
                 return ResolveResultWithInfo.Unresolved;
             }
-            
+
             foreach (var descendant in file.Descendants())
             {
                 if (descendant is PascalVariableDeclaration declaration)
@@ -39,9 +39,10 @@ namespace JetBrains.ReSharper.Plugins.Spring.Reference.Psi
                     }
                 }
             }
+
             Logger.Log("Resolve did not succeed!");
 
-            
+
             return ResolveResultWithInfo.Unresolved;
         }
 

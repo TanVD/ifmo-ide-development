@@ -1,7 +1,6 @@
 using JetBrains.Diagnostics;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Tree;
 using JetBrains.ReSharper.Psi.TreeBuilder;
-using Xunit;
 
 namespace JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node
 {
