@@ -4,9 +4,8 @@ using JetBrains.Application.Settings;
 using JetBrains.ReSharper.Daemon.CSharp.Errors;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.I18n.Services.Daemon;
-using JetBrains.ReSharper.Plugins.Spring.Utils;
+using JetBrains.ReSharper.Plugins.Spring.Parser.Psi;
 using JetBrains.ReSharper.Psi;
-using JetBrains.ReSharper.Psi.ExtensionsAPI.Tree;
 using JetBrains.ReSharper.Psi.Files;
 using JetBrains.ReSharper.Psi.Tree;
 
@@ -40,16 +39,10 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser.Ide
                 var highlightings = new List<HighlightingInfo>();
                 foreach (var treeNode in _file.Descendants())
                 {
-                    Logger.Log($"IN HIGHLIGHTING GOT {treeNode.NodeType}");
-                    if (treeNode is PsiBuilderErrorElement error)
+                    if (treeNode is PascalErrorElement error)
                     {
-                        var splits = error.ErrorDescription.Split('#');
-                        
-                        var message = splits[0];
-                        var length = int.Parse(splits[1]);
-                        
-                        var range = error.GetDocumentRange().ExtendRight(length);
-                        highlightings.Add( new HighlightingInfo(range, new CSharpSyntaxError(message, range)));
+                        var range = error.GetDocumentRange().ExtendRight(error.Length);
+                        highlightings.Add( new HighlightingInfo(range, new CSharpSyntaxError(error.ErrorDescription, range)));
                     }
                 }
 

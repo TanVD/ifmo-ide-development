@@ -1,6 +1,7 @@
 using System.IO;
 using Antlr4.Runtime;
 using JetBrains.Lifetimes;
+using JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node;
 using JetBrains.ReSharper.Plugins.Spring.Utils;
 using JetBrains.ReSharper.Psi.Parsing;
 using JetBrains.ReSharper.Psi.Tree;
@@ -54,14 +55,12 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser
             {
                 var curLexeme = _builder.GetCurrentLexeme();
                 var curNonCommentLexeme = _builder.GetCurrentNonCommentLexeme();
-                
-                Logger.Log($"OFFENDING SYMBOL: {offendingSymbol.StartIndex} {offendingSymbol.StopIndex}");
 
                 _builder.ResetCurrentLexeme(offendingSymbol.TokenIndex, offendingSymbol.TokenIndex);
+
                 var mark = _builder.Mark();
-                
-                //TODO-tanvd need better solution to forward length 
-                _builder.Error(mark, msg + $"#{offendingSymbol.StopIndex - offendingSymbol.StartIndex + 1}");
+                var length = offendingSymbol.StopIndex - offendingSymbol.StartIndex + 1;
+                _builder.Done(mark, PascalCompositeNodeTypes.Error, new PascalErrorNodeType.Message(msg, length));
 
                 _builder.ResetCurrentLexeme(curLexeme, curNonCommentLexeme);
             }

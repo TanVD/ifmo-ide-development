@@ -8,5 +8,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node
         public static readonly PascalCompositeNodeType Variable = new PascalCompositeNodeType("PASCAL_VARIABLE", 2);
 
         public static readonly PascalCompositeNodeType Block = new PascalCompositeNodeType("PASCAL_BLOCK", 3);
+        
+        public static readonly PascalErrorNodeType Error = new PascalErrorNodeType("PASCAL_ERROR", 4);
     }
 }
