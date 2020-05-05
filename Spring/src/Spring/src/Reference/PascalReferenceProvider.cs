@@ -23,7 +23,6 @@ namespace JetBrains.ReSharper.Plugins.Spring.Reference
         {
             if (sourceFile.LanguageType.Name == ((PsiLanguageType) SpringLanguage.Instance).Name)
             {
-                PLogger.Info($"Got factory for pascal references");
                 return new PascalReferenceFactory();
             }
 
@@ -37,11 +36,8 @@ namespace JetBrains.ReSharper.Plugins.Spring.Reference
     {
         public ReferenceCollection GetReferences(ITreeNode element, ReferenceCollection oldReferences)
         {
-            PLogger.Info($"Requested references for {element} with parent {element.Parent}");
-
             if (element is PascalVariable variable)
             {
-                PLogger.Info($"Element was variable!");
                 return new ReferenceCollection(new ArrayList<IReference> {new PascalVariableReference(variable)});
             }
 

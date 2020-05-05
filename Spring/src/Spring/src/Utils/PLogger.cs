@@ -12,5 +12,10 @@ namespace JetBrains.ReSharper.Plugins.Spring.Utils
         {
             Log.Info(text);
         }
+
+        public static void StackTrace()
+        {
+            Log.Info(new System.Diagnostics.StackTrace().ToString());
+        }
     }
 }

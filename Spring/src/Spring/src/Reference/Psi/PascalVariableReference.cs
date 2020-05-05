@@ -20,11 +20,9 @@ namespace JetBrains.ReSharper.Plugins.Spring.Reference.Psi
 
         public override ResolveResultWithInfo ResolveWithoutCache()
         {
-            PLogger.Info("Requested resolve without a cache!");
             var file = _owner.GetContainingFile();
             if (file == null)
             {
-                PLogger.Info($"Did not find file for {_owner}");
                 return ResolveResultWithInfo.Unresolved;
             }
 
@@ -32,7 +30,6 @@ namespace JetBrains.ReSharper.Plugins.Spring.Reference.Psi
             {
                 if (descendant is PascalVariableDeclaration declaration)
                 {
-                    PLogger.Info($"FOUND DECLARATION {descendant}. DECLARATION NAME {declaration.DeclaredName}, REFERENCE NAME {GetName()}");
                     if (declaration.DeclaredName == GetName())
                     {
                         return new ResolveResultWithInfo(new SimpleResolveResult(declaration.DeclaredElement), ResolveErrorType.OK);
@@ -55,7 +52,6 @@ namespace JetBrains.ReSharper.Plugins.Spring.Reference.Psi
 
         public override TreeTextRange GetTreeTextRange()
         {
-            PLogger.Info($"Requested reference range and it was {_owner.Identifier.IdentifierRange}, text was '{_owner.Identifier.GetText()}' and context '{_owner.Identifier.Context}'");
             return _owner.Identifier.IdentifierRange;
         }
 
