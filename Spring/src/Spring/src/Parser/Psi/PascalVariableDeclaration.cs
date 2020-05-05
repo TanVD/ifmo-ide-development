@@ -14,6 +14,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser.Psi
 
         public PascalVariableDeclaration(GPascalParser.VariableDeclarationContext context) : base(context)
         {
+            DeclaredElement = new PascalVariableDeclared(this);
         }
 
         public override NodeType NodeType => PascalNodeTypes.VariableDeclaration;
@@ -23,10 +24,10 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser.Psi
         {
         }
 
-        public TreeTextRange GetNameRange() => Identifier.GetTreeTextRange();
+        public TreeTextRange GetNameRange() => Identifier.IdentifierRange;
         public bool IsSynthetic() => false;
 
-        public IDeclaredElement DeclaredElement => new PascalVariableDeclared(this);
+        public IDeclaredElement DeclaredElement { get; }
 
         public string DeclaredName => Identifier.Name;
     }

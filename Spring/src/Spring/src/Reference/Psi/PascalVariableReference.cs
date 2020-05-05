@@ -53,7 +53,11 @@ namespace JetBrains.ReSharper.Plugins.Spring.Reference.Psi
             throw new NotImplementedException();
         }
 
-        public override TreeTextRange GetTreeTextRange() => _owner.Identifier.GetTreeTextRange();
+        public override TreeTextRange GetTreeTextRange()
+        {
+            PLogger.Info($"Requested reference range and it was {_owner.Identifier.IdentifierRange}, text was '{_owner.Identifier.GetText()}' and context '{_owner.Identifier.Context}'");
+            return _owner.Identifier.IdentifierRange;
+        }
 
         public override IReference BindTo(IDeclaredElement element)
         {

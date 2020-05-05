@@ -1,5 +1,6 @@
 using Antlr4.Runtime;
 using Antlr4.Runtime.Tree;
+using JetBrains.ReSharper.Plugins.Spring.Lexer;
 using JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node;
 using JetBrains.ReSharper.Plugins.Spring.Utils;
 using JetBrains.ReSharper.Psi.TreeBuilder;
@@ -10,6 +11,9 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser
     {
         private readonly PsiBuilder _psiBuilder;
         private ITerminalNode _prev;
+
+        private bool _withLogging = false;
+        private string _tabs = "";
 
         public PascalParserVisitor(PsiBuilder psiBuilder)
         {
@@ -34,25 +38,37 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser
         {
             VisitType(context, PascalNodeTypes.Identifier);
 
-            return base.VisitIdentifier(context);
+            return _psiBuilder;
         }
 
         private void VisitType(RuleContext context, PascalAntlrNodeType type)
         {
-            PLogger.Info($"Got in {type}");
+            if (_withLogging)
+            {
+                _tabs = _tabs + "\t";
+                PLogger.Info($"{_tabs}{type}");
+            }
+
             var mark = _psiBuilder.Mark();
             base.VisitChildren(context);
             _psiBuilder.Done(mark, type, context);
-        }
 
-        public override PsiBuilder VisitChildren(IRuleNode node)
-        {
-            base.VisitChildren(node);
-            return _psiBuilder;
+            if (_withLogging)
+            {
+                PLogger.Info($"{_tabs}{type}");
+                _tabs = _tabs.Substring(0, _tabs.Length - 1);
+            }
         }
 
         public override PsiBuilder VisitTerminal(ITerminalNode node)
         {
+            if (_withLogging)
+            {
+                _tabs = _tabs + "\t";
+                PLogger.Info($"{_tabs}{PascalTokenTypes.Convert(node.Symbol.Type)}");
+                _tabs = _tabs.Substring(0, _tabs.Length - 1);
+            }
+
             //Restore whitespaces that ANTLR does not produce
             if (node.Symbol.TokenIndex != -1)
             {
