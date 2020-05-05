@@ -1,90 +1,35 @@
-using Antlr4.Runtime;
-using Antlr4.Runtime.Tree;
-using JetBrains.ReSharper.Plugins.Spring.Lexer;
+using JetBrains.ReSharper.Plugins.Spring.Parser.Gen;
 using JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node;
-using JetBrains.ReSharper.Plugins.Spring.Utils;
 using JetBrains.ReSharper.Psi.TreeBuilder;
 
 namespace JetBrains.ReSharper.Plugins.Spring.Parser
 {
-    public class PascalParserVisitor : GPascalBaseVisitor<PsiBuilder>
+    public class PascalParserVisitor : PascalGenParserVisitor
     {
-        private readonly PsiBuilder _psiBuilder;
-        private ITerminalNode _prev;
-
-        private bool _withLogging = false;
-        private string _tabs = "";
-
-        public PascalParserVisitor(PsiBuilder psiBuilder)
+        public PascalParserVisitor(PsiBuilder psiBuilder) : base(psiBuilder)
         {
-            _psiBuilder = psiBuilder;
         }
 
-        public override PsiBuilder VisitVariableDeclaration(GPascalParser.VariableDeclarationContext context)
+        public override object VisitVariableDeclaration(GPascalParser.VariableDeclarationContext context)
         {
             VisitType(context, PascalNodeTypes.VariableDeclaration);
 
-            return _psiBuilder;
+            return null;
         }
 
-        public override PsiBuilder VisitVariable(GPascalParser.VariableContext context)
+        public override object VisitVariable(GPascalParser.VariableContext context)
         {
             VisitType(context, PascalNodeTypes.Variable);
 
-            return _psiBuilder;
+            return null;
         }
 
-        public override PsiBuilder VisitIdentifier(GPascalParser.IdentifierContext context)
+        public override object VisitIdentifier(GPascalParser.IdentifierContext context)
         {
             VisitType(context, PascalNodeTypes.Identifier);
 
-            return _psiBuilder;
+            return null;
         }
-
-        private void VisitType(RuleContext context, PascalAntlrNodeType type)
-        {
-            if (_withLogging)
-            {
-                _tabs = _tabs + "\t";
-                PLogger.Info($"{_tabs}{type}");
-            }
-
-            var mark = _psiBuilder.Mark();
-            base.VisitChildren(context);
-            _psiBuilder.Done(mark, type, context);
-
-            if (_withLogging)
-            {
-                PLogger.Info($"{_tabs}{type}");
-                _tabs = _tabs.Substring(0, _tabs.Length - 1);
-            }
-        }
-
-        public override PsiBuilder VisitTerminal(ITerminalNode node)
-        {
-            if (_withLogging)
-            {
-                _tabs = _tabs + "\t";
-                PLogger.Info($"{_tabs}{PascalTokenTypes.Convert(node.Symbol.Type)}");
-                _tabs = _tabs.Substring(0, _tabs.Length - 1);
-            }
-
-            //Restore whitespaces that ANTLR does not produce
-            if (node.Symbol.TokenIndex != -1)
-            {
-                var toLoop = node.Symbol.TokenIndex - (_prev?.Symbol.TokenIndex ?? -1) - 1;
-                while (toLoop > 0)
-                {
-                    if (!_psiBuilder.Eof()) _psiBuilder.AdvanceLexer();
-                    toLoop--;
-                }
-            }
-
-            if (!_psiBuilder.Eof()) _psiBuilder.AdvanceLexer();
-
-            _prev = node;
-
-            return _psiBuilder;
-        }
+        
     }
 }

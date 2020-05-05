@@ -16,23 +16,6 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node
             return null;
         }
 
-        public override CompositeElement Create(object message)
-        {
-            if (this == PascalNodeTypes.Variable)
-            {
-                return new PascalVariable((GPascalParser.VariableContext) message);
-            }
-            else if (this == PascalNodeTypes.VariableDeclaration)
-            {
-                return new PascalVariableDeclaration((GPascalParser.VariableDeclarationContext) message);
-            }
-            else if (this == PascalNodeTypes.Identifier)
-            {
-                return new PascalIdentifier((GPascalParser.IdentifierContext) message);
-            }
-
-            Assertion.Fail($"PascalAntlrNodeType with non-defined Create {this}");
-            return null;
-        }
+        public override CompositeElement Create(object obj) => PascalAntlrNodeTypesFactoryGen.Create(this, obj);
     }
 }
