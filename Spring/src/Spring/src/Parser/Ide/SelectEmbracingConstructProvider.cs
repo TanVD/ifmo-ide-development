@@ -5,7 +5,7 @@ using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Files;
 using JetBrains.ReSharper.Psi.Tree;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Parser
+namespace JetBrains.ReSharper.Plugins.Spring.Parser.Ide
 {
     [ProjectFileType(typeof(SpringProjectFileType))]
     public class SelectEmbracingConstructProvider : ISelectEmbracingConstructProvider

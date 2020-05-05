@@ -1,5 +1,6 @@
 using Antlr4.Runtime.Tree;
 using JetBrains.ReSharper.Plugins.Spring.Parser.Psi;
+using JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node;
 using JetBrains.ReSharper.Plugins.Spring.Utils;
 using JetBrains.ReSharper.Psi.TreeBuilder;
 
@@ -34,6 +35,11 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser
             VisitType(context, PascalCompositeNodeTypes.Variable);
 
             return _psiBuilder;
+        }
+
+        public override PsiBuilder VisitIdentifier(GPascalParser.IdentifierContext context)
+        {
+            return base.VisitIdentifier(context);
         }
 
         private void VisitType(IRuleNode context, PascalCompositeNodeType type)

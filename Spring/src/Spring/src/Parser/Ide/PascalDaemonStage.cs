@@ -4,15 +4,13 @@ using JetBrains.Application.Settings;
 using JetBrains.ReSharper.Daemon.CSharp.Errors;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.I18n.Services.Daemon;
-using JetBrains.ReSharper.Plugins.Spring.Lexer;
 using JetBrains.ReSharper.Plugins.Spring.Utils;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Tree;
 using JetBrains.ReSharper.Psi.Files;
 using JetBrains.ReSharper.Psi.Tree;
-using JetBrains.Util;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Parser
+namespace JetBrains.ReSharper.Plugins.Spring.Parser.Ide
 {
     [DaemonStage]
     class PascalDaemonStage : DaemonStageBase<SpringFile>

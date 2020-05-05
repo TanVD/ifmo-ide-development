@@ -1,6 +1,6 @@
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Tree;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Parser.Psi
+namespace JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node
 {
     public class PascalCompositeNodeType : CompositeNodeType
     {

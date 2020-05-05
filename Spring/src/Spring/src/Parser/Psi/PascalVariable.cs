@@ -1,3 +1,4 @@
+using JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Tree;
 
