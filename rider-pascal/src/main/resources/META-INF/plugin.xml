@@ -9,7 +9,7 @@
 
   <depends>com.intellij.modules.rider</depends>
   <extensions defaultExtensionNs="com.intellij">
-    <fileType name="Pascal" language="Pascal" extensions="pascal" implementationClass="com.jetbrains.rider.ideaInterop.fileTypes.pascal.PascalFileType" />
+    <fileType name="Pascal" language="Pascal" extensions="pas" implementationClass="com.jetbrains.rider.ideaInterop.fileTypes.pascal.PascalFileType" />
     <lang.ast.factory language="Pascal" implementationClass="com.jetbrains.rider.ideaInterop.fileTypes.pascal.PascalAstFactory" />
     <lang.parserDefinition language="Pascal" implementationClass="com.jetbrains.rider.ideaInterop.fileTypes.pascal.PascalParserDefinition" />
 
