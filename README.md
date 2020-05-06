@@ -6,7 +6,7 @@ It performs:
 * Find usages for variables
 * Autocompletion of variables in code
 
-![Pascal Plugin GIF](https://gph.is/g/4oR9N8m)
+![Pascal GIF](https://s3-eu-west-1.amazonaws.com/public-resources.ml-labs.aws.intellij.net/static/tanvd/pascal_plugin.gif)
 
 ### Requirements
 
