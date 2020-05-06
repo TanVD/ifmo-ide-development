@@ -1,19 +1,19 @@
 using System.Collections.Generic;
 using System.Xml;
 using Antlr4.Runtime.Misc;
-using ICSharpCode.NRefactory;
 using JetBrains.ReSharper.Plugins.Pascal.Parser.Psi;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Tree;
+using JetBrains.Util;
 using JetBrains.Util.DataStructures;
 
 namespace JetBrains.ReSharper.Plugins.Pascal.Resolve.Psi
 {
-    public class PascalVariableDeclared : IDeclaredElement
+    public class PascalParameterDeclared: IDeclaredElement
     {
-        private readonly PascalVariableDeclaration _declaration;
+        private readonly PascalParameterDeclaration _declaration;
 
-        public PascalVariableDeclared(PascalVariableDeclaration declaration)
+        public PascalParameterDeclared(PascalParameterDeclaration declaration)
         {
             _declaration = declaration;
         }

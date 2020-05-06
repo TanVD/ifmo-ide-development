@@ -33,7 +33,7 @@ namespace JetBrains.ReSharper.Plugins.Pascal.CodeCompletion.Providers
             var node = context.UnterminatedContext.TreeNode;
             if (node == null ||  !ShouldBeConsidered(node)) return false;
 
-            var declared = PascalPsiUtil.FindDeclarations(node).ToList();
+            var declared = PascalPsiUtil.FindAllAccessibleDeclared(node).ToList();
 
             if (declared.IsEmpty()) return false;
             

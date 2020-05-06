@@ -3402,8 +3402,8 @@ public partial class GPascalParser : Parser {
 	}
 
 	public partial class ParameterGroupContext : ParserRuleContext {
-		public IdentifierListContext identifierList() {
-			return GetRuleContext<IdentifierListContext>(0);
+		public IdentifierContext identifier() {
+			return GetRuleContext<IdentifierContext>(0);
 		}
 		public ITerminalNode COLON() { return GetToken(GPascalParser.COLON, 0); }
 		public TypeIdentifierContext typeIdentifier() {
@@ -3436,7 +3436,7 @@ public partial class GPascalParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 517; identifierList();
+			State = 517; identifier();
 			State = 518; Match(COLON);
 			State = 519; typeIdentifier();
 			}
@@ -6868,7 +6868,7 @@ public partial class GPascalParser : Parser {
 		'\x3', '\x2', '\x2', '\x2', '\x205', '\x1FF', '\x3', '\x2', '\x2', '\x2', 
 		'\x205', '\x201', '\x3', '\x2', '\x2', '\x2', '\x205', '\x203', '\x3', 
 		'\x2', '\x2', '\x2', '\x206', 'g', '\x3', '\x2', '\x2', '\x2', '\x207', 
-		'\x208', '\x5', 'j', '\x36', '\x2', '\x208', '\x209', '\a', '\x32', '\x2', 
+		'\x208', '\x5', '\x6', '\x4', '\x2', '\x208', '\x209', '\a', '\x32', '\x2', 
 		'\x2', '\x209', '\x20A', '\x5', '\x34', '\x1B', '\x2', '\x20A', 'i', '\x3', 
 		'\x2', '\x2', '\x2', '\x20B', '\x210', '\x5', '\x6', '\x4', '\x2', '\x20C', 
 		'\x20D', '\a', '\x30', '\x2', '\x2', '\x20D', '\x20F', '\x5', '\x6', '\x4', 

@@ -1,17 +1,15 @@
-using System.Collections.Generic;
+using System;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Plugins.Pascal.Parser.Psi;
 using JetBrains.ReSharper.Plugins.Pascal.Resolve.Util;
-using JetBrains.ReSharper.Plugins.Pascal.Utils;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Resolve;
-using JetBrains.ReSharper.Psi.Impl.Resolve;
 using JetBrains.ReSharper.Psi.Resolve;
 using JetBrains.ReSharper.Psi.Tree;
 
 namespace JetBrains.ReSharper.Plugins.Pascal.Resolve.Psi
 {
-    public class PascalVariableReference : TreeReferenceBase<PascalVariable>, ICompletableReference
+    public class PascalVariableReference : TreeReferenceBase<PascalVariable>
     {
         private readonly PascalVariable _owner;
 
@@ -25,13 +23,9 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Resolve.Psi
             var file = _owner.GetContainingFile();
             if (file == null) return ResolveResultWithInfo.Unresolved;
 
-            var block = PascalPsiUtil.FindBlock(_owner);
-            if (block == null) return ResolveResultWithInfo.Unresolved;
-
-
-            foreach (var descendant in block.Descendants())
+            foreach (var descendant in PascalPsiUtil.FindAllAccessibleDeclarations(_owner))
             {
-                if (descendant is PascalVariableDeclaration declaration && declaration.DeclaredName == GetName())
+                if (descendant is IDeclaration declaration && declaration.DeclaredName == GetName())
                 {
                     return new ResolveResultWithInfo(new SimpleResolveResult(declaration.DeclaredElement), ResolveErrorType.OK);
                 }
@@ -44,29 +38,7 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Resolve.Psi
 
         public override ISymbolTable GetReferenceSymbolTable(bool useReferenceName)
         {
-            var file = _owner.GetContainingFile();
-            if (file == null)
-            {
-                return EmptySymbolTable.INSTANCE;
-            }
-
-
-            var elements = new HashSet<PascalVariableDeclared>();
-            foreach (var descendant in file.Descendants())
-            {
-                if (descendant is PascalVariableDeclaration declaration)
-                {
-                    if (!useReferenceName || declaration.DeclaredName == GetName())
-                    {
-                        PLogger.Info($"Adding to table {declaration}");
-                        elements.Add((PascalVariableDeclared) declaration.DeclaredElement);
-                    }
-                }
-            }
-
-            var table = new DeclaredElementsSymbolTable<PascalVariableDeclared>(_owner.GetPsiServices(), elements);
-
-            return table;
+            throw new NotImplementedException();
         }
 
         public override TreeTextRange GetTreeTextRange()
@@ -74,13 +46,9 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Resolve.Psi
             return _owner.Identifier.IdentifierRange;
         }
 
-        public override IReference BindTo(IDeclaredElement element)
-        {
-            ((PascalVariableDeclared) element).References.Add(this);
-            return this;
-        }
+        public override IReference BindTo(IDeclaredElement element) => this;
 
-        public override IReference BindTo(IDeclaredElement element, ISubstitution substitution) => BindTo(element);
+        public override IReference BindTo(IDeclaredElement element, ISubstitution substitution) => this;
 
         public override IAccessContext GetAccessContext() => new DefaultAccessContext(_owner);
 
@@ -89,11 +57,5 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Resolve.Psi
             return myOwner.IsValid();
         }
 
-        //TODO-tanvd For some reason does not work
-        public ISymbolTable GetCompletionSymbolTable()
-        {
-            PLogger.Info("Requested completion symbol table");
-            return GetReferenceSymbolTable(false);
-        }
     }
 }

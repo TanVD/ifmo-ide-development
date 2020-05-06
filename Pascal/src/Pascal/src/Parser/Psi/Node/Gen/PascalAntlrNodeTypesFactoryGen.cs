@@ -225,7 +225,7 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Parser.Psi.Node.Gen
 
             if (type == PascalNodeTypes.ParameterGroup)
             {
-                return new PascalParameterGroup((GPascalParser.ParameterGroupContext) data);
+                return new PascalParameterDeclaration((GPascalParser.ParameterGroupContext) data);
             }
 
             if (type == PascalNodeTypes.ParameterList)
