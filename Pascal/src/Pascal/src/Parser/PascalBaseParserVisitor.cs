@@ -7,7 +7,7 @@ using JetBrains.ReSharper.Psi.TreeBuilder;
 
 namespace JetBrains.ReSharper.Plugins.Pascal.Parser
 {
-    public abstract class PascalBaseParserVisitor: GPascalBaseVisitor<object>
+    public abstract class PascalBaseParserVisitor : GPascalBaseVisitor<object>
     {
         private readonly PsiBuilder _psiBuilder;
         private ITerminalNode _prev;
@@ -19,7 +19,7 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Parser
         {
             _psiBuilder = psiBuilder;
         }
-        
+
         protected void VisitType(RuleContext context, PascalAntlrNodeType type)
         {
             if (_withLogging)
@@ -66,6 +66,4 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Parser
             return null;
         }
     }
-    
-    
 }

@@ -11,10 +11,7 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Parser.Psi
     {
         public TreeTextRange IdentifierRange
         {
-            get
-            {
-                return this.Children().TryGetSingleItem(it => it.NodeType == PascalTokenTypes.IDENT)?.GetTreeTextRange() ?? this.GetTreeTextRange();
-            }
+            get { return this.Children().TryGetSingleItem(it => it.NodeType == PascalTokenTypes.IDENT)?.GetTreeTextRange() ?? this.GetTreeTextRange(); }
         }
 
         public string Name => Context.IDENT().GetText();

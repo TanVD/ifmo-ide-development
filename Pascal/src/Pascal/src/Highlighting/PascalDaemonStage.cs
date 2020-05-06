@@ -48,11 +48,11 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Highlighting
                     {
                         var range = error.GetDocumentRange().ExtendRight(error.Length);
                         highlightings.Add(new HighlightingInfo(range, new CSharpSyntaxError(error.ErrorDescription, range)));
-                    } else if (treeNode is PascalLeafToken unknown && unknown.NodeType == PascalTokenTypes.UNKNOWN)
+                    }
+                    else if (treeNode is PascalLeafToken unknown && unknown.NodeType == PascalTokenTypes.UNKNOWN)
                     {
                         var range = unknown.GetDocumentRange();
                         highlightings.Add(new HighlightingInfo(range, new CSharpSyntaxError("Unexpected symbols", range)));
-                        
                     }
                 }
 

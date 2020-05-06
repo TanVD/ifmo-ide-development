@@ -30,7 +30,7 @@ namespace JetBrains.ReSharper.Plugins.Pascal
         {
             return lexer;
         }
-        
+
         public override IParser CreateParser(ILexer lexer, IPsiModule module, IPsiSourceFile sourceFile)
         {
             return new PascalParser(lexer);

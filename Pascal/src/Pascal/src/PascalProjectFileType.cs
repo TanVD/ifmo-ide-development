@@ -29,6 +29,5 @@ namespace JetBrains.ReSharper.Plugins.Pascal
             presentableName, extensions)
         {
         }
-
     }
 }

@@ -118,7 +118,7 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Lexer
         public static PascalTokenType FULL_STOP_FULL_STOP_SYM = new PascalTokenType("..", 64);
         public static PascalTokenType LEFT_CURLY_BRACKET_SYM = new PascalTokenType("{", 65);
         public static PascalTokenType RIGHT_CURLY_BRACKET_SYM = new PascalTokenType("}", 66);
-        
+
         public static PascalTokenType UNKNOWN = new PascalTokenType("UNKNOWN", 81);
 
         public static readonly HashSet<PascalTokenType> Keywords = new HashSet<PascalTokenType>

@@ -25,14 +25,10 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Parser
         {
             using (var def = Lifetime.Define())
             {
-                
                 var builder = new PsiBuilder(new PascalLexer(_lexer.Buffer), PascalNodeTypes.File, new TokenFactory(), def.Lifetime);
-                var listener = new PascalErrorListener(builder);
 
-                var lexer = new GPascalLexer(new AntlrInputStream(new BufferTextReader(_lexer.Buffer)));
-                // var lexer = new GPascalLexer(new AntlrInputStream(_lexer.Buffer.GetText()));
-                var parser = new GPascalParser(new CommonTokenStream(lexer));
-                parser.AddErrorListener(listener);
+                var parser = new GPascalParser(new CommonTokenStream(new GPascalLexer(new AntlrInputStream(new BufferTextReader(_lexer.Buffer)))));
+                parser.AddErrorListener(new PascalErrorListener(builder));
 
                 var fileMark = builder.Mark();
                 new PascalParserVisitor(builder).Visit(parser.program());

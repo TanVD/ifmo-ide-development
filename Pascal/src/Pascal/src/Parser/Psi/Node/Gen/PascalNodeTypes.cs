@@ -102,6 +102,5 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Parser.Psi.Node.Gen
 
         public static readonly PascalErrorNodeType Error = new PascalErrorNodeType("PASCAL_ERROR", 97);
         public static readonly PascalFileNodeType File = new PascalFileNodeType("PASCAL_FILE", 98);
-
     }
 }

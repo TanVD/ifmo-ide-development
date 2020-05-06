@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Xml;
+using JetBrains.Annotations;
 using JetBrains.ReSharper.Plugins.Pascal.Parser.Psi.Node.Gen;
 using JetBrains.ReSharper.Plugins.Pascal.Resolve.Psi;
 using JetBrains.ReSharper.Psi;
@@ -27,7 +28,7 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Parser.Psi
         public TreeTextRange GetNameRange() => Identifier.IdentifierRange;
         public bool IsSynthetic() => false;
 
-        public IDeclaredElement DeclaredElement { get; }
+        [NotNull] public IDeclaredElement DeclaredElement { get; }
 
         public string DeclaredName => Identifier.Name;
     }
