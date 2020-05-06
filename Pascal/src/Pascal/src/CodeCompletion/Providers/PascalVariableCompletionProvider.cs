@@ -2,7 +2,6 @@ using System.Linq;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Feature.Services.CodeCompletion.Infrastructure.LookupItems;
 using JetBrains.ReSharper.Plugins.Pascal.Lexer;
-using JetBrains.ReSharper.Plugins.Pascal.Parser.Psi.Node.Gen;
 using JetBrains.ReSharper.Plugins.Pascal.Resolve.Util;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Tree;
@@ -17,7 +16,7 @@ namespace JetBrains.ReSharper.Plugins.Pascal.CodeCompletion.Providers
         {
             return node.NodeType == PascalTokenTypes.IDENT;
         }
-        
+
         protected override bool IsAvailable(PascalCodeCompletionContextProvider.PascalCodeCompletionContext context)
         {
             if (!base.IsAvailable(context)) return false;
@@ -31,15 +30,16 @@ namespace JetBrains.ReSharper.Plugins.Pascal.CodeCompletion.Providers
         protected override bool AddLookupItems(PascalCodeCompletionContextProvider.PascalCodeCompletionContext context, IItemsCollector collector)
         {
             var node = context.UnterminatedContext.TreeNode;
-            if (node == null ||  !ShouldBeConsidered(node)) return false;
+            if (node == null || !ShouldBeConsidered(node)) return false;
 
-            var declared = PascalPsiUtil.FindAllAccessibleDeclared(node).ToList();
+            var declared = from element in PascalPsiUtil.FindAllAccessibleDeclared(node) select element.ShortName;
+            var completions = declared.ToSet();
 
-            if (declared.IsEmpty()) return false;
-            
-            foreach (var element in declared)
+            if (completions.IsEmpty()) return false;
+
+            foreach (var completion in completions)
             {
-                collector.Add(GetLookupElement(element.ShortName, context.ElementRanges));
+                collector.Add(GetLookupElement(completion, context.ElementRanges));
             }
 
             return true;

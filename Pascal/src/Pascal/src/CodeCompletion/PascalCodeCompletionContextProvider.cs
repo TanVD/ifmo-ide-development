@@ -1,4 +1,3 @@
-using System;
 using JetBrains.ReSharper.Feature.Services.CodeCompletion;
 using JetBrains.ReSharper.Feature.Services.CodeCompletion.Impl;
 using JetBrains.ReSharper.Feature.Services.CodeCompletion.Infrastructure;
@@ -18,7 +17,7 @@ namespace JetBrains.ReSharper.Plugins.Pascal.CodeCompletion
             PLogger.Info($"Someone asking if PascalCompletionContextProvider is Applicable, answer {context.File is PascalFile}");
             return context.File is PascalFile;
         }
-        
+
         public override ISpecificCodeCompletionContext GetCompletionContext(CodeCompletionContext context)
         {
             PLogger.Info("Someone asking PascalCompletionContextProvider for Context");

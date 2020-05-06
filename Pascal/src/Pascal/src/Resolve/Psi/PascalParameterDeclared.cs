@@ -9,7 +9,7 @@ using JetBrains.Util.DataStructures;
 
 namespace JetBrains.ReSharper.Plugins.Pascal.Resolve.Psi
 {
-    public class PascalParameterDeclared: IDeclaredElement
+    public class PascalParameterDeclared : IDeclaredElement
     {
         private readonly PascalParameterDeclaration _declaration;
 

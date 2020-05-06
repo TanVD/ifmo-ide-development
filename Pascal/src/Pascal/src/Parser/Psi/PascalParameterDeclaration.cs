@@ -11,7 +11,7 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Parser.Psi
     public class PascalParameterDeclaration : PascalAntlrCompositeElement<GPascalParser.ParameterGroupContext>, IDeclaration
     {
         public PascalIdentifier Identifier => this.Children().First(it => it is PascalIdentifier) as PascalIdentifier;
-        
+
         public PascalParameterDeclaration(GPascalParser.ParameterGroupContext context) : base(context)
         {
             DeclaredElement = new PascalParameterDeclared(this);

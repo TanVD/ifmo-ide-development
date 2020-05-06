@@ -21,7 +21,7 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Resolve.Util
 
             return cur;
         }
-        
+
         [NotNull]
         public static IEnumerable<IDeclaration> FindAllAccessibleDeclarations(ITreeNode from)
         {
@@ -43,22 +43,21 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Resolve.Util
             var declarations = FindAllAccessibleDeclarations(from);
             return from declaration in declarations select declaration.DeclaredElement;
         }
-        
+
         public static IEnumerable<IDeclaration> GetDeclarationsFromRoot(this ITreeNode from)
         {
             if (from is PascalBlock)
             {
                 return from.Children().Where(it => it is PascalVariableDeclarationPart).TryGetSingleItem()?.GetDeclarationsInDescendants() ?? Enumerable.Empty<IDeclaration>();
             }
-            
+
             if (from is PascalProcedureDeclaration || from is PascalFunctionDeclaration)
             {
                 return from.Children().Where(it => it is PascalFormalParameterList).TryGetSingleItem()?.GetDeclarationsInDescendants() ?? Enumerable.Empty<IDeclaration>();
             }
-            
+
             return Enumerable.Empty<IDeclaration>();
         }
-
 
 
         private static IEnumerable<IDeclaration> GetDeclarationsInDescendants(this ITreeNode from)

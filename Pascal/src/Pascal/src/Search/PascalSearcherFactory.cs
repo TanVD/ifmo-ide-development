@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using JetBrains.ReSharper.Plugins.Pascal.Resolve;
 using JetBrains.ReSharper.Plugins.Pascal.Resolve.Psi;
-using JetBrains.ReSharper.Plugins.Pascal.Utils;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.ExtensionsAPI;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Finder;
@@ -41,12 +40,10 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Search
 
         public override ISearchDomain GetDeclaredElementSearchDomain(IDeclaredElement declaredElement)
         {
-            if (declaredElement is PascalVariableDeclared)
+            if (declaredElement is PascalVariableDeclared || declaredElement is PascalParameterDeclared)
             {
                 return _searchDomainFactory.CreateSearchDomain(declaredElement.GetSourceFiles());
             }
-
-            PLogger.Info("Not PascalVariableDeclared!");
 
             return base.GetDeclaredElementSearchDomain(declaredElement);
         }

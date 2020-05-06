@@ -56,6 +56,5 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Resolve.Psi
         {
             return myOwner.IsValid();
         }
-
     }
 }
