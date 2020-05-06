@@ -1025,3 +1025,7 @@ NUM_REAL
 fragment EXPONENT
    : ('e') ('+' | '-')? ('0' .. '9') +
    ;
+   
+   
+//UNKNOWN FOR UNEXPECTED CHARS
+UNKNOWN: .;

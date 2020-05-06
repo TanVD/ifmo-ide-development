@@ -30,6 +30,5 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Parser
 
             return null;
         }
-        
     }
 }

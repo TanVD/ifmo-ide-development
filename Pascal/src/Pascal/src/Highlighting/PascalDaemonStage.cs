@@ -4,6 +4,7 @@ using JetBrains.Application.Settings;
 using JetBrains.ReSharper.Daemon.CSharp.Errors;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.I18n.Services.Daemon;
+using JetBrains.ReSharper.Plugins.Pascal.Lexer;
 using JetBrains.ReSharper.Plugins.Pascal.Parser.Psi;
 using JetBrains.ReSharper.Plugins.Pascal.Resolve;
 using JetBrains.ReSharper.Psi;
@@ -47,6 +48,11 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Highlighting
                     {
                         var range = error.GetDocumentRange().ExtendRight(error.Length);
                         highlightings.Add(new HighlightingInfo(range, new CSharpSyntaxError(error.ErrorDescription, range)));
+                    } else if (treeNode is PascalLeafToken unknown && unknown.NodeType == PascalTokenTypes.UNKNOWN)
+                    {
+                        var range = unknown.GetDocumentRange();
+                        highlightings.Add(new HighlightingInfo(range, new CSharpSyntaxError("Unexpected symbols", range)));
+                        
                     }
                 }
 

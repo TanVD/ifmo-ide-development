@@ -1,12 +1,14 @@
 using System.IO;
 using Antlr4.Runtime;
 using JetBrains.Lifetimes;
+using JetBrains.ReSharper.Plugins.Pascal.Lexer;
 using JetBrains.ReSharper.Plugins.Pascal.Parser.Ide;
 using JetBrains.ReSharper.Plugins.Pascal.Parser.Psi.Node;
 using JetBrains.ReSharper.Plugins.Pascal.Parser.Psi.Node.Gen;
 using JetBrains.ReSharper.Psi.Parsing;
 using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.ReSharper.Psi.TreeBuilder;
+using JetBrains.Text;
 
 namespace JetBrains.ReSharper.Plugins.Pascal.Parser
 {
@@ -23,10 +25,12 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Parser
         {
             using (var def = Lifetime.Define())
             {
-                var builder = new PsiBuilder(_lexer, PascalNodeTypes.File, new TokenFactory(), def.Lifetime);
+                
+                var builder = new PsiBuilder(new PascalLexer(_lexer.Buffer), PascalNodeTypes.File, new TokenFactory(), def.Lifetime);
                 var listener = new PascalErrorListener(builder);
 
-                var lexer = new GPascalLexer(new AntlrInputStream(_lexer.Buffer.GetText()));
+                var lexer = new GPascalLexer(new AntlrInputStream(new BufferTextReader(_lexer.Buffer)));
+                // var lexer = new GPascalLexer(new AntlrInputStream(_lexer.Buffer.GetText()));
                 var parser = new GPascalParser(new CommonTokenStream(lexer));
                 parser.AddErrorListener(listener);
 
