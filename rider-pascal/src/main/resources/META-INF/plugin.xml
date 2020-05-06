@@ -12,6 +12,7 @@
     <fileType name="Pascal" language="Pascal" extensions="pas" implementationClass="com.jetbrains.rider.ideaInterop.fileTypes.pascal.PascalFileType" />
     <lang.ast.factory language="Pascal" implementationClass="com.jetbrains.rider.ideaInterop.fileTypes.pascal.PascalAstFactory" />
     <lang.parserDefinition language="Pascal" implementationClass="com.jetbrains.rider.ideaInterop.fileTypes.pascal.PascalParserDefinition" />
+    <completion.completionSessionStrategy language="Pascal" implementationClass="com.jetbrains.rider.ideaInterop.fileTypes.pascal.PascalCompletionStrategy" />
 
     <lang.altEnter language="Pascal" implementationClass="com.jetbrains.rider.intentions.altEnter.ReSharperBulbMenuModelFactory" />
     <lang.syntaxHighlighterFactory language="Pascal" implementationClass="com.jetbrains.rider.ideaInterop.fileTypes.pascal.PascalHighlighterProvider"/>
