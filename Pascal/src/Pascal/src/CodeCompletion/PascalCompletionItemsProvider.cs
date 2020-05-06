@@ -11,7 +11,7 @@ using JetBrains.ReSharper.Psi;
 namespace JetBrains.ReSharper.Plugins.Pascal.CodeCompletion
 {
     [Language(typeof(PascalLanguage))]
-    public class PascalCompletionItemsProvider: ItemsProviderOfSpecificContext<PascalCodeCompletionContextProvider.PascalCodeCompletionContext>
+    public class PascalCompletionItemsProvider : ItemsProviderOfSpecificContext<PascalCodeCompletionContextProvider.PascalCodeCompletionContext>
     {
         public PascalCompletionItemsProvider()
         {
@@ -41,13 +41,21 @@ namespace JetBrains.ReSharper.Plugins.Pascal.CodeCompletion
         protected override bool AddLookupItems(PascalCodeCompletionContextProvider.PascalCodeCompletionContext context, IItemsCollector collector)
         {
             PLogger.Info("Someone asking PascalCompletionItemsProvider to AddLookupItems");
-            var info = new TextualInfo("abcd", "abcd");
+            var info = new TextualInfo("my_var", "my_var") {ReplaceText = "my_var", Ranges = context.ElementRanges};
             var item = LookupItemFactory.CreateLookupItem(info)
                 .WithPresentation(_ => new TextPresentation<TextualInfo>(info))
                 .WithBehavior(_ => new TextualBehavior<TextualInfo>(info))
                 .WithMatcher(_ => new TextualMatcher<TextualInfo>(info));
             collector.Add(item);
-            return base.AddLookupItems(context, collector);
+            
+            var infoOther = new TextualInfo("my_other", "my_other") {ReplaceText = "my_other", Ranges = context.ElementRanges};
+            var itemOther = LookupItemFactory.CreateLookupItem(info)
+                .WithPresentation(_ => new TextPresentation<TextualInfo>(infoOther))
+                .WithBehavior(_ => new TextualBehavior<TextualInfo>(infoOther))
+                .WithMatcher(_ => new TextualMatcher<TextualInfo>(infoOther));
+            collector.Add(itemOther);
+
+            return true;
         }
     }
 }
