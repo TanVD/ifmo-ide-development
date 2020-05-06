@@ -6,5 +6,5 @@ object PascalFileType : LanguageFileType(PascalLanguage) {
     override fun getName() = "Pascal"
     override fun getDefaultExtension() = "pas"
     override fun getDescription() = "Pascal file"
-    override fun getIcon() = null
+    override fun getIcon() = PascalIcons.MY_FILE_ICON
 }
