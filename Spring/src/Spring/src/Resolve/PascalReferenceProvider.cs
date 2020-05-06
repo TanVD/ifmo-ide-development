@@ -2,7 +2,7 @@ using Antlr4.Runtime.Misc;
 using JetBrains.DataFlow;
 using JetBrains.Lifetimes;
 using JetBrains.ReSharper.Plugins.Spring.Parser.Psi;
-using JetBrains.ReSharper.Plugins.Spring.Reference.Psi;
+using JetBrains.ReSharper.Plugins.Spring.Resolve.Psi;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Caches;
 using JetBrains.ReSharper.Psi.Resolve;
@@ -20,12 +20,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Resolve
 
         public IReferenceFactory CreateFactory(IPsiSourceFile sourceFile, IFile file, IWordIndex wordIndexForChecks)
         {
-            if (sourceFile.LanguageType.Name == ((PsiLanguageType) SpringLanguage.Instance).Name)
-            {
-                return new PascalReferenceFactory();
-            }
-
-            return null;
+            return sourceFile.PrimaryPsiLanguage.Is<SpringLanguage>() ? new PascalReferenceFactory() : null;
         }
 
         public ISignal<IReferenceProviderFactory> Changed { get; }

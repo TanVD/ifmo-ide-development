@@ -12,7 +12,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Parser
         private readonly PsiBuilder _psiBuilder;
         private ITerminalNode _prev;
 
-        private bool _withLogging = true;
+        private bool _withLogging = false;
         private string _tabs = "";
 
         protected PascalBaseParserVisitor(PsiBuilder psiBuilder)

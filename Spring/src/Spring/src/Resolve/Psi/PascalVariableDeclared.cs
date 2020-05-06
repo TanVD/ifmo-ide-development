@@ -3,7 +3,6 @@ using System.Xml;
 using Antlr4.Runtime.Misc;
 using ICSharpCode.NRefactory;
 using JetBrains.ReSharper.Plugins.Spring.Parser.Psi;
-using JetBrains.ReSharper.Plugins.Spring.Reference.Psi;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.Util.DataStructures;

@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using JetBrains.Util;
 using JetBrains.Util.Logging;
 
@@ -15,7 +16,7 @@ namespace JetBrains.ReSharper.Plugins.Spring.Utils
 
         public static void StackTrace()
         {
-            Log.Info(new System.Diagnostics.StackTrace().ToString());
+            Log.Info(new StackTrace().ToString());
         }
     }
 }
