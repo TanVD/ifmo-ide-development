@@ -39,7 +39,7 @@ namespace JetBrains.ReSharper.Plugins.Pascal
         public override ILexerFactory GetMixedLexerFactory(ISolution solution, IBuffer buffer,
             IPsiSourceFile sourceFile = null)
         {
-            return new PascalLanguageService.LexerFactory();
+            return new PascalLanguageService.PascalLexerFactory();
         }
 
         protected override PsiLanguageType PsiLanguageType => PascalLanguage.Instance;

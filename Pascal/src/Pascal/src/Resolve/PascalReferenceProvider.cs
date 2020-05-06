@@ -25,6 +25,8 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Resolve
 
         public ISignal<IReferenceProviderFactory> Changed { get; }
     }
+    
+    
 
     public class PascalReferenceFactory : IReferenceFactory
     {

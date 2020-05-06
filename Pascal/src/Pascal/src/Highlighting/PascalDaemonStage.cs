@@ -41,7 +41,7 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Highlighting
             public void Execute(Action<DaemonStageResult> committer)
             {
                 var highlightings = new List<HighlightingInfo>();
-                //Lexer check
+                //Lexer and parser check
                 foreach (var treeNode in _file.Descendants())
                 {
                     if (treeNode is PascalErrorElement error)

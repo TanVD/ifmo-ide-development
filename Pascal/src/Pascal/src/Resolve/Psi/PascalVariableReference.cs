@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Plugins.Pascal.Parser.Psi;
+using JetBrains.ReSharper.Plugins.Pascal.Resolve.Util;
 using JetBrains.ReSharper.Plugins.Pascal.Utils;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Resolve;
@@ -22,19 +23,17 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Resolve.Psi
         public override ResolveResultWithInfo ResolveWithoutCache()
         {
             var file = _owner.GetContainingFile();
-            if (file == null)
-            {
-                return ResolveResultWithInfo.Unresolved;
-            }
+            if (file == null) return ResolveResultWithInfo.Unresolved;
 
-            foreach (var descendant in file.Descendants())
+            var block = PascalPsiUtil.FindBlock(_owner);
+            if (block == null) return ResolveResultWithInfo.Unresolved;
+
+
+            foreach (var descendant in block.Descendants())
             {
-                if (descendant is PascalVariableDeclaration declaration)
+                if (descendant is PascalVariableDeclaration declaration && declaration.DeclaredName == GetName())
                 {
-                    if (declaration.DeclaredName == GetName())
-                    {
-                        return new ResolveResultWithInfo(new SimpleResolveResult(declaration.DeclaredElement), ResolveErrorType.OK);
-                    }
+                    return new ResolveResultWithInfo(new SimpleResolveResult(declaration.DeclaredElement), ResolveErrorType.OK);
                 }
             }
 

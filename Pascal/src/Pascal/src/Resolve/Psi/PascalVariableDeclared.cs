@@ -29,7 +29,6 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Resolve.Psi
             return new ArrayList<IDeclaration> {_declaration};
         }
 
-        //TODO-tanvd fix -- working like there is only one file
         public IList<IDeclaration> GetDeclarationsIn(IPsiSourceFile sourceFile)
         {
             var file = _declaration.GetSourceFile();
@@ -61,7 +60,6 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Resolve.Psi
             return new HybridCollection<IPsiSourceFile>(file);
         }
 
-        //TODO-tanvd fix -- working like there is only one file and it is pascal
         public bool HasDeclarationsIn(IPsiSourceFile sourceFile)
         {
             return sourceFile.Equals(_declaration.GetSourceFile());

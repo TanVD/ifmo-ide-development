@@ -24,9 +24,7 @@ namespace JetBrains.ReSharper.Plugins.Pascal
         {
         }
 
-        protected PascalProjectFileType(string name, string presentableName, IEnumerable<string> extensions) : base(
-            name,
-            presentableName, extensions)
+        protected PascalProjectFileType(string name, string presentableName, IEnumerable<string> extensions) : base(name, presentableName, extensions)
         {
         }
     }
