@@ -1,4 +1,4 @@
-using System.Linq;
+using JetBrains.Platform.MsBuildTask.Utils;
 using JetBrains.ReSharper.Plugins.Pascal.Lexer;
 using JetBrains.ReSharper.Plugins.Pascal.Parser.Psi.Node.Gen;
 using JetBrains.ReSharper.Psi;
@@ -9,7 +9,14 @@ namespace JetBrains.ReSharper.Plugins.Pascal.Parser.Psi
 {
     public class PascalIdentifier : PascalAntlrCompositeElement<GPascalParser.IdentifierContext>
     {
-        public TreeTextRange IdentifierRange => this.Children().Single(it => it.NodeType == PascalTokenTypes.IDENT).GetTreeTextRange();
+        public TreeTextRange IdentifierRange
+        {
+            get
+            {
+                return this.Children().TryGetSingleItem(it => it.NodeType == PascalTokenTypes.IDENT)?.GetTreeTextRange() ?? this.GetTreeTextRange();
+            }
+        }
+
         public string Name => Context.IDENT().GetText();
 
         public PascalIdentifier(GPascalParser.IdentifierContext context) : base(context)
