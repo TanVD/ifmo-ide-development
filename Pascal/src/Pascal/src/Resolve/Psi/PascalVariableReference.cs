@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Plugins.Spring.Parser.Psi;
-using JetBrains.ReSharper.Plugins.Spring.Utils;
+using JetBrains.ReSharper.Plugins.Pascal.Parser.Psi;
+using JetBrains.ReSharper.Plugins.Pascal.Utils;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Resolve;
 using JetBrains.ReSharper.Psi.Impl.Resolve;
 using JetBrains.ReSharper.Psi.Resolve;
 using JetBrains.ReSharper.Psi.Tree;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Resolve.Psi
+namespace JetBrains.ReSharper.Plugins.Pascal.Resolve.Psi
 {
     public class PascalVariableReference : TreeReferenceBase<PascalVariable>, ICompletableReference
     {

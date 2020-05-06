@@ -1,8 +1,8 @@
-using JetBrains.ReSharper.Plugins.Spring.Parser.Gen;
-using JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node;
+using JetBrains.ReSharper.Plugins.Pascal.Parser.Gen;
+using JetBrains.ReSharper.Plugins.Pascal.Parser.Psi.Node.Gen;
 using JetBrains.ReSharper.Psi.TreeBuilder;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Parser
+namespace JetBrains.ReSharper.Plugins.Pascal.Parser
 {
     public class PascalParserVisitor : PascalGenParserVisitor
     {

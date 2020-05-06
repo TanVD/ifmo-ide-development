@@ -1,11 +1,11 @@
 using Antlr4.Runtime;
 using Antlr4.Runtime.Tree;
-using JetBrains.ReSharper.Plugins.Spring.Lexer;
-using JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node;
-using JetBrains.ReSharper.Plugins.Spring.Utils;
+using JetBrains.ReSharper.Plugins.Pascal.Lexer;
+using JetBrains.ReSharper.Plugins.Pascal.Parser.Psi.Node;
+using JetBrains.ReSharper.Plugins.Pascal.Utils;
 using JetBrains.ReSharper.Psi.TreeBuilder;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Parser
+namespace JetBrains.ReSharper.Plugins.Pascal.Parser
 {
     public abstract class PascalBaseParserVisitor: GPascalBaseVisitor<object>
     {

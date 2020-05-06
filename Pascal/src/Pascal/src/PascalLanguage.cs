@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Psi;
 
-namespace JetBrains.ReSharper.Plugins.Spring
+namespace JetBrains.ReSharper.Plugins.Pascal
 {
     [LanguageDefinition(NAME)]
     public class PascalLanguage : KnownLanguage

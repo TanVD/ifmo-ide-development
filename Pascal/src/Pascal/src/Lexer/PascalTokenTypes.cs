@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using JetBrains.Util.Collections;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Lexer
+namespace JetBrains.ReSharper.Plugins.Pascal.Lexer
 {
     public static class PascalTokenTypes
     {

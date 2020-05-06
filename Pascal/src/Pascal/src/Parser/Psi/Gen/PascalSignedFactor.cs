@@ -1,7 +1,7 @@
-using JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node;
+using JetBrains.ReSharper.Plugins.Pascal.Parser.Psi.Node.Gen;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Tree;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Gen
+namespace JetBrains.ReSharper.Plugins.Pascal.Parser.Psi.Gen
 {
     public class PascalSignedFactor : PascalAntlrCompositeElement<GPascalParser.SignedFactorContext>
     {

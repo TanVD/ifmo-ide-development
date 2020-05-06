@@ -1,6 +1,5 @@
 using System;
 using Antlr4.Runtime;
-using JetBrains.ReSharper.Plugins.Spring.Lexer;
 using JetBrains.Text;
 using NUnit.Framework;
 

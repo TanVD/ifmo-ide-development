@@ -2,7 +2,7 @@ using Antlr4.Runtime;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Tree;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Parser.Psi
+namespace JetBrains.ReSharper.Plugins.Pascal.Parser.Psi
 {
     public abstract class PascalAntlrCompositeElement<T> : CompositeElement where T : RuleContext
     {

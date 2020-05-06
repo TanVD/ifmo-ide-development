@@ -5,7 +5,7 @@ using JetBrains.ReSharper.Psi.Parsing;
 using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.Text;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Lexer
+namespace JetBrains.ReSharper.Plugins.Pascal.Lexer
 {
     internal class PascalLeafToken : LeafElementBase, ITokenNode
     {

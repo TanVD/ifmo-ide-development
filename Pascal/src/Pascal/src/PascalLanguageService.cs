@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Plugins.Spring.Lexer;
-using JetBrains.ReSharper.Plugins.Spring.Parser;
+using JetBrains.ReSharper.Plugins.Pascal.Lexer;
+using JetBrains.ReSharper.Plugins.Pascal.Parser;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Caches2;
 using JetBrains.ReSharper.Psi.Impl;
@@ -11,7 +11,7 @@ using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.Text;
 using JetBrains.Util;
 
-namespace JetBrains.ReSharper.Plugins.Spring
+namespace JetBrains.ReSharper.Plugins.Pascal
 {
     [Language(typeof(PascalLanguage))]
     class PascalLanguageService : LanguageService

@@ -1,8 +1,8 @@
-using JetBrains.ReSharper.Plugins.Spring.Parser.Psi.Node;
+using JetBrains.ReSharper.Plugins.Pascal.Parser.Psi.Node.Gen;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Tree;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Parser.Psi
+namespace JetBrains.ReSharper.Plugins.Pascal.Parser.Psi
 {
     public class PascalFile : FileElementBase
     {

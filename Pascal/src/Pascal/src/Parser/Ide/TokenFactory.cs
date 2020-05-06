@@ -4,7 +4,7 @@ using JetBrains.ReSharper.Psi.Parsing;
 using JetBrains.ReSharper.Psi.TreeBuilder;
 using JetBrains.Text;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Parser
+namespace JetBrains.ReSharper.Plugins.Pascal.Parser.Ide
 {
     internal class TokenFactory : IPsiBuilderTokenFactory
     {

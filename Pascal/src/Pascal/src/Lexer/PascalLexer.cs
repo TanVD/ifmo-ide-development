@@ -2,7 +2,7 @@ using Antlr4.Runtime;
 using JetBrains.ReSharper.Psi.Parsing;
 using JetBrains.Text;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Lexer
+namespace JetBrains.ReSharper.Plugins.Pascal.Lexer
 {
     public class PascalLexer : ILexer<int>
     {

@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using JetBrains.ReSharper.Plugins.Spring.Resolve;
-using JetBrains.ReSharper.Plugins.Spring.Resolve.Psi;
-using JetBrains.ReSharper.Plugins.Spring.Utils;
+using JetBrains.ReSharper.Plugins.Pascal.Resolve;
+using JetBrains.ReSharper.Plugins.Pascal.Resolve.Psi;
+using JetBrains.ReSharper.Plugins.Pascal.Utils;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.ExtensionsAPI;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Finder;
@@ -12,7 +12,7 @@ using JetBrains.ReSharper.Psi.Resolve;
 using JetBrains.ReSharper.Psi.Search;
 using JetBrains.ReSharper.Psi.Tree;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Search
+namespace JetBrains.ReSharper.Plugins.Pascal.Search
 {
     [PsiSharedComponent]
     public class PascalSearcherFactory : DomainSpecificSearcherFactoryBase

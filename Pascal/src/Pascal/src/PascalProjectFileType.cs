@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using JetBrains.ProjectModel;
 
-namespace JetBrains.ReSharper.Plugins.Spring
+namespace JetBrains.ReSharper.Plugins.Pascal
 {
     [ProjectFileTypeDefinition(NAME)]
     public class PascalProjectFileType : KnownProjectFileType

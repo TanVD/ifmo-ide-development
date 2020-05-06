@@ -1,12 +1,12 @@
 using JetBrains.DocumentModel;
 using JetBrains.ProjectModel;
 using JetBrains.ReSharper.Feature.Services.SelectEmbracingConstruct;
-using JetBrains.ReSharper.Plugins.Spring.Parser.Psi;
+using JetBrains.ReSharper.Plugins.Pascal.Parser.Psi;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Files;
 using JetBrains.ReSharper.Psi.Tree;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Parser.Ide
+namespace JetBrains.ReSharper.Plugins.Pascal.Parser.Ide
 {
     [ProjectFileType(typeof(PascalProjectFileType))]
     public class SelectEmbracingConstructProvider : ISelectEmbracingConstructProvider

@@ -4,7 +4,7 @@ using JetBrains.ReSharper.Psi.Parsing;
 using JetBrains.Text;
 using JetBrains.Util;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Lexer
+namespace JetBrains.ReSharper.Plugins.Pascal.Lexer
 {
     public class PascalTokenType : TokenNodeType
     {

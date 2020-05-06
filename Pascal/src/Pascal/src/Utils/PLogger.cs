@@ -3,7 +3,7 @@ using System.Diagnostics;
 using JetBrains.Util;
 using JetBrains.Util.Logging;
 
-namespace JetBrains.ReSharper.Plugins.Spring.Utils
+namespace JetBrains.ReSharper.Plugins.Pascal.Utils
 {
     public static class PLogger
     {

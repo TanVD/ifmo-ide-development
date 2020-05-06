@@ -5,7 +5,7 @@ using JetBrains.ReSharper.Psi.Parsing;
 using JetBrains.Text;
 using JetBrains.UI.Icons;
 
-namespace JetBrains.ReSharper.Plugins.Spring
+namespace JetBrains.ReSharper.Plugins.Pascal
 {
     [ProjectFileType(typeof(PascalProjectFileType))]
     public class PascalProjectFileLanguageService : ProjectFileLanguageService
